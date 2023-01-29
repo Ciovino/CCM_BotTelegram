@@ -38,7 +38,8 @@ namespace CCM_BotTelegram
             { 
                 AllowedUpdates = new UpdateType[]
                 {
-                    UpdateType.Message
+                    UpdateType.Message,
+                    UpdateType.EditedMessage
                 }
             };
 
@@ -56,20 +57,43 @@ namespace CCM_BotTelegram
         {
             if (update.Type == UpdateType.Message)
             {
-                var message_update = new BotUpdate
+                if (update.Message.Type == MessageType.Text)
                 {
-                    type = UpdateType.Message.ToString(),
-                    text = update.Message.Text,
-                    id = update.Message.Chat.Id,
-                    username = update.Message.Chat.Username,
-                };
+                    var message_update = new BotUpdate
+                    {
+                        type = UpdateType.Message.ToString(),
+                        text = update.Message.Text,
+                        id = update.Message.Chat.Id,
+                        username = update.Message.Chat.Username,
+                    };
 
-                // Write an update
-                botUpdates.Add(message_update);
+                    // Write an update
+                    botUpdates.Add(message_update);
 
-                var message_update_string = JsonConvert.SerializeObject(botUpdates);
+                    var message_update_string = JsonConvert.SerializeObject(botUpdates);
 
-                System.IO.File.WriteAllText(PrivateConfiguration.getLogFileName(), message_update_string);
+                    System.IO.File.WriteAllText(PrivateConfiguration.getLogFileName(), message_update_string);
+                }                
+            }
+            else if (update.Type == UpdateType.EditedMessage)
+            {
+                if (update.EditedMessage.Type == MessageType.Text)
+                {
+                    var message_update = new BotUpdate
+                    {
+                        type = UpdateType.EditedMessage.ToString(),
+                        text = update.EditedMessage.Text,
+                        id = update.EditedMessage.Chat.Id,
+                        username = update.EditedMessage.Chat.Username,
+                    };
+
+                    // Write an update
+                    botUpdates.Add(message_update);
+
+                    var message_update_string = JsonConvert.SerializeObject(botUpdates);
+
+                    System.IO.File.WriteAllText(PrivateConfiguration.getLogFileName(), message_update_string);
+                }
             }
         }
     }
