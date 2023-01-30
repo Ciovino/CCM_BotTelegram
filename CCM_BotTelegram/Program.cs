@@ -8,8 +8,8 @@ using Telegram.Bot.Types.ReplyMarkups;
 namespace CCM_BotTelegram
 {
     enum State{
-        NoCommand,
-        CommandTest
+        NoCommand = -1,
+        Incognito
     }
     struct BotUpdate
     {
@@ -26,9 +26,9 @@ namespace CCM_BotTelegram
         static State botState = State.NoCommand;
         static List<BotUpdate> botUpdates = new List<BotUpdate>();
 
-        static CommandTest test = new();
+        static List<Command> allCommands = new();
 
-        static void Main(string[] args)
+        static void Main()
         {
             // Read all saved updates
             try
@@ -49,6 +49,9 @@ namespace CCM_BotTelegram
                     UpdateType.Message
                 }
             };
+
+            // Create and Add command
+            allCommands.Add(new IncognitoMode());
 
             Client.StartReceiving(UpdateHandler, ErrorHandler, receiverOptions);
 
@@ -85,19 +88,18 @@ namespace CCM_BotTelegram
                                 string command = message_update.text.Substring(1);
                                 switch (command)
                                 {
-                                    case "test": // Activate CommandTest
-                                        MessageWrapper commandTestMessage = test.Activate();
+                                    case "incognito": // Activate IncognitoMode
+                                        botState = State.Incognito;
 
-                                        botState = State.CommandTest;
-
+                                        MessageWrapper commandTestMessage = allCommands[((int)State.Incognito)].Activate();
                                         await SendWrapperMessageAsync(message_update.chat_id, commandTestMessage, token);
                                         break;
 
                                     default: // Send Error message
-                                        MessageWrapper message = new("Non esiste stu comand asscemo");
+                                        MessageWrapper message = new("Non puoi ancora usare questo comando.");
                                         await SendWrapperMessageAsync(message_update.chat_id, message, token);
-                                        AddMessageToJson(message_update);
 
+                                        AddMessageToJson(message_update);
                                         break;
                                 }
                             }
@@ -106,39 +108,24 @@ namespace CCM_BotTelegram
 
                             break;
 
-                        case State.CommandTest:
+                        case State.Incognito:
                             if (message_update.text[0] == '/')
                             {
                                 string command = message_update.text.Substring(1);
                                 switch (command)
                                 {
-                                    case "remove": // Back to NoCommand
-                                        MessageWrapper commandTestMessage = test.Deactivate();
-
+                                    case "exit": // Back to NoCommand
                                         botState = State.NoCommand;
 
+                                        MessageWrapper commandTestMessage = allCommands[((int)State.Incognito)].Deactivate();
                                         await SendWrapperMessageAsync(message_update.chat_id, commandTestMessage, token);
                                         break;
 
                                     default: // Send Error message
-                                        MessageWrapper message = new("Non esiste stu comand asscemo");
+                                        MessageWrapper message = new("Non puoi usare questo comando ora");
                                         await SendWrapperMessageAsync(message_update.chat_id, message, token);
-                                        AddMessageToJson(message_update);
 
                                         break;
-                                }
-                            }
-                            else
-                            {
-                                if (!test.IsValidMessage(message_update.text))
-                                {
-                                    // Invalid message
-                                    MessageWrapper invalid_message = new("Non scrivere a cazzo. Scegli una delle opzioni.");
-                                    await SendWrapperMessageAsync(message_update.chat_id, invalid_message, token);
-                                }
-                                else 
-                                {
-                                    AddMessageToJson(message_update);
                                 }
                             }
 
@@ -148,7 +135,7 @@ namespace CCM_BotTelegram
                             break;
                     }
 
-                    // Console.WriteLine(botState.ToString());
+                    Console.WriteLine(botState.ToString());
                 }                
             }
         }
