@@ -3,6 +3,7 @@ using Telegram.Bot;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.ReplyMarkups;
 
 namespace CCM_BotTelegram
 {
@@ -38,8 +39,7 @@ namespace CCM_BotTelegram
             { 
                 AllowedUpdates = new UpdateType[]
                 {
-                    UpdateType.Message,
-                    UpdateType.EditedMessage
+                    UpdateType.Message
                 }
             };
 
@@ -74,53 +74,49 @@ namespace CCM_BotTelegram
                     var message_update_string = JsonConvert.SerializeObject(botUpdates);
 
                     System.IO.File.WriteAllText(PrivateConfiguration.getLogFileName(), message_update_string);
+
+                    // If is a command
+                    if (message_update.text[0] == '/')
+                    {
+                        string command = message_update.text.Substring(1);
+
+                        switch (command)
+                        {
+                            case "test":
+                                ReplyKeyboardMarkup possible_choices = new ReplyKeyboardMarkup(new[]
+                                {
+                                    new KeyboardButton[] {"Questo è un test"},
+                                    new KeyboardButton[] {"Questo non è un test" }
+                                })
+                                {
+                                    ResizeKeyboard = true
+                                };
+
+                                Message add_keyboard = await Client.SendTextMessageAsync(
+                                    chatId: message_update.chat_id,
+                                    text: "Facciam stu test waglio",
+                                    replyMarkup: possible_choices,
+                                    cancellationToken: token);
+
+                                break;
+                            case "remove":
+                                Message remove_keyboard = await Client.SendTextMessageAsync(
+                                    chatId: message_update.chat_id,
+                                    text: "Finiamo stu test wagioo",
+                                    replyMarkup: new ReplyKeyboardRemove(),
+                                    cancellationToken: token);
+
+                                break;
+                            default:
+                                Message no_command = await Client.SendTextMessageAsync(
+                                    chatId: message_update.chat_id,
+                                    text: "Non esiste stu comand asscemo",
+                                    cancellationToken: token);
+                                break;
+                        }
+                    }
                 }                
             }
-            else if (update.Type == UpdateType.EditedMessage)
-            {
-                if (update.EditedMessage.Type == MessageType.Text)
-                {
-                    var message_update = new BotUpdate
-                    {
-                        type = UpdateType.EditedMessage.ToString(),
-                        text = update.EditedMessage.Text,
-                        chat_id = update.EditedMessage.Chat.Id,
-                        message_id=update.EditedMessage.MessageId,
-                        username = update.EditedMessage.Chat.Username,
-                    };
-
-                    // Remove the message that was edited
-                    RemoveEditedMessage(message_update);
-                    botUpdates.Add(message_update);
-
-                    var message_update_string = JsonConvert.SerializeObject(botUpdates);
-
-                    System.IO.File.WriteAllText(PrivateConfiguration.getLogFileName(), message_update_string);
-                }
-            }
-        }
-
-        static void RemoveEditedMessage(BotUpdate new_message)
-        {
-            int need_remove = -1;
-            for(int i = 0; i < botUpdates.Count; i++)
-            {
-                if(SameMessage(new_message, botUpdates[i]))
-                {
-                    need_remove = i;
-                    break;
-                }
-            }
-
-            if(need_remove > 0)
-            {
-                botUpdates.RemoveAt(need_remove);
-            }
-        }
-
-        private static bool SameMessage(BotUpdate a, BotUpdate b)
-        {
-            return a.message_id == b.message_id;
         }
     }
 }
