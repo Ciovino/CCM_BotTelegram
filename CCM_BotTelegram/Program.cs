@@ -22,6 +22,7 @@ namespace CCM_BotTelegram
 
     internal class Program
     {
+        const string botUsername = "@CAHMontpelos_BOT";
         static TelegramBotClient Client = new TelegramBotClient(PrivateConfiguration.getToken());
         static State botState = State.NoCommand;
         static List<BotUpdate> botUpdates = new List<BotUpdate>();
@@ -86,7 +87,7 @@ namespace CCM_BotTelegram
                             if (message_update.text[0] == '/')
                             {
                                 string command = message_update.text.Substring(1);
-                                switch (command)
+                                switch (SimpleCommand(command))
                                 {
                                     case "incognito": // Activate IncognitoMode
                                         botState = State.Incognito;
@@ -112,7 +113,7 @@ namespace CCM_BotTelegram
                             if (message_update.text[0] == '/')
                             {
                                 string command = message_update.text.Substring(1);
-                                switch (command)
+                                switch (SimpleCommand(command))
                                 {
                                     case "exit": // Back to NoCommand
                                         botState = State.NoCommand;
@@ -135,7 +136,7 @@ namespace CCM_BotTelegram
                             break;
                     }
 
-                    Console.WriteLine(botState.ToString());
+                    // Console.WriteLine(botState.ToString());
                 }                
             }
         }
@@ -164,6 +165,19 @@ namespace CCM_BotTelegram
                                                         replyMarkup: to_send.Keyboard,
                                                         cancellationToken: token);
             }
+        }
+
+
+        private static string SimpleCommand(string command)
+        {
+            if (command.Contains(botUsername))
+            {
+                var length = command.IndexOf('@');
+
+                command = command.Substring(0, length);
+            }
+
+            return command;
         }
     }
 
