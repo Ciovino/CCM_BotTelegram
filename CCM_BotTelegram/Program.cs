@@ -75,11 +75,6 @@ namespace CCM_BotTelegram
                         username = update.Message.Chat.Username,
                     };
 
-                    // Write an update
-                    botUpdates.Add(message_update);
-                    var message_update_string = JsonConvert.SerializeObject(botUpdates);
-                    System.IO.File.WriteAllText(PrivateConfiguration.getLogFileName(), message_update_string);
-
                     // Check bot state
                     switch (botState)
                     {
@@ -101,10 +96,14 @@ namespace CCM_BotTelegram
                                     default: // Send Error message
                                         MessageWrapper message = new("Non esiste stu comand asscemo");
                                         await SendWrapperMessageAsync(message_update.chat_id, message, token);
-                                        
+                                        AddMessageToJson(message_update);
+
                                         break;
                                 }
                             }
+                            else
+                                AddMessageToJson(message_update);
+
                             break;
 
                         case State.CommandTest:
@@ -124,8 +123,22 @@ namespace CCM_BotTelegram
                                     default: // Send Error message
                                         MessageWrapper message = new("Non esiste stu comand asscemo");
                                         await SendWrapperMessageAsync(message_update.chat_id, message, token);
+                                        AddMessageToJson(message_update);
 
                                         break;
+                                }
+                            }
+                            else
+                            {
+                                if (!test.IsValidMessage(message_update.text))
+                                {
+                                    // Invalid message
+                                    MessageWrapper invalid_message = new("Non scrivere a cazzo. Scegli una delle opzioni.");
+                                    await SendWrapperMessageAsync(message_update.chat_id, invalid_message, token);
+                                }
+                                else 
+                                {
+                                    AddMessageToJson(message_update);
                                 }
                             }
 
@@ -135,9 +148,17 @@ namespace CCM_BotTelegram
                             break;
                     }
 
-                    Console.WriteLine(botState.ToString());
+                    // Console.WriteLine(botState.ToString());
                 }                
             }
+        }
+
+        private static void AddMessageToJson(BotUpdate new_message)
+        {
+            // Write an update
+            botUpdates.Add(new_message);
+            var message_update_string = JsonConvert.SerializeObject(botUpdates);
+            System.IO.File.WriteAllText(PrivateConfiguration.getLogFileName(), message_update_string);
         }
 
         private static async Task<Message> SendWrapperMessageAsync(ChatId id, MessageWrapper to_send, CancellationToken token)

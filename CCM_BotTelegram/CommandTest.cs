@@ -49,5 +49,16 @@ namespace CCM_BotTelegram
 
             return to_send;
         }
+
+        public bool IsValidMessage(string message_text)
+        {
+            foreach(string possible in test)
+            {
+                if (message_text == possible)
+                    return true;
+            }
+
+            return false;
+        }
     }
 }
