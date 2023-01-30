@@ -3,9 +3,14 @@ using Telegram.Bot;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.ReplyMarkups;
 
 namespace CCM_BotTelegram
 {
+    enum State{
+        NoCommand,
+        CommandTest
+    }
     struct BotUpdate
     {
         public string type;
@@ -18,7 +23,10 @@ namespace CCM_BotTelegram
     internal class Program
     {
         static TelegramBotClient Client = new TelegramBotClient(PrivateConfiguration.getToken());
+        static State botState = State.NoCommand;
         static List<BotUpdate> botUpdates = new List<BotUpdate>();
+
+        static CommandTest test = new();
 
         static void Main(string[] args)
         {
@@ -38,8 +46,7 @@ namespace CCM_BotTelegram
             { 
                 AllowedUpdates = new UpdateType[]
                 {
-                    UpdateType.Message,
-                    UpdateType.EditedMessage
+                    UpdateType.Message
                 }
             };
 
@@ -68,59 +75,132 @@ namespace CCM_BotTelegram
                         username = update.Message.Chat.Username,
                     };
 
-                    // Write an update
-                    botUpdates.Add(message_update);
+                    // Check bot state
+                    switch (botState)
+                    {
+                        case State.NoCommand: // There's no active command
+                            // Check if a new command needs to be activate
+                            if (message_update.text[0] == '/')
+                            {
+                                string command = message_update.text.Substring(1);
+                                switch (command)
+                                {
+                                    case "test": // Activate CommandTest
+                                        MessageWrapper commandTestMessage = test.Activate();
 
-                    var message_update_string = JsonConvert.SerializeObject(botUpdates);
+                                        botState = State.CommandTest;
 
-                    System.IO.File.WriteAllText(PrivateConfiguration.getLogFileName(), message_update_string);
+                                        await SendWrapperMessageAsync(message_update.chat_id, commandTestMessage, token);
+                                        break;
+
+                                    default: // Send Error message
+                                        MessageWrapper message = new("Non esiste stu comand asscemo");
+                                        await SendWrapperMessageAsync(message_update.chat_id, message, token);
+                                        AddMessageToJson(message_update);
+
+                                        break;
+                                }
+                            }
+                            else
+                                AddMessageToJson(message_update);
+
+                            break;
+
+                        case State.CommandTest:
+                            if (message_update.text[0] == '/')
+                            {
+                                string command = message_update.text.Substring(1);
+                                switch (command)
+                                {
+                                    case "remove": // Back to NoCommand
+                                        MessageWrapper commandTestMessage = test.Deactivate();
+
+                                        botState = State.NoCommand;
+
+                                        await SendWrapperMessageAsync(message_update.chat_id, commandTestMessage, token);
+                                        break;
+
+                                    default: // Send Error message
+                                        MessageWrapper message = new("Non esiste stu comand asscemo");
+                                        await SendWrapperMessageAsync(message_update.chat_id, message, token);
+                                        AddMessageToJson(message_update);
+
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                if (!test.IsValidMessage(message_update.text))
+                                {
+                                    // Invalid message
+                                    MessageWrapper invalid_message = new("Non scrivere a cazzo. Scegli una delle opzioni.");
+                                    await SendWrapperMessageAsync(message_update.chat_id, invalid_message, token);
+                                }
+                                else 
+                                {
+                                    AddMessageToJson(message_update);
+                                }
+                            }
+
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                    // Console.WriteLine(botState.ToString());
                 }                
             }
-            else if (update.Type == UpdateType.EditedMessage)
-            {
-                if (update.EditedMessage.Type == MessageType.Text)
-                {
-                    var message_update = new BotUpdate
-                    {
-                        type = UpdateType.EditedMessage.ToString(),
-                        text = update.EditedMessage.Text,
-                        chat_id = update.EditedMessage.Chat.Id,
-                        message_id=update.EditedMessage.MessageId,
-                        username = update.EditedMessage.Chat.Username,
-                    };
-
-                    // Remove the message that was edited
-                    RemoveEditedMessage(message_update);
-                    botUpdates.Add(message_update);
-
-                    var message_update_string = JsonConvert.SerializeObject(botUpdates);
-
-                    System.IO.File.WriteAllText(PrivateConfiguration.getLogFileName(), message_update_string);
-                }
-            }
         }
 
-        static void RemoveEditedMessage(BotUpdate new_message)
+        private static void AddMessageToJson(BotUpdate new_message)
         {
-            int need_remove = -1;
-            for(int i = 0; i < botUpdates.Count; i++)
-            {
-                if(SameMessage(new_message, botUpdates[i]))
-                {
-                    need_remove = i;
-                    break;
-                }
-            }
-
-            if(need_remove > 0)
-            {
-                botUpdates.RemoveAt(need_remove);
-            }
+            // Write an update
+            botUpdates.Add(new_message);
+            var message_update_string = JsonConvert.SerializeObject(botUpdates);
+            System.IO.File.WriteAllText(PrivateConfiguration.getLogFileName(), message_update_string);
         }
 
-        private static bool SameMessage(BotUpdate a, BotUpdate b)
+        private static async Task<Message> SendWrapperMessageAsync(ChatId id, MessageWrapper to_send, CancellationToken token)
         {
-            return a.message_id == b.message_id;
+            if (to_send.Keyboard == null)
+            {
+                return await Client.SendTextMessageAsync(chatId: id,
+                                                    text: to_send.Text,
+                                                    replyMarkup: new ReplyKeyboardRemove(),
+                                                    cancellationToken: token);
+            }
+            else
+            {
+                return await Client.SendTextMessageAsync(chatId: id,
+                                                        text: to_send.Text,
+                                                        replyMarkup: to_send.Keyboard,
+                                                        cancellationToken: token);
+            }
+        }
+    }
+
+    public class MessageWrapper
+    {
+        private string text;
+        public string Text { get { return text; } }
+
+        private ReplyKeyboardMarkup? keyboard;
+        public ReplyKeyboardMarkup? Keyboard { 
+            get {
+                return keyboard; 
+            } 
+        }
+
+        public MessageWrapper(string text)
+        {
+            this.text = text;
+        }
+
+        public MessageWrapper(string text, ReplyKeyboardMarkup keyboard)
+        {
+            this.text = text;
+            this.keyboard = keyboard;
         }
     }
 }
