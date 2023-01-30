@@ -3,7 +3,6 @@ using Telegram.Bot;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace CCM_BotTelegram
 {
@@ -11,7 +10,8 @@ namespace CCM_BotTelegram
     {
         public string type;
         public string text;
-        public long id;
+        public long chat_id;
+        public long message_id;
         public string? username;
     }
 
@@ -63,7 +63,8 @@ namespace CCM_BotTelegram
                     {
                         type = UpdateType.Message.ToString(),
                         text = update.Message.Text,
-                        id = update.Message.Chat.Id,
+                        chat_id = update.Message.Chat.Id,
+                        message_id = update.Message.MessageId,
                         username = update.Message.Chat.Username,
                     };
 
@@ -83,11 +84,13 @@ namespace CCM_BotTelegram
                     {
                         type = UpdateType.EditedMessage.ToString(),
                         text = update.EditedMessage.Text,
-                        id = update.EditedMessage.Chat.Id,
+                        chat_id = update.EditedMessage.Chat.Id,
+                        message_id=update.EditedMessage.MessageId,
                         username = update.EditedMessage.Chat.Username,
                     };
 
-                    // Write an update
+                    // Remove the message that was edited
+                    RemoveEditedMessage(message_update);
                     botUpdates.Add(message_update);
 
                     var message_update_string = JsonConvert.SerializeObject(botUpdates);
@@ -95,6 +98,29 @@ namespace CCM_BotTelegram
                     System.IO.File.WriteAllText(PrivateConfiguration.getLogFileName(), message_update_string);
                 }
             }
+        }
+
+        static void RemoveEditedMessage(BotUpdate new_message)
+        {
+            int need_remove = -1;
+            for(int i = 0; i < botUpdates.Count; i++)
+            {
+                if(SameMessage(new_message, botUpdates[i]))
+                {
+                    need_remove = i;
+                    break;
+                }
+            }
+
+            if(need_remove > 0)
+            {
+                botUpdates.RemoveAt(need_remove);
+            }
+        }
+
+        private static bool SameMessage(BotUpdate a, BotUpdate b)
+        {
+            return a.message_id == b.message_id;
         }
     }
 }
