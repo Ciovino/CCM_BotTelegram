@@ -7,6 +7,10 @@ using Telegram.Bot.Types.ReplyMarkups;
 
 namespace CCM_BotTelegram
 {
+    enum State{
+        NoCommand,
+        CommandTest
+    }
     struct BotUpdate
     {
         public string type;
@@ -19,7 +23,10 @@ namespace CCM_BotTelegram
     internal class Program
     {
         static TelegramBotClient Client = new TelegramBotClient(PrivateConfiguration.getToken());
+        static State botState = State.NoCommand;
         static List<BotUpdate> botUpdates = new List<BotUpdate>();
+
+        static CommandTest test = new();
 
         static void Main(string[] args)
         {
@@ -70,53 +77,109 @@ namespace CCM_BotTelegram
 
                     // Write an update
                     botUpdates.Add(message_update);
-
                     var message_update_string = JsonConvert.SerializeObject(botUpdates);
-
                     System.IO.File.WriteAllText(PrivateConfiguration.getLogFileName(), message_update_string);
 
-                    // If is a command
-                    if (message_update.text[0] == '/')
+                    // Check bot state
+                    switch (botState)
                     {
-                        string command = message_update.text.Substring(1);
-
-                        switch (command)
-                        {
-                            case "test":
-                                ReplyKeyboardMarkup possible_choices = new ReplyKeyboardMarkup(new[]
+                        case State.NoCommand: // There's no active command
+                            // Check if a new command needs to be activate
+                            if (message_update.text[0] == '/')
+                            {
+                                string command = message_update.text.Substring(1);
+                                switch (command)
                                 {
-                                    new KeyboardButton[] {"Questo è un test"},
-                                    new KeyboardButton[] {"Questo non è un test" }
-                                })
+                                    case "test": // Activate CommandTest
+                                        MessageWrapper commandTestMessage = test.Activate();
+
+                                        botState = State.CommandTest;
+
+                                        await SendWrapperMessageAsync(message_update.chat_id, commandTestMessage, token);
+                                        break;
+
+                                    default: // Send Error message
+                                        MessageWrapper message = new("Non esiste stu comand asscemo");
+                                        await SendWrapperMessageAsync(message_update.chat_id, message, token);
+                                        
+                                        break;
+                                }
+                            }
+                            break;
+
+                        case State.CommandTest:
+                            if (message_update.text[0] == '/')
+                            {
+                                string command = message_update.text.Substring(1);
+                                switch (command)
                                 {
-                                    ResizeKeyboard = true
-                                };
+                                    case "remove": // Back to NoCommand
+                                        MessageWrapper commandTestMessage = test.Deactivate();
 
-                                Message add_keyboard = await Client.SendTextMessageAsync(
-                                    chatId: message_update.chat_id,
-                                    text: "Facciam stu test waglio",
-                                    replyMarkup: possible_choices,
-                                    cancellationToken: token);
+                                        botState = State.NoCommand;
 
-                                break;
-                            case "remove":
-                                Message remove_keyboard = await Client.SendTextMessageAsync(
-                                    chatId: message_update.chat_id,
-                                    text: "Finiamo stu test wagioo",
-                                    replyMarkup: new ReplyKeyboardRemove(),
-                                    cancellationToken: token);
+                                        await SendWrapperMessageAsync(message_update.chat_id, commandTestMessage, token);
+                                        break;
 
-                                break;
-                            default:
-                                Message no_command = await Client.SendTextMessageAsync(
-                                    chatId: message_update.chat_id,
-                                    text: "Non esiste stu comand asscemo",
-                                    cancellationToken: token);
-                                break;
-                        }
+                                    default: // Send Error message
+                                        MessageWrapper message = new("Non esiste stu comand asscemo");
+                                        await SendWrapperMessageAsync(message_update.chat_id, message, token);
+
+                                        break;
+                                }
+                            }
+
+                            break;
+
+                        default:
+                            break;
                     }
+
+                    Console.WriteLine(botState.ToString());
                 }                
             }
+        }
+
+        private static async Task<Message> SendWrapperMessageAsync(ChatId id, MessageWrapper to_send, CancellationToken token)
+        {
+            if (to_send.Keyboard == null)
+            {
+                return await Client.SendTextMessageAsync(chatId: id,
+                                                    text: to_send.Text,
+                                                    replyMarkup: new ReplyKeyboardRemove(),
+                                                    cancellationToken: token);
+            }
+            else
+            {
+                return await Client.SendTextMessageAsync(chatId: id,
+                                                        text: to_send.Text,
+                                                        replyMarkup: to_send.Keyboard,
+                                                        cancellationToken: token);
+            }
+        }
+    }
+
+    public class MessageWrapper
+    {
+        private string text;
+        public string Text { get { return text; } }
+
+        private ReplyKeyboardMarkup? keyboard;
+        public ReplyKeyboardMarkup? Keyboard { 
+            get {
+                return keyboard; 
+            } 
+        }
+
+        public MessageWrapper(string text)
+        {
+            this.text = text;
+        }
+
+        public MessageWrapper(string text, ReplyKeyboardMarkup keyboard)
+        {
+            this.text = text;
+            this.keyboard = keyboard;
         }
     }
 }
