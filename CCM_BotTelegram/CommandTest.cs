@@ -1,33 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Telegram.Bot.Types.ReplyMarkups;
+﻿using Telegram.Bot.Types.ReplyMarkups;
 
 namespace CCM_BotTelegram
 {
-    internal class CommandTest
+    internal class CommandTest : Command
     {
-        private string[] test = { "Questo è un test", "Questo non è un test", "Questo potrebbe essere un test", "Voglio licenziarmi"};
+        private readonly string[] test = { "Questo è un test", "Questo non è un test", "Questo potrebbe essere un test", "Voglio licenziarmi"};
 
-        private bool active;
-        public bool Active { get { return active; } }
-
-        public CommandTest()
+        public override MessageWrapper Activate()
         {
-            this.active = false;
-        }
-
-        public MessageWrapper Activate()
-        {
-            this.active = true;
+            this.Active = true;
 
             // Set the test keyboard
             ReplyKeyboardMarkup keyboard = new(new[]
             {
                  new KeyboardButton[] { test[0], test[1] },
-                 new KeyboardButton[] {test[2], test[3] }
+                 new KeyboardButton[] { test[2], test[3] }
             })
             { ResizeKeyboard = true };
 
@@ -38,9 +25,9 @@ namespace CCM_BotTelegram
             return to_send;
         }
 
-        public MessageWrapper Deactivate()
+        public override MessageWrapper Deactivate()
         {
-            this.active = false;
+            this.Active = false;
 
             // Remove keyboard
             string text_message = "Comando REMOVE. Abbiamo finito il test.";
@@ -48,6 +35,56 @@ namespace CCM_BotTelegram
             MessageWrapper to_send = new(text_message);
 
             return to_send;
+        }
+
+        public override async Task<State> ExecuteCommand(string messageText, long chatId, CancellationToken token)
+        {
+            State returnValue = State.CommandTest;
+            ReplyKeyboardMarkup keyboard = new(new[]
+            {
+                 new KeyboardButton[] { test[0], test[1] },
+                 new KeyboardButton[] { test[2], test[3] }
+            })
+            { ResizeKeyboard = true };
+
+            // Check if is a command
+            if (messageText[0] == '/')
+            {
+                string command = messageText[1..];
+                switch (Program.SimpleCommand(command))
+                {
+                    case "remove": // Back to NoCommand
+                        returnValue = State.NoCommand;
+
+                        MessageWrapper commandTestMessage = Deactivate();
+                        await Program.SendWrapperMessageAsync(chatId, commandTestMessage, token);
+                        break;
+
+                    default: // Send Error message
+                        MessageWrapper message = new("Non esiste stu comand asscemo", keyboard);
+                        await Program.SendWrapperMessageAsync(chatId, message, token);
+                        break;
+                }
+            }
+            else
+            {
+                if (!ValidMessage(messageText))
+                {
+                    MessageWrapper message = new("Devi scegliere una delle opzioni possibili", keyboard);
+                    await Program.SendWrapperMessageAsync(chatId, message, token);
+                }
+            }
+
+            return returnValue;
+        }
+
+        private bool ValidMessage(string message)
+        {
+            foreach(string possible in test)
+                if (message == possible)
+                    return true;
+
+            return false;
         }
     }
 }

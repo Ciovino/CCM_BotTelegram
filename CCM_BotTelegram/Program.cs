@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using Telegram.Bot;
+﻿using Telegram.Bot;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
@@ -8,47 +7,34 @@ using Telegram.Bot.Types.ReplyMarkups;
 namespace CCM_BotTelegram
 {
     enum State{
-        NoCommand,
-        CommandTest
-    }
-    struct BotUpdate
-    {
-        public string type;
-        public string text;
-        public long chat_id;
-        public long message_id;
-        public string? username;
+        NoCommand = -1,
+        CommandTest,
+        CAHGame
     }
 
     internal class Program
     {
-        static TelegramBotClient Client = new TelegramBotClient(PrivateConfiguration.getToken());
+        static readonly TelegramBotClient Client = new(PrivateConfiguration.getToken());
+        static readonly string botUsername = "@CAHMontpelos_BOT";
+
         static State botState = State.NoCommand;
-        static List<BotUpdate> botUpdates = new List<BotUpdate>();
 
-        static CommandTest test = new();
+        static readonly List<Command> allCommands = new();
 
-        static void Main(string[] args)
+        static void Main()
         {
-            // Read all saved updates
-            try
-            {
-                var botUpdatesString = System.IO.File.ReadAllText(PrivateConfiguration.getLogFileName());
-
-                botUpdates = JsonConvert.DeserializeObject<List<BotUpdate>>(botUpdatesString) ?? botUpdates;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-
             var receiverOptions = new ReceiverOptions()
             { 
                 AllowedUpdates = new UpdateType[]
                 {
                     UpdateType.Message
-                }
+                },
+                ThrowPendingUpdates = true
             };
+
+            // Add commands
+            allCommands.Add(new CommandTest());
+            allCommands.Add(new CAHGame());
 
             Client.StartReceiving(UpdateHandler, ErrorHandler, receiverOptions);
 
@@ -64,71 +50,21 @@ namespace CCM_BotTelegram
         {
             if (update.Type == UpdateType.Message)
             {
-                if (update.Message.Type == MessageType.Text)
+                if (update.Message != null && update.Message.Type == MessageType.Text)
                 {
-                    var message_update = new BotUpdate
-                    {
-                        type = UpdateType.Message.ToString(),
-                        text = update.Message.Text,
-                        chat_id = update.Message.Chat.Id,
-                        message_id = update.Message.MessageId,
-                        username = update.Message.Chat.Username,
-                    };
-
-                    // Write an update
-                    botUpdates.Add(message_update);
-                    var message_update_string = JsonConvert.SerializeObject(botUpdates);
-                    System.IO.File.WriteAllText(PrivateConfiguration.getLogFileName(), message_update_string);
+                    string text = update.Message.Text ?? "";
+                    var chatId = update.Message.Chat.Id;
 
                     // Check bot state
                     switch (botState)
                     {
                         case State.NoCommand: // There's no active command
-                            // Check if a new command needs to be activate
-                            if (message_update.text[0] == '/')
-                            {
-                                string command = message_update.text.Substring(1);
-                                switch (command)
-                                {
-                                    case "test": // Activate CommandTest
-                                        MessageWrapper commandTestMessage = test.Activate();
-
-                                        botState = State.CommandTest;
-
-                                        await SendWrapperMessageAsync(message_update.chat_id, commandTestMessage, token);
-                                        break;
-
-                                    default: // Send Error message
-                                        MessageWrapper message = new("Non esiste stu comand asscemo");
-                                        await SendWrapperMessageAsync(message_update.chat_id, message, token);
-                                        
-                                        break;
-                                }
-                            }
+                            botState = await CheckExecutionAsync(text, chatId, token);
                             break;
 
                         case State.CommandTest:
-                            if (message_update.text[0] == '/')
-                            {
-                                string command = message_update.text.Substring(1);
-                                switch (command)
-                                {
-                                    case "remove": // Back to NoCommand
-                                        MessageWrapper commandTestMessage = test.Deactivate();
-
-                                        botState = State.NoCommand;
-
-                                        await SendWrapperMessageAsync(message_update.chat_id, commandTestMessage, token);
-                                        break;
-
-                                    default: // Send Error message
-                                        MessageWrapper message = new("Non esiste stu comand asscemo");
-                                        await SendWrapperMessageAsync(message_update.chat_id, message, token);
-
-                                        break;
-                                }
-                            }
-
+                        case State.CAHGame:
+                            botState = await allCommands[(int)botState].ExecuteCommand(text, chatId, token);
                             break;
 
                         default:
@@ -140,31 +76,83 @@ namespace CCM_BotTelegram
             }
         }
 
-        private static async Task<Message> SendWrapperMessageAsync(ChatId id, MessageWrapper to_send, CancellationToken token)
+        private static async Task<State> CheckExecutionAsync(string text, long chatId, CancellationToken token)
+        {
+            State returnValue = State.NoCommand;
+
+            // Check if is a command
+            if (text[0] == '/')
+            {
+                string command = text[1..];
+                switch (SimpleCommand(command))
+                {
+                    case "test": // Activate CommandTest
+                        returnValue = State.CommandTest;
+
+                        MessageWrapper test_message = allCommands[(int) State.CommandTest].Activate();
+                        await SendWrapperMessageAsync(chatId, test_message, token);
+                        break;
+
+                    case "play": // Start a new game
+                        returnValue = State.CAHGame;
+
+                        MessageWrapper game_message = allCommands[(int) State.CAHGame].Activate();
+                        await SendWrapperMessageAsync(chatId, game_message, token);
+                        break;
+
+                    default: // Send Error message
+                        MessageWrapper error_message = new("Non esiste stu comand asscemo");
+                        await SendWrapperMessageAsync(chatId, error_message, token);
+
+                        break;
+                }
+            }
+            else // Simple message
+            {
+                MessageWrapper message = new("Scrivi qualcosa di utile, idiota");
+                await SendWrapperMessageAsync(chatId, message, token);
+            }
+
+            return returnValue;
+        }
+
+        public static async Task<Message> SendWrapperMessageAsync(ChatId id, MessageWrapper to_send, CancellationToken token)
         {
             if (to_send.Keyboard == null)
             {
                 return await Client.SendTextMessageAsync(chatId: id,
-                                                    text: to_send.Text,
-                                                    replyMarkup: new ReplyKeyboardRemove(),
-                                                    cancellationToken: token);
+                    text: to_send.Text,
+                    replyMarkup: new ReplyKeyboardRemove(),
+                    cancellationToken: token);
             }
             else
             {
                 return await Client.SendTextMessageAsync(chatId: id,
-                                                        text: to_send.Text,
-                                                        replyMarkup: to_send.Keyboard,
-                                                        cancellationToken: token);
+                    text: to_send.Text,
+                    replyMarkup: to_send.Keyboard,
+                    cancellationToken: token);
             }
+        }
+
+        public static string SimpleCommand(string command)
+        {
+            if (command.Contains(botUsername))
+            {
+                var length = command.IndexOf('@');
+
+                command = command[..length];
+            }
+
+            return command;
         }
     }
 
     public class MessageWrapper
     {
-        private string text;
+        private readonly string text;
         public string Text { get { return text; } }
 
-        private ReplyKeyboardMarkup? keyboard;
+        private readonly ReplyKeyboardMarkup? keyboard;
         public ReplyKeyboardMarkup? Keyboard { 
             get {
                 return keyboard; 
