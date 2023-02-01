@@ -49,7 +49,8 @@ namespace CCM_BotTelegram
                 AllowedUpdates = new UpdateType[]
                 {
                     UpdateType.Message
-                }
+                },
+                ThrowPendingUpdates = true
             };
 
             // Create and Add command
@@ -103,6 +104,12 @@ namespace CCM_BotTelegram
 
                                         MessageWrapper cardTestMessage = allCommands[(int)botState].Activate();
                                         await SendWrapperMessageAsync(message_update.chat_id, cardTestMessage, token);
+
+                                        // Send a poll
+                                        // Wait 1 minute
+                                        // Close poll
+                                        // If someone vote "Yes", send them a message
+
                                         break;
 
                                     default: // Send Error message
@@ -226,11 +233,7 @@ namespace CCM_BotTelegram
         public string Text { get { return text; } }
 
         private ReplyKeyboardMarkup? keyboard;
-        public ReplyKeyboardMarkup? Keyboard { 
-            get {
-                return keyboard; 
-            } 
-        }
+        public ReplyKeyboardMarkup? Keyboard { get { return keyboard; } }
 
         public MessageWrapper(string text)
         {

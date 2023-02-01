@@ -12,6 +12,13 @@ namespace CCM_BotTelegram
         public int id;
         public string text;
         public bool used;
+
+        public Card(int id, string text, bool v) : this()
+        {
+            this.id = id;
+            this.text = text;
+            this.used = v;
+        }
     }
 
     internal class CardTest : Command
@@ -20,21 +27,11 @@ namespace CCM_BotTelegram
         private List<Card> allCards = new();
         readonly Random random = new();
 
-        public CardTest()
-        {
-            // Load cards in memory
-            string allCards_str = System.IO.File.ReadAllText(cards_file);
-            allCards = JsonConvert.DeserializeObject<List<Card>>(allCards_str);
-        }
-
         public override MessageWrapper Activate()
         {
             this.Active = true;
 
-            // Load cards in memory
-            allCards.Clear();
-            string allCards_str = System.IO.File.ReadAllText(cards_file);
-            allCards = JsonConvert.DeserializeObject<List<Card>>(allCards_str);
+            ResetCard();
 
             string text = "Carte contro l'Umanità. Yee";
 
@@ -50,8 +47,21 @@ namespace CCM_BotTelegram
             return new MessageWrapper(text);
         }
 
+        private void ResetCard()
+        {
+            allCards.Clear();
+            string allCards_str = System.IO.File.ReadAllText(cards_file);
+            allCards = JsonConvert.DeserializeObject<List<Card>>(allCards_str);
+        }
+
         public MessageWrapper NewCard()
         {
+            if (needReset())
+            {
+                ResetCard();
+                return new MessageWrapper("Tutte le carte sono uscite.");
+            }
+
             bool gotNewCard = false;
             int idx = -1;
 
@@ -64,7 +74,21 @@ namespace CCM_BotTelegram
 
             string text = allCards[idx].text;
 
+            // Update used
+            allCards[idx] = new Card(idx, text, true);
+
             return new MessageWrapper(text);
+        }
+
+        private bool needReset()
+        {
+            foreach(Card c in allCards)
+            {
+                if (!c.used)
+                    return false;
+            }
+
+            return true;
         }
     }
 }
