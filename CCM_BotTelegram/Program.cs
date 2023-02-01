@@ -9,7 +9,8 @@ namespace CCM_BotTelegram
 {
     enum State{
         NoCommand = -1,
-        Incognito
+        Incognito,
+        CardTest
     }
     struct BotUpdate
     {
@@ -53,6 +54,7 @@ namespace CCM_BotTelegram
 
             // Create and Add command
             allCommands.Add(new IncognitoMode());
+            allCommands.Add(new CardTest());
 
             Client.StartReceiving(UpdateHandler, ErrorHandler, receiverOptions);
 
@@ -92,8 +94,15 @@ namespace CCM_BotTelegram
                                     case "incognito": // Activate IncognitoMode
                                         botState = State.Incognito;
 
-                                        MessageWrapper commandTestMessage = allCommands[((int)State.Incognito)].Activate();
+                                        MessageWrapper commandTestMessage = allCommands[(int) botState].Activate();
                                         await SendWrapperMessageAsync(message_update.chat_id, commandTestMessage, token);
+                                        break;
+
+                                    case "cardtest": // Activate CardTest
+                                        botState = State.CardTest;
+
+                                        MessageWrapper cardTestMessage = allCommands[(int)botState].Activate();
+                                        await SendWrapperMessageAsync(message_update.chat_id, cardTestMessage, token);
                                         break;
 
                                     default: // Send Error message
@@ -116,10 +125,40 @@ namespace CCM_BotTelegram
                                 switch (SimpleCommand(command))
                                 {
                                     case "exit": // Back to NoCommand
-                                        botState = State.NoCommand;
-
-                                        MessageWrapper commandTestMessage = allCommands[((int)State.Incognito)].Deactivate();
+                                        MessageWrapper commandTestMessage = allCommands[(int) botState].Deactivate();
                                         await SendWrapperMessageAsync(message_update.chat_id, commandTestMessage, token);
+
+                                        botState = State.NoCommand;
+                                        break;
+
+                                    default: // Send Error message
+                                        MessageWrapper message = new("Non puoi usare questo comando ora");
+                                        await SendWrapperMessageAsync(message_update.chat_id, message, token);
+
+                                        AddMessageToJson(message_update);
+                                        break;
+                                }
+                            }
+
+                            break;
+
+                        case State.CardTest:
+                            if (message_update.text[0] == '/')
+                            {
+                                string command = message_update.text.Substring(1);
+                                switch (SimpleCommand(command))
+                                {
+                                    case "exit": // Back to NoCommand
+                                        MessageWrapper commandTestMessage = allCommands[(int)botState].Deactivate();
+                                        await SendWrapperMessageAsync(message_update.chat_id, commandTestMessage, token);
+
+                                        botState = State.NoCommand;
+                                        break;
+
+                                    case "card": // Send a new card in chat
+                                        MessageWrapper newCard_message = ((CardTest)allCommands[(int)botState]).NewCard();
+
+                                        await SendWrapperMessageAsync(message_update.chat_id, newCard_message, token);
                                         break;
 
                                     default: // Send Error message
@@ -136,7 +175,7 @@ namespace CCM_BotTelegram
                             break;
                     }
 
-                    // Console.WriteLine(botState.ToString());
+                    Console.WriteLine(botState.ToString());
                 }                
             }
         }
@@ -183,7 +222,7 @@ namespace CCM_BotTelegram
 
     public class MessageWrapper
     {
-        private string text;
+        private readonly string text;
         public string Text { get { return text; } }
 
         private ReplyKeyboardMarkup? keyboard;
