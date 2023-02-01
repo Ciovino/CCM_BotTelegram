@@ -104,12 +104,6 @@ namespace CCM_BotTelegram
 
                                         MessageWrapper cardTestMessage = allCommands[(int)botState].Activate();
                                         await SendWrapperMessageAsync(message_update.chat_id, cardTestMessage, token);
-
-                                        // Send a poll
-                                        // Wait 1 minute
-                                        // Close poll
-                                        // If someone vote "Yes", send them a message
-
                                         break;
 
                                     default: // Send Error message

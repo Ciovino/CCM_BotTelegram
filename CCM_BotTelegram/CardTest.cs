@@ -12,13 +12,6 @@ namespace CCM_BotTelegram
         public int id;
         public string text;
         public bool used;
-
-        public Card(int id, string text, bool v) : this()
-        {
-            this.id = id;
-            this.text = text;
-            this.used = v;
-        }
     }
 
     internal class CardTest : Command
@@ -75,7 +68,7 @@ namespace CCM_BotTelegram
             string text = allCards[idx].text;
 
             // Update used
-            allCards[idx] = new Card(idx, text, true);
+            allCards[idx] = new Card { id = idx, text = text, used = true};
 
             return new MessageWrapper(text);
         }
