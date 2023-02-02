@@ -1,4 +1,4 @@
-﻿using System.Threading;
+﻿using System.Numerics;
 using System.Timers;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
@@ -12,19 +12,20 @@ namespace CCM_BotTelegram
     enum State{
         Idle,           // Nothing to do, waiting for commands
         Test,           // Test state, will be deleted
-        WaitPoll_cah,   // Cah starting state: wait for a 60s timer, than change to Playing
+        WaitPoll_cah,   // Cah starting state: wait for a 60s timer, then check if the match can start
         Playing_cah,    // Playing Cah game
+        Retry,          // Cannot play Cah
     }
 
     internal class Program
     {
-        private static Timer timer; // 60 seconds timer
+        private static Timer? timer; // 60 seconds timer
         static readonly TelegramBotClient Client = new(PrivateConfiguration.GetToken());
         static readonly string botUsername = "@CAHMontpelos_BOT";
 
         static State botState = State.Idle;
-        static long chatIdMatch;
-        static CancellationTokenSource cts = new();
+        static Match cahMatch = new();
+        static readonly CancellationTokenSource cts = new();
 
         static void Main()
         {
@@ -32,7 +33,8 @@ namespace CCM_BotTelegram
             { 
                 AllowedUpdates = new UpdateType[]
                 {
-                    UpdateType.Message
+                    UpdateType.Message,
+                    UpdateType.PollAnswer
                 },
                 ThrowPendingUpdates = true
             };
@@ -47,7 +49,9 @@ namespace CCM_BotTelegram
         {
             if (exception is ApiRequestException apiRequestException)
             {
-                await bot.SendTextMessageAsync(PrivateConfiguration.GetLogChatId(), apiRequestException.ToString());
+                await bot.SendTextMessageAsync(PrivateConfiguration.GetLogChatId(),
+                    apiRequestException.ToString(),
+                    cancellationToken: token);
             }
         }
 
@@ -56,7 +60,7 @@ namespace CCM_BotTelegram
             switch (botState)
             {
                 case State.Idle:
-                    if (update.Type == UpdateType.Message)
+                    if (update.Type == UpdateType.Message)      
                     {
                         string text = update.Message.Text ?? "";
                         long chatId = update.Message.Chat.Id;
@@ -72,13 +76,29 @@ namespace CCM_BotTelegram
                                     break;
 
                                 case "play":
-                                    botState = State.WaitPoll_cah;
+                                    if (update.Message.Chat.Type == ChatType.Group || update.Message.Chat.Type == ChatType.Supergroup)
+                                    {
+                                        botState = State.WaitPoll_cah;
+                                    
+                                        SetTimer();
 
-                                    chatIdMatch = update.Message.Chat.Id;
-                                    SetTimer();
+                                        Message pollMatch = await bot.SendPollAsync(chatId: chatId, 
+                                            question: "Chi vuole giocare?",
+                                            options: new[] {"Io sii", "Ma vatten"},
+                                            isAnonymous: false,
+                                            allowsMultipleAnswers: false,
+                                            openPeriod: 60,
+                                            replyToMessageId: update.Message.MessageId,
+                                            cancellationToken: token);
 
-                                    await bot.SendTextMessageAsync(chatId, "StateMachine Update: Cambio in WaitPoll_cah",
+                                        cahMatch = new(chatId, pollMatch.Poll.Id);
+                                    }
+                                    else
+                                    {
+                                        await bot.SendTextMessageAsync(chatId, $"Per usare il comando {text} devi essere in un gruppo",
                                         cancellationToken: token);
+                                    }
+                                    
                                     break;
 
                                 default:
@@ -126,6 +146,15 @@ namespace CCM_BotTelegram
                     break;
 
                 case State.WaitPoll_cah:
+                    if(update.Type == UpdateType.PollAnswer)
+                    {
+                        // Answer from the game poll
+                        if (cahMatch.IsMatchPoll(update.PollAnswer.PollId))
+                        {
+                            if (update.PollAnswer.OptionIds[0] == 0)
+                                cahMatch.addPlayer(update.PollAnswer.User.Id);
+                        }
+                    }
                     break;
 
                 case State.Playing_cah:
@@ -152,13 +181,68 @@ namespace CCM_BotTelegram
                         }
                         else // Normal message
                         {
-                            await bot.SendTextMessageAsync(chatId, "StateMachine Update: Rimango in Gioco",
+                            await bot.SendTextMessageAsync(chatId, "StateMachine Update: Rimango in Playing_cah",
                                         cancellationToken: token);
                         }
                     }
                     break;
 
-                default: throw new ArgumentOutOfRangeException(nameof(botState));
+                case State.Retry:
+                    if (update.Type == UpdateType.Message)
+                    {
+                        string text = update.Message.Text ?? "";
+                        long chatId = update.Message.Chat.Id;
+
+                        if (text[0] == '/') // Possible Command
+                        {
+                            switch (SimpleCommand(text))
+                            {
+                                case "stop":
+                                    botState = State.Idle;
+                                    await bot.SendTextMessageAsync(chatId, "StateMachine Update: Cambio in Idle",
+                                        cancellationToken: token);
+                                    break;
+
+                                case "retry":
+                                    if (update.Message.Chat.Type == ChatType.Group || update.Message.Chat.Type == ChatType.Supergroup)
+                                    {
+                                        botState = State.WaitPoll_cah;
+
+                                        SetTimer();
+
+                                        Message pollMatch = await bot.SendPollAsync(chatId: chatId,
+                                            question: "Chi vuole giocare?",
+                                            options: new[] { "Io sii", "Ma vatten" },
+                                            isAnonymous: false,
+                                            allowsMultipleAnswers: false,
+                                            openPeriod: 60,
+                                            replyToMessageId: update.Message.MessageId,
+                                            cancellationToken: token);
+
+                                        cahMatch = new(chatId, pollMatch.Poll.Id);
+                                    }
+                                    else
+                                    {
+                                        await bot.SendTextMessageAsync(chatId, $"Per usare il comando {text} devi essere in un gruppo",
+                                        cancellationToken: token);
+                                    }
+                                    break;
+
+                                default:
+                                    await bot.SendTextMessageAsync(chatId, $"Il comando /{SimpleCommand(text)} non esiste",
+                                        cancellationToken: token);
+                                    break;
+                            }
+                        }
+                        else // Normal message
+                        {
+                            await bot.SendTextMessageAsync(chatId, "StateMachine Update: Rimango in Retry",
+                                        cancellationToken: token);
+                        }
+                    }
+                    break;
+
+                default: break;
             }
         }        
 
@@ -182,11 +266,33 @@ namespace CCM_BotTelegram
             timer.Enabled = true;
         }
 
-        private static void OnTimedEvent(Object source, ElapsedEventArgs e)
+        private static async void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             // 60 seconds have passed
-            botState = State.Playing_cah;
-            Client.SendTextMessageAsync(chatIdMatch, "1 minuto è passsato", cancellationToken: cts.Token);
+            await Client.SendTextMessageAsync(cahMatch.GetChatId(), "So passati 60 secondi", cancellationToken: cts.Token);
+            timer.Enabled = false;
+
+            if (cahMatch.Start())
+            {
+                botState = State.Playing_cah;
+                // Send to all player their card
+                List<long> allPlayers = cahMatch.GetPlayers();
+
+                foreach (long player in allPlayers)
+                {
+                    await Client.SendTextMessageAsync(player, "Queste sono le tue carte", cancellationToken: cts.Token);
+                    foreach(Card c in cahMatch.GetPlayerCard(player))
+                    {
+                        await Client.SendTextMessageAsync(player, c.text, cancellationToken: cts.Token);
+                    }
+                }
+            }
+            else
+            {
+                await Client.SendTextMessageAsync(cahMatch.GetChatId(), "Non ci sono abbastanza giocatori", cancellationToken: cts.Token);
+                botState = State.Retry;
+                cahMatch.Reset();
+            }
         }
     }
 }
