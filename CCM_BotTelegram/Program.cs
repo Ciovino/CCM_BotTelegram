@@ -1,25 +1,30 @@
-﻿using Telegram.Bot;
+﻿using System.Threading;
+using System.Timers;
+using Telegram.Bot;
+using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.ReplyMarkups;
+using Timer = System.Timers.Timer;
 
 namespace CCM_BotTelegram
 {
     enum State{
-        NoCommand = -1,
-        CommandTest,
-        CAHGame
+        Idle,           // Nothing to do, waiting for commands
+        Test,           // Test state, will be deleted
+        WaitPoll_cah,   // Cah starting state: wait for a 60s timer, than change to Playing
+        Playing_cah,    // Playing Cah game
     }
 
     internal class Program
     {
-        static readonly TelegramBotClient Client = new(PrivateConfiguration.getToken());
+        private static Timer timer; // 60 seconds timer
+        static readonly TelegramBotClient Client = new(PrivateConfiguration.GetToken());
         static readonly string botUsername = "@CAHMontpelos_BOT";
 
-        static State botState = State.NoCommand;
-
-        static readonly List<Command> allCommands = new();
+        static State botState = State.Idle;
+        static long chatIdMatch;
+        static CancellationTokenSource cts = new();
 
         static void Main()
         {
@@ -32,142 +37,156 @@ namespace CCM_BotTelegram
                 ThrowPendingUpdates = true
             };
 
-            // Add commands
-            allCommands.Add(new CommandTest());
-            allCommands.Add(new CAHGame());
-
-            Client.StartReceiving(UpdateHandler, ErrorHandler, receiverOptions);
+            Client.StartReceiving(UpdateHandler, ErrorHandler, receiverOptions, cts.Token);
 
             Console.ReadLine();
+            cts.Cancel();
         }
 
-        private static Task ErrorHandler(ITelegramBotClient arg1, Exception arg2, CancellationToken arg3)
+        private async static Task ErrorHandler(ITelegramBotClient bot, Exception exception, CancellationToken token)
         {
-            throw new NotImplementedException();
-        }
-
-        private static async Task UpdateHandler(ITelegramBotClient bot, Update update, CancellationToken token)
-        {
-            if (update.Type == UpdateType.Message)
+            if (exception is ApiRequestException apiRequestException)
             {
-                if (update.Message != null && update.Message.Type == MessageType.Text)
-                {
-                    string text = update.Message.Text ?? "";
-                    var chatId = update.Message.Chat.Id;
+                await bot.SendTextMessageAsync(PrivateConfiguration.GetLogChatId(), apiRequestException.ToString());
+            }
+        }
 
-                    // Check bot state
-                    switch (botState)
+        private async static Task UpdateHandler(ITelegramBotClient bot, Update update, CancellationToken token)
+        {
+            switch (botState)
+            {
+                case State.Idle:
+                    if (update.Type == UpdateType.Message)
                     {
-                        case State.NoCommand: // There's no active command
-                            botState = await CheckExecutionAsync(text, chatId, token);
-                            break;
+                        string text = update.Message.Text ?? "";
+                        long chatId = update.Message.Chat.Id;
 
-                        case State.CommandTest:
-                        case State.CAHGame:
-                            botState = await allCommands[(int)botState].ExecuteCommand(text, chatId, token);
-                            break;
+                        if (text[0] == '/') // Possible Command
+                        {
+                            switch (SimpleCommand(text))
+                            {
+                                case "test":
+                                    botState = State.Test;
+                                    await bot.SendTextMessageAsync(chatId, "StateMachine Update: Cambio in Test",
+                                        cancellationToken: token);
+                                    break;
 
-                        default:
-                            break;
+                                case "play":
+                                    botState = State.WaitPoll_cah;
+
+                                    chatIdMatch = update.Message.Chat.Id;
+                                    SetTimer();
+
+                                    await bot.SendTextMessageAsync(chatId, "StateMachine Update: Cambio in WaitPoll_cah",
+                                        cancellationToken: token);
+                                    break;
+
+                                default:
+                                    await bot.SendTextMessageAsync(chatId, $"Il comando /{SimpleCommand(text)} non esiste",
+                                        cancellationToken: token);
+                                    break;
+                            }
+                        }
+                        else // Normal message
+                        {
+                            await bot.SendTextMessageAsync(chatId, "StateMachine Update: Rimango in Idle",
+                                        cancellationToken: token);
+                        }
                     }
+                    break;
 
-                    Console.WriteLine(botState.ToString());
-                }                
+                case State.Test:
+                    if (update.Type == UpdateType.Message)
+                    {
+                        string text = update.Message.Text ?? "";
+                        long chatId = update.Message.Chat.Id;
+
+                        if (text[0] == '/') // Possible Command
+                        {
+                            switch (SimpleCommand(text))
+                            {
+                                case "exit":
+                                    botState = State.Idle;
+                                    await bot.SendTextMessageAsync(chatId, "StateMachine Update: Cambio in Idle",
+                                        cancellationToken: token);
+                                    break;
+
+                                default:
+                                    await bot.SendTextMessageAsync(chatId, $"Il comando /{SimpleCommand(text)} non esiste",
+                                        cancellationToken: token);
+                                    break;
+                            }
+                        }
+                        else // Normal message
+                        {
+                            await bot.SendTextMessageAsync(chatId, "StateMachine Update: Rimango in Test",
+                                        cancellationToken: token);
+                        }
+                    }
+                    break;
+
+                case State.WaitPoll_cah:
+                    break;
+
+                case State.Playing_cah:
+                    if (update.Type == UpdateType.Message)
+                    {
+                        string text = update.Message.Text ?? "";
+                        long chatId = update.Message.Chat.Id;
+
+                        if (text[0] == '/') // Possible Command
+                        {
+                            switch (SimpleCommand(text))
+                            {
+                                case "stop":
+                                    botState = State.Idle;
+                                    await bot.SendTextMessageAsync(chatId, "StateMachine Update: Cambio in Idle",
+                                        cancellationToken: token);
+                                    break;
+
+                                default:
+                                    await bot.SendTextMessageAsync(chatId, $"Il comando /{SimpleCommand(text)} non esiste",
+                                        cancellationToken: token);
+                                    break;
+                            }
+                        }
+                        else // Normal message
+                        {
+                            await bot.SendTextMessageAsync(chatId, "StateMachine Update: Rimango in Gioco",
+                                        cancellationToken: token);
+                        }
+                    }
+                    break;
+
+                default: throw new ArgumentOutOfRangeException(nameof(botState));
             }
-        }
-
-        private static async Task<State> CheckExecutionAsync(string text, long chatId, CancellationToken token)
-        {
-            State returnValue = State.NoCommand;
-
-            // Check if is a command
-            if (text[0] == '/')
-            {
-                string command = text[1..];
-                switch (SimpleCommand(command))
-                {
-                    case "test": // Activate CommandTest
-                        returnValue = State.CommandTest;
-
-                        MessageWrapper test_message = allCommands[(int) State.CommandTest].Activate();
-                        await SendWrapperMessageAsync(chatId, test_message, token);
-                        break;
-
-                    case "play": // Start a new game
-                        returnValue = State.CAHGame;
-
-                        MessageWrapper game_message = allCommands[(int) State.CAHGame].Activate();
-                        await SendWrapperMessageAsync(chatId, game_message, token);
-                        break;
-
-                    default: // Send Error message
-                        MessageWrapper error_message = new("Non esiste stu comand asscemo");
-                        await SendWrapperMessageAsync(chatId, error_message, token);
-
-                        break;
-                }
-            }
-            else // Simple message
-            {
-                MessageWrapper message = new("Scrivi qualcosa di utile, idiota");
-                await SendWrapperMessageAsync(chatId, message, token);
-            }
-
-            return returnValue;
-        }
-
-        public static async Task<Message> SendWrapperMessageAsync(ChatId id, MessageWrapper to_send, CancellationToken token)
-        {
-            if (to_send.Keyboard == null)
-            {
-                return await Client.SendTextMessageAsync(chatId: id,
-                    text: to_send.Text,
-                    replyMarkup: new ReplyKeyboardRemove(),
-                    cancellationToken: token);
-            }
-            else
-            {
-                return await Client.SendTextMessageAsync(chatId: id,
-                    text: to_send.Text,
-                    replyMarkup: to_send.Keyboard,
-                    cancellationToken: token);
-            }
-        }
+        }        
 
         public static string SimpleCommand(string command)
         {
+            command = command[1..];
+
             if (command.Contains(botUsername))
             {
                 var length = command.IndexOf('@');
-
                 command = command[..length];
             }
 
             return command;
         }
-    }
 
-    public class MessageWrapper
-    {
-        private readonly string text;
-        public string Text { get { return text; } }
-
-        private readonly ReplyKeyboardMarkup? keyboard;
-        public ReplyKeyboardMarkup? Keyboard { 
-            get {
-                return keyboard; 
-            } 
+        private static void SetTimer()
+        {
+            timer = new(60000); // 60 seconds timer
+            timer.Elapsed += OnTimedEvent;
+            timer.Enabled = true;
         }
 
-        public MessageWrapper(string text)
+        private static void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            this.text = text;
-        }
-
-        public MessageWrapper(string text, ReplyKeyboardMarkup keyboard)
-        {
-            this.text = text;
-            this.keyboard = keyboard;
+            // 60 seconds have passed
+            botState = State.Playing_cah;
+            Client.SendTextMessageAsync(chatIdMatch, "1 minuto è passsato", cancellationToken: cts.Token);
         }
     }
 }
