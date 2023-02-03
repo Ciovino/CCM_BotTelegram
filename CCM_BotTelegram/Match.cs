@@ -19,7 +19,7 @@ namespace CCM_BotTelegram
         long? chatId;
         string? pollId;
         List<PlayerCah> players = new();
-        List<Card> cards = new();
+        List<Card> cards = new(), sentences = new();
 
         public Match()
         {
@@ -36,6 +36,11 @@ namespace CCM_BotTelegram
             cards.Clear();
             string cards_str = File.ReadAllText(PrivateConfiguration.GetCardsFile());
             cards = JsonConvert.DeserializeObject<List<Card>>(cards_str) ?? new();
+
+            // Load sentence
+            sentences.Clear();
+            string sentences_str = File.ReadAllText(PrivateConfiguration.getSencencesFile());
+            sentences = JsonConvert.DeserializeObject<List<Card>>(sentences_str) ?? new();
         }
 
         public void addPlayer(long playerId)
@@ -87,6 +92,22 @@ namespace CCM_BotTelegram
                     return player.GetPlayerCards();
 
             return new();
+        }
+
+        public Card GetRandomSentence()
+        {
+            int sentenceIdx = -1;
+            while (sentenceIdx < 0)
+            {
+                int idx = random.Next(0, sentences.Count);
+
+                if (!sentences[idx].used)
+                    sentenceIdx = idx;
+            }
+
+            sentences[sentenceIdx] = new Card { id = sentences[sentenceIdx].id, text = sentences[sentenceIdx].text, used = true };
+
+            return sentences[sentenceIdx];
         }
 
         public bool Start()

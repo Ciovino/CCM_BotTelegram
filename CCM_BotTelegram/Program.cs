@@ -15,6 +15,7 @@ namespace CCM_BotTelegram
         WaitPoll_cah,   // Cah starting state: wait for a 60s timer, then check if the match can start
         Playing_cah,    // Playing Cah game
         Retry,          // Cannot play Cah
+        _ShowCards      // Not playing, only show cards (testing)
     }
 
     internal class Program
@@ -71,8 +72,6 @@ namespace CCM_BotTelegram
                             {
                                 case "test":
                                     botState = State.Test;
-                                    await bot.SendTextMessageAsync(chatId, "StateMachine Update: Cambio in Test",
-                                        cancellationToken: token);
                                     break;
 
                                 case "play":
@@ -109,8 +108,7 @@ namespace CCM_BotTelegram
                         }
                         else // Normal message
                         {
-                            await bot.SendTextMessageAsync(chatId, "StateMachine Update: Rimango in Idle",
-                                        cancellationToken: token);
+                            
                         }
                     }
                     break;
@@ -127,8 +125,6 @@ namespace CCM_BotTelegram
                             {
                                 case "exit":
                                     botState = State.Idle;
-                                    await bot.SendTextMessageAsync(chatId, "StateMachine Update: Cambio in Idle",
-                                        cancellationToken: token);
                                     break;
 
                                 default:
@@ -139,8 +135,7 @@ namespace CCM_BotTelegram
                         }
                         else // Normal message
                         {
-                            await bot.SendTextMessageAsync(chatId, "StateMachine Update: Rimango in Test",
-                                        cancellationToken: token);
+                            
                         }
                     }
                     break;
@@ -169,7 +164,12 @@ namespace CCM_BotTelegram
                             {
                                 case "stop":
                                     botState = State.Idle;
-                                    await bot.SendTextMessageAsync(chatId, "StateMachine Update: Cambio in Idle",
+                                    cahMatch.Reset();
+                                    break;
+
+                                case "show":
+                                    botState = State._ShowCards;
+                                    await bot.SendTextMessageAsync(chatId, "Test, giusto per mostrare le carte", 
                                         cancellationToken: token);
                                     break;
 
@@ -181,8 +181,42 @@ namespace CCM_BotTelegram
                         }
                         else // Normal message
                         {
-                            await bot.SendTextMessageAsync(chatId, "StateMachine Update: Rimango in Playing_cah",
+                            
+                        }
+                    }
+                    break;
+
+                case State._ShowCards:
+                    if (update.Type == UpdateType.Message)
+                    {
+                        string text = update.Message.Text ?? "";
+                        long chatId = update.Message.Chat.Id;
+
+                        if (text[0] == '/') // Possible Command
+                        {
+                            switch (SimpleCommand(text))
+                            {
+                                case "stop":
+                                    botState = State.Idle;
+                                    cahMatch.Reset();
+                                    break;
+
+                                case "sentence":
+                                    Card sentence = cahMatch.GetRandomSentence();
+
+                                    await bot.SendTextMessageAsync(chatId, $"Frase scelta: {sentence.text}",
                                         cancellationToken: token);
+                                    break;
+
+                                default:
+                                    await bot.SendTextMessageAsync(chatId, $"Il comando /{SimpleCommand(text)} non esiste",
+                                        cancellationToken: token);
+                                    break;
+                            }
+                        }
+                        else // Normal message
+                        {
+
                         }
                     }
                     break;
@@ -199,7 +233,7 @@ namespace CCM_BotTelegram
                             {
                                 case "stop":
                                     botState = State.Idle;
-                                    await bot.SendTextMessageAsync(chatId, "StateMachine Update: Cambio in Idle",
+                                    await bot.SendTextMessageAsync(chatId, "Partita annullata",
                                         cancellationToken: token);
                                     break;
 
@@ -236,8 +270,7 @@ namespace CCM_BotTelegram
                         }
                         else // Normal message
                         {
-                            await bot.SendTextMessageAsync(chatId, "StateMachine Update: Rimango in Retry",
-                                        cancellationToken: token);
+                            
                         }
                     }
                     break;
@@ -261,7 +294,7 @@ namespace CCM_BotTelegram
 
         private static void SetTimer()
         {
-            timer = new(60000); // 60 seconds timer
+            timer = new(10000); // 60 seconds timer
             timer.Elapsed += OnTimedEvent;
             timer.Enabled = true;
         }

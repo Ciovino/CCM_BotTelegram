@@ -1,0 +1,852 @@
+[
+  {
+    "id": 0,
+    "text": "_:testato dai bambini, approvato dalle mamme",
+    "used": false
+  },
+  {
+    "id": 1,
+    "text": "_: buono fino all'ultima goccia",
+    "used": false
+  },
+  {
+    "id": 2,
+    "text": "_? C'e' un'applicazione per quello",
+    "used": false
+  },
+  {
+    "id": 3,
+    "text": "_. Cosi' mantengo viva la mia relazione",
+    "used": false
+  },
+  {
+    "id": 4,
+    "text": "_. Dammi il cinque fratello",
+    "used": false
+  },
+  {
+    "id": 5,
+    "text": "_. E' cosi' che voglio morire",
+    "used": false
+  },
+  {
+    "id": 6,
+    "text": "_. E' una trappola",
+    "used": false
+  },
+  {
+    "id": 7,
+    "text": "_. Una meraviglia in teoria, un po' complicato nella pratica",
+    "used": false
+  },
+  {
+    "id": 8,
+    "text": "_. Uno tira l'altro",
+    "used": false
+  },
+  {
+    "id": 9,
+    "text": "...e l'avrei scampata, se non fosse stato per _.",
+    "used": false
+  },
+  {
+    "id": 10,
+    "text": "A cosa rinuncio per la quaresima?",
+    "used": false
+  },
+  {
+    "id": 11,
+    "text": "A scuola non mi sono mai realmente inserito finche' non ho scoperto il club di _.",
+    "used": false
+  },
+  {
+    "id": 12,
+    "text": "Abbiamo conteggiato i voti, la nuova mascotte scolastica e' _.",
+    "used": false
+  },
+  {
+    "id": 13,
+    "text": "Alcuni membri del Rotary Club stanno pagando migliaia di Euro per provare _.",
+    "used": false
+  },
+  {
+    "id": 14,
+    "text": "Amarti e' facile perche' sei _.",
+    "used": false
+  },
+  {
+    "id": 15,
+    "text": "Anziche' carbone Babbo Natale ai bambini cattivi ora porta _.",
+    "used": false
+  },
+  {
+    "id": 16,
+    "text": "Bevo per dimenticare _.",
+    "used": false
+  },
+  {
+    "id": 17,
+    "text": "Cara TopGirl, ho difficolta' con _ e vorrei qualche consiglio",
+    "used": false
+  },
+  {
+    "id": 18,
+    "text": "Che cosa ha complicato la vita al campo nudisti?",
+    "used": false
+  },
+  {
+    "id": 19,
+    "text": "Che cosa ha fermato l'orgia?",
+    "used": false
+  },
+  {
+    "id": 20,
+    "text": "Che cosa ha paracadutato l'Italia ai bambini afghani",
+    "used": false
+  },
+  {
+    "id": 21,
+    "text": "Chi controlla _, controlla il mondo",
+    "used": false
+  },
+  {
+    "id": 22,
+    "text": "Chiama i responsabili delle risorse umane, nessuno dovrebbe subire _ sul lavoro",
+    "used": false
+  },
+  {
+    "id": 23,
+    "text": "Come abitudine, Mike Bongiorno dedicava sempre 15 minuti al giorno a _",
+    "used": false
+  },
+  {
+    "id": 24,
+    "text": "Cos'e' che mia nonna troverebbe allarmante ma nello stesso tempo anche stranamente affascinante?",
+    "used": false
+  },
+  {
+    "id": 25,
+    "text": "Cos'e' questa macchia sul mio divano?",
+    "used": false
+  },
+  {
+    "id": 26,
+    "text": "Cos'e' questo odore?",
+    "used": false
+  },
+  {
+    "id": 27,
+    "text": "Cos'e' questo rumore?",
+    "used": false
+  },
+  {
+    "id": 28,
+    "text": "Cosa aiuterebbe Mario Monti a rilassarsi",
+    "used": false
+  },
+  {
+    "id": 29,
+    "text": "Cosa fece finire la mia passata relazione?",
+    "used": false
+  },
+  {
+    "id": 30,
+    "text": "Cosa ho portato a casa dal Messico?",
+    "used": false
+  },
+  {
+    "id": 31,
+    "text": "Cosa mi crea flatulenze incontrollabili?",
+    "used": false
+  },
+  {
+    "id": 32,
+    "text": "Cosa mi lascia dolorante dappertutto?",
+    "used": false
+  },
+  {
+    "id": 33,
+    "text": "Cosa mi rende cosi' appiccicoso?",
+    "used": false
+  },
+  {
+    "id": 34,
+    "text": "Cosa mi rende insonne?",
+    "used": false
+  },
+  {
+    "id": 35,
+    "text": "Cosa mi scaldera' durante il lungo gelido inverno?",
+    "used": false
+  },
+  {
+    "id": 36,
+    "text": "Cosa mi stanno tenendo nascosto i miei genitori?",
+    "used": false
+  },
+  {
+    "id": 37,
+    "text": "Cosa migliora con l'eta'?",
+    "used": false
+  },
+  {
+    "id": 38,
+    "text": "Cosa non vuoi trovare nel tuo cibo cinese?",
+    "used": false
+  },
+  {
+    "id": 39,
+    "text": "Cosa piace a Silvio Berlusconi?",
+    "used": false
+  },
+  {
+    "id": 40,
+    "text": "Cosa posso portare nel passato per convincere tutti di essere un potente stregone?",
+    "used": false
+  },
+  {
+    "id": 41,
+    "text": "Cosa sara' disponibile a volonta' in paradiso?",
+    "used": false
+  },
+  {
+    "id": 42,
+    "text": "Cosa si mangia Vin Diesel per cena?",
+    "used": false
+  },
+  {
+    "id": 43,
+    "text": "Cosa ti permette di portarti a letto una ragazza con assoluta certezza",
+    "used": false
+  },
+  {
+    "id": 44,
+    "text": "Cosa usano gli insegnanti per ispirare al successo i ragazzi?",
+    "used": false
+  },
+  {
+    "id": 45,
+    "text": "Cosi e' come il mondo finira', non con una eplosione, ma con _",
+    "used": false
+  },
+  {
+    "id": 46,
+    "text": "Da contratto, Morgan non si esibisce senza _ nel suo camerino",
+    "used": false
+  },
+  {
+    "id": 47,
+    "text": "Di cosa odorano le persone anziane?",
+    "used": false
+  },
+  {
+    "id": 48,
+    "text": "Dopo essere svenuto al capodanno, sono stato svegliato da _",
+    "used": false
+  },
+  {
+    "id": 49,
+    "text": "Dopo mesi di dibattito, il Partito Democratico concorda solo sulla necessita' di _",
+    "used": false
+  },
+  {
+    "id": 50,
+    "text": "Durante il sesso mi piace pensare a _",
+    "used": false
+  },
+  {
+    "id": 51,
+    "text": "Durante il sottovalutato Periodo Marrone di Picasso, egli produsse centinaia di opere su _",
+    "used": false
+  },
+  {
+    "id": 52,
+    "text": "Durante la sua crisi di mezza eta', mio padre passo' molto tempo su _",
+    "used": false
+  },
+  {
+    "id": 53,
+    "text": "E' un peccato che i bambini di oggi si dedichino a _",
+    "used": false
+  },
+  {
+    "id": 54,
+    "text": "Finalmente! Un servizio che porta _ a domicilio",
+    "used": false
+  },
+  {
+    "id": 55,
+    "text": "Gesu e' _",
+    "used": false
+  },
+  {
+    "id": 56,
+    "text": "Giorgio Mastrota ora vi presentera' _",
+    "used": false
+  },
+  {
+    "id": 57,
+    "text": "Gira voce che a San Vittore si possanno barattare 200 sigarette per _",
+    "used": false
+  },
+  {
+    "id": 58,
+    "text": "Girano voci che al Vaticano ci sia una stanza segreta per _",
+    "used": false
+  },
+  {
+    "id": 59,
+    "text": "Gli antropologi hanno recentemente scoperto una tribu' primitiva che venera _",
+    "used": false
+  },
+  {
+    "id": 60,
+    "text": "Guerra! Qual e' il suo lato positivo?",
+    "used": false
+  },
+  {
+    "id": 61,
+    "text": "Hey bellezza, vieni a casa mia, ti mostrero' _",
+    "used": false
+  },
+  {
+    "id": 62,
+    "text": "Ho imparato che non puoi confrontare un amico depresso con _",
+    "used": false
+  },
+  {
+    "id": 63,
+    "text": "Ho un sacco di problemi, ma non con _",
+    "used": false
+  },
+  {
+    "id": 64,
+    "text": "I soldi non compreranno l'amore, ma possono comprarmi _",
+    "used": false
+  },
+  {
+    "id": 65,
+    "text": "Il governo socialista Scandinavo ha dichiarato come basilare diritto dell'umanita' l'accesso a _",
+    "used": false
+  },
+  {
+    "id": 66,
+    "text": "Il mio insegnante di ginnastica e' stato licenziato per aver aggiunto _ alla corsa a ostacoli",
+    "used": false
+  },
+  {
+    "id": 67,
+    "text": "Il prossimo romanzo di J.K. Rowling: Harry Potter e la camera di _",
+    "used": false
+  },
+  {
+    "id": 68,
+    "text": "In questa puntata, Bear Grylls devve sopravvivere nella foresta amazzonica con solamente _",
+    "used": false
+  },
+  {
+    "id": 69,
+    "text": "In un tentativo di raggiungere un maggior pubblico, il Museo di Storia Naturale apre una mostra interattiva su _",
+    "used": false
+  },
+  {
+    "id": 70,
+    "text": "L'appuntamento al buio stava andando orribilmente finche' non scoprimmo che a entrambi piace _",
+    "used": false
+  },
+  {
+    "id": 71,
+    "text": "La CIA ora interroga i prigionieri sottoponendoli ripetutamente a _",
+    "used": false
+  },
+  {
+    "id": 72,
+    "text": "La FIFA ha bandito _ perche' dopante",
+    "used": false
+  },
+  {
+    "id": 73,
+    "text": "La gita scolastica fu completamente rovinata da _",
+    "used": false
+  },
+  {
+    "id": 74,
+    "text": "La guarigione e' iniziata quando ho iniziato a frequentare un gruppo di sostegno per vittme di _",
+    "used": false
+  },
+  {
+    "id": 75,
+    "text": "La medicina alternativa sta proponendo i poteri curativi di _",
+    "used": false
+  },
+  {
+    "id": 76,
+    "text": "La nuova norma di sicurezza aerea ora proibisce _ sugli aerei",
+    "used": false
+  },
+  {
+    "id": 77,
+    "text": "La scienza non spieghera' mai l'origine di _",
+    "used": false
+  },
+  {
+    "id": 78,
+    "text": "La vita dei nativi Americani cambio' quando i coloni li introdussero a _",
+    "used": false
+  },
+  {
+    "id": 79,
+    "text": "Ma prima di ucciderla, Signor Bond, devo mostrarle _",
+    "used": false
+  },
+  {
+    "id": 80,
+    "text": "Mentre gli Stati Uniti e la Russia gareggiavano per la conquista della luna, il Messico ha investito milioni di pesos per _",
+    "used": false
+  },
+  {
+    "id": 81,
+    "text": "Mi scusi professore, non ho potuto fare i compiti a causa di _",
+    "used": false
+  },
+  {
+    "id": 82,
+    "text": "Mia mamma e' impazzita quando nella cronologia del mio browser ha visto _.com",
+    "used": false
+  },
+  {
+    "id": 83,
+    "text": "Nei suoi ultimi giorni, Michael Jackson faceva spesso pensieri su _",
+    "used": false
+  },
+  {
+    "id": 84,
+    "text": "Nel futuro, gli storici concorderanno che il nostro declino e' iniziato con _",
+    "used": false
+  },
+  {
+    "id": 85,
+    "text": "Nel nuovo film della Disney, Hannah Montana per la prima volta si scontra con _",
+    "used": false
+  },
+  {
+    "id": 86,
+    "text": "Nel settimo girone infernale, i peccatori devono subire _ per l'eternita'",
+    "used": false
+  },
+  {
+    "id": 87,
+    "text": "Nel suo nuovo tentativo di promuovere il turismo, la citta' di Milano dichiara di essersi liberata di _",
+    "used": false
+  },
+  {
+    "id": 88,
+    "text": "Nel suo ultimo album, Jovanotti da rap sopra il suono di _",
+    "used": false
+  },
+  {
+    "id": 89,
+    "text": "Nel suo ultimo spettacolo, il Mago Casanova deve scappare da _",
+    "used": false
+  },
+  {
+    "id": 90,
+    "text": "Nella nuova serie dell'Isola dei Famosi, le celebrita' vivranno con _",
+    "used": false
+  },
+  {
+    "id": 91,
+    "text": "Nella prossima puntata di Rai Educational: Come parlare a tuo figlio di _",
+    "used": false
+  },
+  {
+    "id": 92,
+    "text": "Non so con quali armi sara' combattuta la terza Guerra Mondiale, ma la quarta sara' combattuta con _",
+    "used": false
+  },
+  {
+    "id": 93,
+    "text": "Non sono come voi, sono troppo ricco e impegnato per _",
+    "used": false
+  },
+  {
+    "id": 94,
+    "text": "Ogni Natale mio zio si ubriaca e ci racconta la sua storia riguardo _",
+    "used": false
+  },
+  {
+    "id": 95,
+    "text": "Parla il capitano. Allacciate le cinture e preparatevi per _",
+    "used": false
+  },
+  {
+    "id": 96,
+    "text": "Presto in tutti i teatri: _, il Musical",
+    "used": false
+  },
+  {
+    "id": 97,
+    "text": "Prima di concorrere alla presidenza, devo distruggere tutte le prove del mio coinvolgimento con _",
+    "used": false
+  },
+  {
+    "id": 98,
+    "text": "Prossimamente su Rai Sport 2: i mondiali di _",
+    "used": false
+  },
+  {
+    "id": 99,
+    "text": "Qual e' il miglior amico di una ragazza?",
+    "used": false
+  },
+  {
+    "id": 100,
+    "text": "Qual e' il mio potere segreto?",
+    "used": false
+  },
+  {
+    "id": 101,
+    "text": "Qual e' il trucco per ravvivare una festa?",
+    "used": false
+  },
+  {
+    "id": 102,
+    "text": "Qual e' il vizio di Batman?",
+    "used": false
+  },
+  {
+    "id": 103,
+    "text": "Qual e' la cosa piu' emo?",
+    "used": false
+  },
+  {
+    "id": 104,
+    "text": "Qual e' la cosa piu' incrostata?",
+    "used": false
+  },
+  {
+    "id": 105,
+    "text": "Qual e' la nuova dieta del momento?",
+    "used": false
+  },
+  {
+    "id": 106,
+    "text": "Qual e' un regalo che andra' oltre le aspettative?",
+    "used": false
+  },
+  {
+    "id": 107,
+    "text": "Quale sara' la prossima coppia di supereroi?",
+    "used": false
+  },
+  {
+    "id": 108,
+    "text": "Quale sara' la prossima sorpresa dell'Happy Meal?",
+    "used": false
+  },
+  {
+    "id": 109,
+    "text": "Quando il faraone rimase impassibile, Mose' scaneto' la piaga di _",
+    "used": false
+  },
+  {
+    "id": 110,
+    "text": "Quando nient'altro funziona, posso sempre masturbarmi con _",
+    "used": false
+  },
+  {
+    "id": 111,
+    "text": "Quando saro' il capo del governo, creero' il Ministero di _",
+    "used": false
+  },
+  {
+    "id": 112,
+    "text": "Quando saro' milionario erigero' una statua di 30 metri per commemorare _",
+    "used": false
+  },
+  {
+    "id": 113,
+    "text": "Quando sono andato in bagno, cosa e' uscito dal mio didietro?",
+    "used": false
+  },
+  {
+    "id": 114,
+    "text": "Questo mese su Donna Moderna: \"Riaccendi la passione con _\"",
+    "used": false
+  },
+  {
+    "id": 115,
+    "text": "Recenti studi hanno mostrato che topi di laboratorio impiegano il 50% di tempo in meno per uscire da un labirinto se sono esposti a _",
+    "used": false
+  },
+  {
+    "id": 116,
+    "text": "Solo due cose nella vita sono certe: la morte e _",
+    "used": false
+  },
+  {
+    "id": 117,
+    "text": "Stasera a Report: quello che non sai su _ potrebbe ucciderti",
+    "used": false
+  },
+  {
+    "id": 118,
+    "text": "Tra 100 anni, quando le banconote saranno un lontano ricordo, _ sara' la nostra moneta",
+    "used": false
+  },
+  {
+    "id": 119,
+    "text": "Tutti a terra e non si fara' male nessuno! Siamo qui per _!",
+    "used": false
+  },
+  {
+    "id": 120,
+    "text": "Un colloquio di lavoro di successo inizia con una solida stretta di mano e finisce con _",
+    "used": false
+  },
+  {
+    "id": 121,
+    "text": "Una cena a lume di candela non sarebbe completa senza _",
+    "used": false
+  },
+  {
+    "id": 122,
+    "text": "Quando saro' Re, come terro' in riga i miei sudditi?",
+    "used": false
+  },
+  {
+    "id": 123,
+    "text": "Caro Leader Kin Jong-Un, in nostro villaggio rende gloria alla vostra infinita saggezza con l'umile offerta di _",
+    "used": false
+  },
+  {
+    "id": 124,
+    "text": "Lasciatemi in pace! Sono preso da _ in questo momento",
+    "used": false
+  },
+  {
+    "id": 125,
+    "text": "Come compenso il mio minuscolo pene?",
+    "used": false
+  },
+  {
+    "id": 126,
+    "text": "Sono piuttosto sicuro di essere fatto, perche' sono completamente intrippato da _",
+    "used": false
+  },
+  {
+    "id": 127,
+    "text": "Mi dispiace signore, ma nel nostro circolo non ammettiamo _",
+    "used": false
+  },
+  {
+    "id": 128,
+    "text": "E' in agguato nella notte. E' affamato di sangue. Quest'estate, nessuno si salvera' da _",
+    "used": false
+  },
+  {
+    "id": 129,
+    "text": "Amico, ne ho le palle piene di _",
+    "used": false
+  },
+  {
+    "id": 130,
+    "text": "Ho visto un uomo che moriva per amore; ne ho visto un altro che piu' lacrime non ha. Nessun coltello mai, ti puo' ferir di piu' di _",
+    "used": false
+  },
+  {
+    "id": 131,
+    "text": "I giapponesi hanno sviluppato una versione piu' piccola e piu' efficiente di _",
+    "used": false
+  },
+  {
+    "id": 132,
+    "text": "Sono gli anni d'oro della mia vita. Sono giovane, bello e muoi dalla voglia di _",
+    "used": false
+  },
+  {
+    "id": 133,
+    "text": "Che cosa e' divertente fino a che non diventa imbarazzante?",
+    "used": false
+  },
+  {
+    "id": 134,
+    "text": "Avete visto la donna barbuta! Avete visto l'anello infuocato! E ora, signore e signori, puntate lo sguardo su _!",
+    "used": false
+  },
+  {
+    "id": 135,
+    "text": "E la zuppa del giorno e' Crema di _",
+    "used": false
+  },
+  {
+    "id": 136,
+    "text": "Abito di Armani: \u00e2\u201a\u00ac1000. Cena per due in un ottimo ristorante: \u00e2\u201a\u00ac300. La sua faccia quando la sorprendi con _: non ha prezzo",
+    "used": false
+  },
+  {
+    "id": 137,
+    "text": "Il gusto piu' estremo che abbiate mai provato! Preparatevi per Estathe' al gusto di _",
+    "used": false
+  },
+  {
+    "id": 138,
+    "text": "La giornata peggiore di sempre. Hashtag #_",
+    "used": false
+  },
+  {
+    "id": 139,
+    "text": "Mi aiuti dottore, ho _ dentro il culo!",
+    "used": false
+  },
+  {
+    "id": 140,
+    "text": "Qui nell'Istituto dei Bambini Prodigio, lasciamo che gli studenti esplorino _ alla loro maniera",
+    "used": false
+  },
+  {
+    "id": 141,
+    "text": "Ciao MTV! Mi chiamo Jessica, vengo da Rimini, adoro _, e mi piace divertirmi in compagnia",
+    "used": false
+  },
+  {
+    "id": 142,
+    "text": "Salve, sono Giorgio della contabilita'. Abbiamo una spesa di \u00e2\u201a\u00ac1200 per \"_\", puo' spiegare?",
+    "used": false
+  },
+  {
+    "id": 143,
+    "text": "Non per vantarmi, ma mi chiamano il Michael Jordan dei _",
+    "used": false
+  },
+  {
+    "id": 144,
+    "text": "Nel suo famoso messaggio di addio, George Washington mise in guardia agli Americani sui pericoli di _",
+    "used": false
+  },
+  {
+    "id": 145,
+    "text": "Nel suo nuovo film d'azione, Jackie Chan deve difendersi dai ninja mentre si occupa di _",
+    "used": false
+  },
+  {
+    "id": 146,
+    "text": "E' dura quando fai una vita spericolata. Ecco perche' non esco mai di casa senza _",
+    "used": false
+  },
+  {
+    "id": 147,
+    "text": "Da oggi in libreria \"Il coraggio di _\". Un libro di Barack Obama",
+    "used": false
+  },
+  {
+    "id": 148,
+    "text": "Cos'e' che me lo fa ammosciare?",
+    "used": false
+  },
+  {
+    "id": 149,
+    "text": "Cosa rende le cose imbarazzanti durante la sauna?",
+    "used": false
+  },
+  {
+    "id": 150,
+    "text": "Sono completamente al verde a causa di _",
+    "used": false
+  },
+  {
+    "id": 151,
+    "text": "Tua madre e' talmente grassa che e' come _",
+    "used": false
+  },
+  {
+    "id": 152,
+    "text": "Mi faccio il culo tutto il giorno per la mia famiglia, e quando torno a casa devo trovare _!?",
+    "used": false
+  },
+  {
+    "id": 153,
+    "text": "Seguo delle tappe precise. Primo appuntamento, cena. Secondo appuntamento, bacio. Terzo appuntamento, _",
+    "used": false
+  },
+  {
+    "id": 154,
+    "text": "Quando eravamo piccoli giocavamo a Cowboy e _",
+    "used": false
+  },
+  {
+    "id": 155,
+    "text": "Questa e' l'America. Senza il duro lavoro, non puoi avere successo. Non importa se sei nero, bianco, viola o _",
+    "used": false
+  },
+  {
+    "id": 156,
+    "text": "Giacomo era un ragazzo solitario, ma quando ha scoperto una porta segreta in soffitta, ha incontrato un magico nuovo amico: _",
+    "used": false
+  },
+  {
+    "id": 157,
+    "text": "Non ti preoccupare figliolo, col tempo passa tutto. Ho convissuto con _ per 20 anni.",
+    "used": false
+  },
+  {
+    "id": 158,
+    "text": "Mio nonno si e' fatto strada da solo. Quando e' arrivato in questo paese, tutto quello che possedeva erano le scarpe che aveva ai piedi e _",
+    "used": false
+  },
+  {
+    "id": 159,
+    "text": "Dietro ogni grande uomo ci sono _",
+    "used": false
+  },
+  {
+    "id": 160,
+    "text": "Non sei solo. Milioni di persone ogni giorno fanno i conti con _",
+    "used": false
+  },
+  {
+    "id": 161,
+    "text": "Dubai vi aspetta! Potrete rilassarvi nelle nostre celebri spa, avere un assaggio della vita notturna o semplicemente stare a bordo piscina e godervi _",
+    "used": false
+  },
+  {
+    "id": 162,
+    "text": "\"Questa e' pazzia!\" \"No. QUESTA E' _!\"",
+    "used": false
+  },
+  {
+    "id": 163,
+    "text": "Ascolta Gary, tu mi piaci. Ma se vuoi l'ufficio migliore, dovrai mostrarmi _",
+    "used": false
+  },
+  {
+    "id": 164,
+    "text": "Come desidera le ali di pollo? Delicate, piccanti oppure con _",
+    "used": false
+  },
+  {
+    "id": 165,
+    "text": "Perche' non fai piu' l'amore con me? E' per via di _?",
+    "used": false
+  },
+  {
+    "id": 166,
+    "text": "La puberta' e' un momento di cambiamenti. Ti crescceranno peli in posti nuovi. Potresti anche sviluppare interesse per _. E' completamente normale",
+    "used": false
+  },
+  {
+    "id": 167,
+    "text": "Mi dispiace signora Zhang, ma non c'era nulla che potessimo fare. Alle 4:15 di questa mattina, suo figlio e' morto per _",
+    "used": false
+  },
+  {
+    "id": 168,
+    "text": "Sono Miss Molise, e se potessi rendere il mondo migliore cambiando una sola cosa, eliminerei _",
+    "used": false
+  },
+  {
+    "id": 169,
+    "text": "Stanotte faremo sesso. E dopo, se vorrai, anche un po' di _",
+    "used": false
+  }
+]
