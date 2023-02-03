@@ -42,7 +42,7 @@ namespace CCM_BotTelegram
 
             // Load sentence
             sentences.Clear();
-            string sentences_str = File.ReadAllText(PrivateConfiguration.getSencencesFile());
+            string sentences_str = File.ReadAllText(PrivateConfiguration.GetSencencesFile());
             sentences = JsonConvert.DeserializeObject<List<Card>>(sentences_str) ?? new();
         }
 
