@@ -1,5 +1,4 @@
-﻿using System.Numerics;
-using System.Timers;
+﻿using System.Timers;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
@@ -90,7 +89,7 @@ namespace CCM_BotTelegram
                                             replyToMessageId: update.Message.MessageId,
                                             cancellationToken: token);
 
-                                        cahMatch = new(chatId, pollMatch.Poll.Id);
+                                        cahMatch = new(chatId, pollMatch.Poll.Id, update.Message.From.Id);
                                     }
                                     else
                                     {
@@ -163,14 +162,32 @@ namespace CCM_BotTelegram
                             switch (SimpleCommand(text))
                             {
                                 case "stop":
-                                    botState = State.Idle;
-                                    cahMatch.Reset();
+                                    if (cahMatch.GetMasterId() == update.Message.From.Id)
+                                    {
+                                        botState = State.Idle;
+                                        cahMatch.Reset();
+                                        await bot.SendTextMessageAsync(chatId, "Partita annullata",
+                                            cancellationToken: token);
+                                    }
+                                    else
+                                    {
+                                        await bot.SendTextMessageAsync(chatId, "Solo il master puo' usare quel comando", 
+                                            cancellationToken: token);
+                                    }
                                     break;
 
                                 case "show":
-                                    botState = State._ShowCards;
-                                    await bot.SendTextMessageAsync(chatId, "Test, giusto per mostrare le carte", 
-                                        cancellationToken: token);
+                                    if (cahMatch.GetMasterId() == update.Message.From.Id)
+                                    {
+                                        botState = State._ShowCards;
+                                        await bot.SendTextMessageAsync(chatId, "Test (andrà levato sto comando)",
+                                            cancellationToken: token);
+                                    }
+                                    else
+                                    {
+                                        await bot.SendTextMessageAsync(chatId, "Solo il master puo' usare quel comando",
+                                            cancellationToken: token);
+                                    }
                                     break;
 
                                 default:
@@ -197,13 +214,36 @@ namespace CCM_BotTelegram
                             switch (SimpleCommand(text))
                             {
                                 case "stop":
-                                    botState = State.Idle;
-                                    cahMatch.Reset();
+                                    if (cahMatch.GetMasterId() == update.Message.From.Id)
+                                    {
+                                        botState = State.Idle;
+                                        cahMatch.Reset();
+                                        await bot.SendTextMessageAsync(chatId, "Partita annullata",
+                                            cancellationToken: token);
+                                    }
+                                    else
+                                    {
+                                        await bot.SendTextMessageAsync(chatId, "Solo il master puo' usare quel comando",
+                                            cancellationToken: token);
+                                    }
+                                    break;
+
+                                case "back":
+                                    if (cahMatch.GetMasterId() == update.Message.From.Id)
+                                    {
+                                        botState = State.Playing_cah;
+                                        await bot.SendTextMessageAsync(chatId, "Pre-partita",
+                                            cancellationToken: token);
+                                    }
+                                    else
+                                    {
+                                        await bot.SendTextMessageAsync(chatId, "Solo il master puo' usare quel comando",
+                                            cancellationToken: token);
+                                    }                                    
                                     break;
 
                                 case "sentence":
                                     Card sentence = cahMatch.GetRandomSentence();
-
                                     await bot.SendTextMessageAsync(chatId, $"Frase scelta: {sentence.text}",
                                         cancellationToken: token);
                                     break;
@@ -253,7 +293,7 @@ namespace CCM_BotTelegram
                                             replyToMessageId: update.Message.MessageId,
                                             cancellationToken: token);
 
-                                        cahMatch = new(chatId, pollMatch.Poll.Id);
+                                        cahMatch = new(chatId, pollMatch.Poll.Id, update.Message.From.Id);
                                     }
                                     else
                                     {
@@ -319,6 +359,9 @@ namespace CCM_BotTelegram
                         await Client.SendTextMessageAsync(player, c.text, cancellationToken: cts.Token);
                     }
                 }
+
+                await Client.SendTextMessageAsync(cahMatch.GetChatId(), "Il master controlla la partita", cancellationToken: cts.Token);
+                botState = State.Retry;
             }
             else
             {

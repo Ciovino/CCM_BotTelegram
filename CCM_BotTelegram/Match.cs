@@ -16,6 +16,7 @@ namespace CCM_BotTelegram
         const int MAX_CARDS = 10;
         static Random random = new();
 
+        long? master;
         long? chatId;
         string? pollId;
         List<PlayerCah> players = new();
@@ -23,12 +24,14 @@ namespace CCM_BotTelegram
 
         public Match()
         {
+            master = null;
             chatId = null;
             pollId = null;
         }
 
-        public Match(long chatId, string pollId)
+        public Match(long chatId, string pollId, long master)
         {
+            this.master = master;
             this.chatId = chatId;
             this.pollId = pollId;
 
@@ -74,6 +77,8 @@ namespace CCM_BotTelegram
         { 
             return chatId.Value; 
         }
+
+        public long GetMasterId () { return master.Value; }
 
         public List<long> GetPlayers()
         {
@@ -136,6 +141,9 @@ namespace CCM_BotTelegram
 
             // Reset poll
             pollId = null;
+
+            // Reset master
+            master = null;
         }
     }
 
