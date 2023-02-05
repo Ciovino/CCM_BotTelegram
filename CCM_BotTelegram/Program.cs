@@ -544,7 +544,7 @@ namespace CCM_BotTelegram
 
         private static void SetPollTimer()
         {
-            pollTimer = new(10000); // 60 seconds timer
+            pollTimer = new(60000); // 60 seconds timer
             pollTimer.Elapsed += PollClosed;
             pollTimer.Enabled = true;
         }
@@ -566,12 +566,15 @@ namespace CCM_BotTelegram
                     List<Card> playerCard = cahMatch.GetPlayerCard(player);
                     ReplyKeyboardMarkup playerCardsKeyboard = new(
                         new[] {
-                        new KeyboardButton[] { playerCard[0].text, playerCard[1].text },
-                        new KeyboardButton[] { playerCard[2].text, playerCard[3].text },
-                        new KeyboardButton[] { playerCard[4].text, playerCard[5].text },
-                        new KeyboardButton[] { playerCard[6].text, playerCard[7].text },
-                        new KeyboardButton[] { playerCard[8].text, playerCard[9].text }
-                    });
+                            new KeyboardButton[] { playerCard[0].text, playerCard[1].text },
+                            new KeyboardButton[] { playerCard[2].text, playerCard[3].text },
+                            new KeyboardButton[] { playerCard[4].text, playerCard[5].text },
+                            new KeyboardButton[] { playerCard[6].text, playerCard[7].text },
+                            new KeyboardButton[] { playerCard[8].text, playerCard[9].text }
+                        })
+                    {
+                        ResizeKeyboard = true
+                    };
 
                     await Client.SendTextMessageAsync(player, "Sotto ci sono le tue carte",
                         replyMarkup: playerCardsKeyboard,

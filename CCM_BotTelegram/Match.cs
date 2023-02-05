@@ -190,6 +190,7 @@ namespace CCM_BotTelegram
                 }
             }
             var cardIdx = players[idx].ChosenCard;
+            players[idx].ShownAnswer = true;
             roundManager.IncrementAnswer();
 
             return GetPlayerCard(players[idx].GetId())[cardIdx];
