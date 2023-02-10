@@ -16,7 +16,6 @@ namespace CCM_BotTelegram
 
     internal class CardTest : Command
     {
-        private const string cards_file = "cah.json";
         private List<Card> allCards = new();
         readonly Random random = new();
 
@@ -43,7 +42,7 @@ namespace CCM_BotTelegram
         private void ResetCard()
         {
             allCards.Clear();
-            string allCards_str = System.IO.File.ReadAllText(cards_file);
+            string allCards_str = System.IO.File.ReadAllText(PrivateConfiguration.GetCardsFile());
             allCards = JsonConvert.DeserializeObject<List<Card>>(allCards_str);
         }
 

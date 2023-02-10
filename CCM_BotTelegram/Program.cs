@@ -24,7 +24,7 @@ namespace CCM_BotTelegram
     internal class Program
     {
         const string botUsername = "@CAHMontpelos_BOT";
-        static TelegramBotClient Client = new TelegramBotClient(PrivateConfiguration.getToken());
+        static TelegramBotClient Client = new TelegramBotClient(PrivateConfiguration.GetToken());
         static State botState = State.NoCommand;
         static List<BotUpdate> botUpdates = new List<BotUpdate>();
 
@@ -35,7 +35,7 @@ namespace CCM_BotTelegram
             // Read all saved updates
             try
             {
-                var botUpdatesString = System.IO.File.ReadAllText(PrivateConfiguration.getLogFileName());
+                var botUpdatesString = System.IO.File.ReadAllText("update.json");
 
                 botUpdates = JsonConvert.DeserializeObject<List<BotUpdate>>(botUpdatesString) ?? botUpdates;
             }
@@ -92,6 +92,11 @@ namespace CCM_BotTelegram
                                 string command = message_update.text.Substring(1);
                                 switch (SimpleCommand(command))
                                 {
+                                    case "dado":
+                                        Dice dado = (await bot.SendDiceAsync(message_update.chat_id)).Dice;
+                                        await bot.SendTextMessageAsync(message_update.chat_id, $"Uscito {dado.Value}", cancellationToken: token);
+                                        break;
+
                                     case "incognito": // Activate IncognitoMode
                                         botState = State.Incognito;
 
@@ -186,7 +191,7 @@ namespace CCM_BotTelegram
             // Write an update
             botUpdates.Add(new_message);
             var message_update_string = JsonConvert.SerializeObject(botUpdates);
-            System.IO.File.WriteAllText(PrivateConfiguration.getLogFileName(), message_update_string);
+            System.IO.File.WriteAllText("update.json", message_update_string);
         }
 
         private static async Task<Message> SendWrapperMessageAsync(ChatId id, MessageWrapper to_send, CancellationToken token)
