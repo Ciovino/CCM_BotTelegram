@@ -15,9 +15,9 @@ namespace CCM_BotTelegram
         const int MAX_CARDS = 10;
         static Random random = new();
 
-        long? master;
-        long? chatId;
-        string? pollId;
+        long? master, chatId;
+        string? pollId, answerPollId;
+        int? messageAnswerPollId;
         List<PlayerCah> players = new();
         List<Card> cards = new(), sentences = new();
 
@@ -28,6 +28,8 @@ namespace CCM_BotTelegram
             master = null;
             chatId = null;
             pollId = null;
+            answerPollId = null;
+            messageAnswerPollId = null;
         }
 
         public Match(long chatId, string pollId, long master)
@@ -191,9 +193,44 @@ namespace CCM_BotTelegram
             }
             var cardIdx = players[idx].ChosenCard;
             players[idx].ShownAnswer = true;
+            roundManager.playerCardChoosen = idx;
             roundManager.IncrementAnswer();
 
             return GetPlayerCard(players[idx].GetId())[cardIdx];
+        }
+
+        public void SaveAnswerPoll(string answerPollId, int messageId)
+        {
+            this.answerPollId = answerPollId;
+            messageAnswerPollId = messageId;
+        }
+
+        public bool OpenAnswerPoll()
+        {
+            return messageAnswerPollId != null;
+        }
+
+        public int GetMessageAnswerPollId()
+        {
+            return messageAnswerPollId.Value;
+        }
+
+        public bool IsAnswerPoll(string pollId)
+        {
+            return pollId == answerPollId;
+        }
+
+        public void AddPoints(int answer)
+        {
+            players[roundManager.playerCardChoosen].AddPoints(Math.Abs(answer - 2));
+        }
+
+        public int GetPlayerPoints(long playerId)
+        {
+            foreach (PlayerCah player in players)
+                if (player.GetId() == playerId)
+                    return player.GetPoints();
+            return 0;
         }
 
         public Card GetRoundSentence() { return roundManager.GetChoosenCard(); }
@@ -245,6 +282,10 @@ namespace CCM_BotTelegram
 
             // Reset master
             master = null;
+
+            // Reset answerPoll
+            answerPollId = null;
+            messageAnswerPollId = null;
         }
     }
 
@@ -272,6 +313,13 @@ namespace CCM_BotTelegram
             cards.RemoveAt(ChosenCard);
             cards.Add(newCard);
         }
+
+        public void AddPoints(int points)
+        {
+            this.points += points;
+        }
+
+        public int GetPoints() { return points; }
     }
 
     class Round
@@ -280,6 +328,7 @@ namespace CCM_BotTelegram
         Card chosenSentence;
         List<long> playerWhoDecide = new();
         int answerShown = 0;
+        public int playerCardChoosen = -1;
 
         public void NewRound(Card chosenSentence)
         {
