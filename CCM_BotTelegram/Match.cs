@@ -23,6 +23,17 @@ namespace CCM_BotTelegram
         public bool IsInvalid() { return id == -1; }
     }
 
+    struct PlayerStats
+    {
+        public long id;
+        public string name;
+        public int points;
+
+        public bool GreaterThan(PlayerStats other) { return points > other.points; }
+
+        public override string ToString() { return $"{name}, {points} punti"; }
+    }
+
     internal class Match
     {
         const int MAX_CARDS = 10;
@@ -207,25 +218,30 @@ namespace CCM_BotTelegram
 
         public bool Start() { return players.Count > 1; }
 
-        public WinningPlayerStats WinningPlayer()
+        public List<PlayerStats> Leaderboard()
         {
-            int maxPoints = -1;
-            int idx_max = 0;
+            List<PlayerStats> leaderboard = new() { players[0].GetStats() };
 
-            for (int i = 0; i < players.Count; i++)
+            for(int i = 1; i < players.Count; i++)
             {
-                if (players[i].GetPoints() > maxPoints)
+                PlayerStats stats = players[i].GetStats();
+                bool atTheAnd = true;
+
+                for(int j = 0; j < leaderboard.Count; j++)
                 {
-                    idx_max = i;
-                    maxPoints = players[i].GetPoints();
+                    if (stats.GreaterThan(leaderboard[j]))
+                    {
+                        leaderboard.Insert(j, stats);
+                        atTheAnd = false;
+                        break;
+                    }
                 }
+
+                if (atTheAnd)
+                    leaderboard.Add(stats);
             }
 
-            return new WinningPlayerStats { 
-                id = players[idx_max].GetId(), 
-                name = players[idx_max].GetName(), 
-                points = players[idx_max].GetPoints()
-            };
+            return leaderboard;
         }
 
         public void Reset()
@@ -247,9 +263,9 @@ namespace CCM_BotTelegram
 
     class PlayerCah
     {
-        long id;
-        string name;
-        List<Card> cards = new();
+        readonly long id;
+        readonly string name;
+        readonly List<Card> cards = new();
         public int ChosenCard { get; set; }
         public bool ShownAnswer { get; set; }
         public PollInfo AnswerPoll { get; set; }
@@ -287,6 +303,16 @@ namespace CCM_BotTelegram
         public int GetPoints() { return points; }
 
         public bool InvalidPlayer() { return id < 0; }
+
+        public PlayerStats GetStats()
+        {
+            return new PlayerStats
+            {
+                id = id,
+                name = name,
+                points = points
+            };
+        }
     }
 
     class Round

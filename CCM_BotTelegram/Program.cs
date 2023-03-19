@@ -18,13 +18,6 @@ namespace CCM_BotTelegram
         EndMatch,       // Final results
     }
 
-    struct WinningPlayerStats
-    {
-        public long id;
-        public string name;
-        public int points;
-    }
-
     struct PollInfo
     {
         public string id;
@@ -71,6 +64,7 @@ namespace CCM_BotTelegram
             if(update.Type == UpdateType.Message)
             {
                 text = update.Message.Text ?? "";
+                if (text == "") return;
             }            
 
             // bot_state command: Print the state of the bot
@@ -468,13 +462,58 @@ namespace CCM_BotTelegram
             {
                 if (cahMatch.GetMasterId() == updateMessage.From.Id)
                 {
-                    WinningPlayerStats win = cahMatch.WinningPlayer();
+                    List<PlayerStats> leaderboard = cahMatch.Leaderboard();
+
+                    // Check for tie
+                    int tie = 0;
+                    for(int i = 1; i < leaderboard.Count; i++)
+                    {
+                        if (leaderboard[i].points == leaderboard[0].points)
+                            tie++;
+                        else
+                            break;
+                    }
+
+                    if (tie > 0)
+                    {
+                        // There is a tie
+                        await Client.SendTextMessageAsync(
+                            updateChat.Id,
+                            $"C'è un pareggio!!",
+                            cancellationToken: token
+                        );
+
+                        string allWinners = leaderboard[0].name;
+                        for (int i = 1; i < tie; i++)
+                            allWinners += $", {leaderboard[i].name}";
+                        allWinners += $" e {leaderboard[tie].name}";
+
+                        await Client.SendTextMessageAsync(
+                            updateChat.Id,
+                            $"Congratulazioni a {allWinners} per la vittoria!!\n" +
+                                $"Ora andate a festeggiare",
+                            cancellationToken: token
+                        );
+                    }
+                    else
+                    {
+                        await Client.SendTextMessageAsync(
+                            updateChat.Id,
+                            $"Congratulazioni a {leaderboard[0].name} per la vittoria!!\n" +
+                                $"Vai pure a festeggiare",
+                            cancellationToken: token
+                        );
+                    }
+
+                    string leaderboardToString = leaderboard[0].ToString();
+                    for(int i = 1; i < leaderboard.Count; i++)
+                        leaderboardToString += $"\n{leaderboard[i]}";
 
                     await Client.SendTextMessageAsync(
-                        updateChat.Id, 
-                        $"Congratulazioni {win.name}, hai vinto con {win.points}!!",
-                        cancellationToken: token
-                    );
+                            updateChat.Id,
+                            $"Ecco la classifica completa:\n{leaderboardToString}",
+                            cancellationToken: token
+                        );
 
                     await EndGameCommand(updateChat, updateMessage, token);
                 }
