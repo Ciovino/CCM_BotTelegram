@@ -16,8 +16,7 @@ namespace CCM_BotTelegram
         static Random random = new();
 
         long? master, chatId;
-        string? pollId, answerPollId;
-        int? messageAnswerPollId;
+        PollInfo startingPoll;
         List<PlayerCah> players = new();
         List<Card> cards = new(), sentences = new();
 
@@ -27,16 +26,13 @@ namespace CCM_BotTelegram
         {
             master = null;
             chatId = null;
-            pollId = null;
-            answerPollId = null;
-            messageAnswerPollId = null;
         }
 
-        public Match(long chatId, string pollId, long master)
+        public Match(long chatId, PollInfo poll, long master)
         {
             this.master = master;
             this.chatId = chatId;
-            this.pollId = pollId;
+            startingPoll = poll;
 
             // Load cards
             cards.Clear();
@@ -52,7 +48,7 @@ namespace CCM_BotTelegram
             roundManager.ResetRound();
         }
 
-        public void addPlayer(long playerId)
+        public void addPlayer(long playerId, string name)
         {
             // Assign cards to player
             List<Card> playerCards = new();
@@ -71,12 +67,17 @@ namespace CCM_BotTelegram
                 playerCards.Add(cards[cardIdx]);
             }
 
-            players.Add(new(playerId, playerCards));
+            players.Add(new(playerId, playerCards, name));
         }
 
         public bool IsMatchPoll(string pollId) 
         { 
-            return pollId == this.pollId;
+            return pollId == startingPoll.id;
+        }
+
+        public int GetStartingPollMessageId()
+        {
+            return startingPoll.messageId;
         }
 
         public long GetChatId() 
@@ -199,25 +200,25 @@ namespace CCM_BotTelegram
             return GetPlayerCard(players[idx].GetId())[cardIdx];
         }
 
-        public void SaveAnswerPoll(string answerPollId, int messageId)
+        public void SaveAnswerPoll(PollInfo answerPoll)
         {
-            this.answerPollId = answerPollId;
-            messageAnswerPollId = messageId;
+            players[roundManager.playerCardChoosen].AnswerPoll = answerPoll;
         }
 
         public bool OpenAnswerPoll()
         {
-            return messageAnswerPollId != null;
+            if (roundManager.playerCardChoosen == -1) return false;
+            return players[roundManager.playerCardChoosen].InvalidPlayer();
         }
 
         public int GetMessageAnswerPollId()
         {
-            return messageAnswerPollId.Value;
+            return players[roundManager.playerCardChoosen].AnswerPoll.messageId;
         }
 
         public bool IsAnswerPoll(string pollId)
         {
-            return pollId == answerPollId;
+            return pollId.Equals(players[roundManager.playerCardChoosen].AnswerPoll.id);
         }
 
         public void AddPoints(int answer)
@@ -264,6 +265,27 @@ namespace CCM_BotTelegram
             return true;
         }
 
+        public WinningPlayerStats WinningPlayer()
+        {
+            int maxPoints = -1;
+            int idx_max = 0;
+
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (players[i].GetPoints() > maxPoints)
+                {
+                    idx_max = i;
+                    maxPoints = players[i].GetPoints();
+                }
+            }
+
+            return new WinningPlayerStats { 
+                id = players[idx_max].GetId(), 
+                name = players[idx_max].GetName(), 
+                points = players[idx_max].GetPoints()
+            };
+        }
+
         public void Reset()
         {
             // Reset Cards
@@ -277,34 +299,32 @@ namespace CCM_BotTelegram
             // Reset chatId
             chatId = null;
 
-            // Reset poll
-            pollId = null;
-
             // Reset master
             master = null;
-
-            // Reset answerPoll
-            answerPollId = null;
-            messageAnswerPollId = null;
         }
     }
 
     class PlayerCah
     {
         long id;
+        string name;
         List<Card> cards = new();
         public int ChosenCard { get; set; }
         public bool ShownAnswer { get; set; }
-        int points;
+        public PollInfo AnswerPoll { get; set; }
 
-        public PlayerCah(long id, List<Card> cards)
+        public int points;  
+
+        public PlayerCah(long id, List<Card> cards, string name)
         {
             this.id = id;
             this.cards = cards;
             points = 0;
+            this.name = name;
         }
 
         public long GetId() { return id; }
+        public string GetName() { return name; }
 
         public List<Card> GetPlayerCards() { return cards; }
 
@@ -320,6 +340,8 @@ namespace CCM_BotTelegram
         }
 
         public int GetPoints() { return points; }
+
+        public bool InvalidPlayer() { return id < 0; }
     }
 
     class Round
@@ -336,6 +358,7 @@ namespace CCM_BotTelegram
             answerShown = 0;
             this.chosenSentence = chosenSentence;
             playerWhoDecide = new();
+            playerCardChoosen = -1;
         }
 
         public void playerChoose(long player) 
