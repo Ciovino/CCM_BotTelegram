@@ -1,9 +1,5 @@
-﻿using Microsoft.VisualBasic;
-using Newtonsoft.Json.Linq;
-using System.Threading;
-using System.Timers;
+﻿using System.Timers;
 using Telegram.Bot;
-using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
@@ -71,10 +67,15 @@ namespace CCM_BotTelegram
 
         private async static Task UpdateHandler(ITelegramBotClient bot, Update update, CancellationToken token)
         {
-            if (update.Type == UpdateType.Message)
+            string text = "";
+            if(update.Type == UpdateType.Message)
             {
-                string text = update.Message.Text ?? "";
+                text = update.Message.Text ?? "";
+            }            
 
+            // bot_state command: Print the state of the command
+            if (update.Type == UpdateType.Message) // Debug Time
+            {
                 if (text[0] == '/') // Possible Command
                 {
                     if (SimpleCommand(text) == "bot_state")
@@ -90,56 +91,20 @@ namespace CCM_BotTelegram
             switch (botState)
             {                 
                 case State.Idle:
-                    if (update.Type == UpdateType.Message)      
+                    if (update.Type == UpdateType.Message)
                     {
-                        string text = update.Message.Text ?? "";
-                        long chatId = update.Message.Chat.Id;
-
                         if (text[0] == '/') // Possible Command
                         {
                             switch (SimpleCommand(text))
                             {
                                 case "play":
-                                    if (update.Message.Chat.Type == ChatType.Group || update.Message.Chat.Type == ChatType.Supergroup)
-                                    {
-                                        botState = State.WaitPoll_cah;
-
-                                        Message pollMatch = await bot.SendPollAsync(chatId: chatId, 
-                                            question: "Chi vuole giocare?",
-                                            options: new[] {"Io sii", "Ma vatten"},
-                                            isAnonymous: false,
-                                            allowsMultipleAnswers: false,
-                                            replyToMessageId: update.Message.MessageId,
-                                            cancellationToken: token);
-
-                                        cahMatch = new(
-                                            chatId, 
-                                            new PollInfo { id = pollMatch.Poll.Id, messageId = pollMatch.MessageId }, 
-                                            update.Message.From.Id
-                                        );
-                                    }
-                                    else
-                                    {
-                                        await bot.SendTextMessageAsync(chatId, $"Per usare il comando {text} devi essere in un gruppo",
-                                        cancellationToken: token);
-                                    }
-                                    
-                                    break;
-
-                                case "bot_state":
-                                    Console.WriteLine(botState);
-                                    await bot.SendTextMessageAsync(update.Message.Chat.Id, $"{botState}", cancellationToken: token);
+                                    await PlayCommand(update.Message.Chat, update.Message, token);                                    
                                     break;
 
                                 default:
-                                    await bot.SendTextMessageAsync(chatId, $"Il comando /{SimpleCommand(text)} non esiste",
-                                        cancellationToken: token);
+                                    await NoSuchCommand(update.Message.Chat, update.Message, token);
                                     break;
                             }
-                        }
-                        else // Normal message
-                        {
-                            
                         }
                     }
                     break;
@@ -159,38 +124,18 @@ namespace CCM_BotTelegram
                     }
                     else if (update.Type == UpdateType.Message)
                     {
-                        string text = update.Message.Text ?? "";
-                        long chatId = update.Message.Chat.Id;
-
                         if (text[0] == '/') // Possible Command
                         {
                             switch (SimpleCommand(text))
                             {
-                                case "start":
-                                    if (cahMatch.GetChatId() == chatId) 
-                                    {
-                                        if (cahMatch.GetMasterId() == update.Message.From.Id)
-                                        {
-                                            await StartMatch();
-                                        }
-                                        else
-                                        {
-                                            await bot.SendTextMessageAsync(chatId, "Solo il master puo' usare quel comando",
-                                                cancellationToken: token);
-                                        }
-                                    }
-                                        
+                                case "start_game":
+                                    await StartGameCommand(update.Message.Chat, update.Message, token);                                        
                                     break;
 
                                 default:
-                                    await bot.SendTextMessageAsync(chatId, $"Il comando /{SimpleCommand(text)} non esiste",
-                                        cancellationToken: token);
+                                    await NoSuchCommand(update.Message.Chat, update.Message, token);
                                     break;
                             }
-                        }
-                        else // Normal message
-                        {
-
                         }
                     }
                     break;
@@ -198,61 +143,20 @@ namespace CCM_BotTelegram
                 case State.Playing_cah:
                     if (update.Type == UpdateType.Message)
                     {
-                        string text = update.Message.Text ?? "";
-                        long chatId = update.Message.Chat.Id;
-
                         if (text[0] == '/') // Possible Command
                         {
                             switch (SimpleCommand(text))
                             {
                                 case "stop":
-                                    if (cahMatch.GetChatId() == chatId)
-                                    {
-                                        if (cahMatch.GetMasterId() == update.Message.From.Id)
-                                        {
-                                            botState = State.Idle;
-                                            ResetMatch();
-                                            await bot.SendTextMessageAsync(chatId, "Partita annullata",
-                                                cancellationToken: token);
-                                        }
-                                        else
-                                        {
-                                            await bot.SendTextMessageAsync(chatId, "Solo il master puo' usare quel comando", 
-                                                cancellationToken: token);
-                                        }
-                                    }                                    
+                                    await EndGameCommand(update.Message.Chat, update.Message, token);                                    
                                     break;
 
                                 case "start_round":
-                                    if (cahMatch.GetChatId() == chatId)
-                                    {
-                                        if (cahMatch.GetMasterId() == update.Message.From.Id)
-                                        {
-                                            botState = State.Round;
-                                            await bot.SendTextMessageAsync(chatId, "Inizio Round. Avete 60 secondi per scegliere la vostra carta",
-                                                cancellationToken: token);
-
-                                            Card sentence = cahMatch.StartRound();
-                                            List<long> allPlayers = cahMatch.GetPlayers();
-                                            foreach (long player in allPlayers)
-                                            {
-                                                await Client.SendTextMessageAsync(player, $"Frase: {sentence.text.Replace("_", "________")}",
-                                                    cancellationToken: cts.Token);
-                                            }
-
-                                            SetRoundTimer();
-                                        }
-                                        else
-                                        {
-                                            await bot.SendTextMessageAsync(chatId, "Solo il master puo' usare quel comando",
-                                                cancellationToken: token);
-                                        }
-                                    }
+                                    await StartRoundCommand(update.Message.Chat, update.Message, token);
                                     break;
 
                                 default:
-                                    await bot.SendTextMessageAsync(chatId, $"Il comando /{SimpleCommand(text)} non esiste",
-                                        cancellationToken: token);
+                                    await NoSuchCommand(update.Message.Chat, update.Message, token);
                                     break;
                             }
                         }
@@ -265,9 +169,11 @@ namespace CCM_BotTelegram
                             {
                                 if (userId == userChatId)
                                 {
-                                    await bot.DeleteMessageAsync(update.Message.Chat.Id, update.Message.MessageId, token);
-                                    await bot.SendTextMessageAsync(update.Message.Chat.Id, "La partita non è ancora iniziata", 
-                                        cancellationToken: token);
+                                    await bot.DeleteMessageAsync(
+                                        update.Message.Chat.Id, 
+                                        update.Message.MessageId, 
+                                        token
+                                    );
                                 }                                
                             }
                         }
@@ -277,7 +183,6 @@ namespace CCM_BotTelegram
                 case State.Round:
                     if (update.Type == UpdateType.Message)
                     {
-                        string text = update.Message.Text ?? "";
                         long chatId = update.Message.Chat.Id;
                         var userId = update.Message.From.Id;
 
@@ -296,15 +201,26 @@ namespace CCM_BotTelegram
 
                                 if(idx == -1)
                                 {
-                                    await bot.DeleteMessageAsync(chatId, update.Message.MessageId, token);
-                                    await bot.SendTextMessageAsync(chatId, "Scegli una tra le tue 10 carte",
-                                        cancellationToken: token);
+                                    await bot.DeleteMessageAsync(
+                                        chatId, 
+                                        update.Message.MessageId, 
+                                        token
+                                    );
+
+                                    await bot.SendTextMessageAsync(
+                                        chatId, 
+                                        "Scegli una tra le tue 10 carte",
+                                        cancellationToken: token
+                                    );
                                 }
                                 else
                                 {
                                     cahMatch.SetPlayerChoice(userId, idx);
-                                    await bot.SendTextMessageAsync(chatId, "Scelta salvata",
-                                        cancellationToken: token);
+                                    await bot.SendTextMessageAsync(
+                                        chatId, 
+                                        "Scelta salvata",
+                                        cancellationToken: token
+                                    );
                                 }
                             }
                         }
@@ -314,65 +230,16 @@ namespace CCM_BotTelegram
                 case State.ShowAnswers:
                     if (update.Type == UpdateType.Message)
                     {
-                        string text = update.Message.Text ?? "";
-                        long chatId = update.Message.Chat.Id;
-
                         if (text[0] == '/') // Possible Command
                         {
                             switch (SimpleCommand(text))
                             {
                                 case "next":
-                                    if (cahMatch.GetChatId() == chatId)
-                                    {
-                                        if (cahMatch.GetMasterId() == update.Message.From.Id)
-                                        {
-                                            if (cahMatch.HasNextAnswer())
-                                            {
-                                                Card nextAnswer = cahMatch.GetNextAnswer();
-                                                Card sentence = cahMatch.GetRoundSentence();
-
-                                                string completeSentence = sentence.text;
-                                                if (completeSentence.Contains('_'))
-                                                    completeSentence = completeSentence.Replace("_", nextAnswer.text);
-                                                else
-                                                    completeSentence = $"{completeSentence} {nextAnswer.text}";
-
-                                                Message answerPoll = await bot.SendPollAsync(chatId: chatId,
-                                                    question: $"{completeSentence}.\nFa ridere?",
-                                                    options: new[] { "Tantissimoo", "Ho visto di meglio" , "Per niente" },
-                                                    isAnonymous: false,
-                                                    allowsMultipleAnswers: false,
-                                                    cancellationToken: token);
-
-                                                cahMatch.SaveAnswerPoll(
-                                                    new PollInfo { id = answerPoll.Poll.Id, messageId = answerPoll.MessageId }
-                                                );
-                                            }
-                                            else
-                                            {
-                                                botState = State.Points;
-                                                await bot.SendTextMessageAsync(chatId, "Round finito",
-                                                    cancellationToken: token);
-
-                                                List<long> allPlayers = cahMatch.GetPlayers();
-                                                foreach (long player in allPlayers)
-                                                { 
-                                                    await Client.SendTextMessageAsync(player, $"Hai {cahMatch.GetPlayerPoints(player)} punti",
-                                                        cancellationToken: cts.Token);
-                                                }
-                                            }
-                                        }
-                                        else
-                                        {
-                                            await bot.SendTextMessageAsync(chatId, "Solo il master puo' usare quel comando",
-                                                cancellationToken: token);
-                                        }
-                                    }
+                                    await NextAnswerCommand(update.Message.Chat, update.Message, token);
                                     break;
 
                                 default:
-                                    await bot.SendTextMessageAsync(chatId, $"Il comando /{SimpleCommand(text)} non esiste",
-                                        cancellationToken: token);
+                                    await NoSuchCommand(update.Message.Chat, update.Message, token);
                                     break;
                             }
                         }
@@ -389,89 +256,20 @@ namespace CCM_BotTelegram
                 case State.Points:
                     if (update.Type == UpdateType.Message)
                     {
-                        string text = update.Message.Text ?? "";
-                        long chatId = update.Message.Chat.Id;
-
                         if (text[0] == '/') // Possible Command
                         {
                             switch (SimpleCommand(text))
                             {
                                 case "start_round":
-                                    if (cahMatch.GetChatId() == chatId)
-                                    {
-                                        if (cahMatch.GetMasterId() == update.Message.From.Id)
-                                        {
-                                            // Update Cards
-                                            cahMatch.UpdatePlayersCards();
-
-                                            // Update Player Keyboard
-                                            List<long> allPlayers = cahMatch.GetPlayers();
-
-                                            foreach (long player in allPlayers)
-                                            {
-                                                List<Card> playerCard = cahMatch.GetPlayerCard(player);
-                                                ReplyKeyboardMarkup playerCardsKeyboard = new(
-                                                    new[] {
-                                                new KeyboardButton[] { playerCard[0].text, playerCard[1].text },
-                                                new KeyboardButton[] { playerCard[2].text, playerCard[3].text },
-                                                new KeyboardButton[] { playerCard[4].text, playerCard[5].text },
-                                                new KeyboardButton[] { playerCard[6].text, playerCard[7].text },
-                                                new KeyboardButton[] { playerCard[8].text, playerCard[9].text }
-                                                    });
-
-                                                await Client.SendTextMessageAsync(player, "Hai una nuova carta",
-                                                    replyMarkup: playerCardsKeyboard,
-                                                    cancellationToken: cts.Token);
-                                            }
-
-                                            // Start a new Round
-                                            botState = State.Round;
-                                            await bot.SendTextMessageAsync(chatId, "Inizio Round. Avete 60 secondi per scegliere la vostra carta",
-                                               cancellationToken: token);
-
-                                            Card sentence = cahMatch.StartRound();
-                                            foreach (long player in allPlayers)
-                                            {
-                                                await Client.SendTextMessageAsync(player, $"Frase: {sentence.text.Replace("_", "________")}",
-                                                    cancellationToken: cts.Token);
-                                            }
-
-                                            SetRoundTimer();
-                                        }
-                                        else
-                                        {
-                                            await bot.SendTextMessageAsync(chatId, "Solo il master puo' usare quel comando",
-                                                cancellationToken: token);
-                                        }
-                                    }                                    
+                                    await UpdatePlayersCardsCommand(update.Message.Chat, update.Message, token);
                                     break;
 
                                 case "stop":
-                                    if (cahMatch.GetChatId() == chatId)
-                                    {
-                                        if (cahMatch.GetMasterId() == update.Message.From.Id)
-                                        {
-                                            WinningPlayerStats win = cahMatch.WinningPlayer();
-
-                                            await bot.SendTextMessageAsync(chatId, $"Congratulazioni {win.name}, hai vinto con {win.points}!!",
-                                                cancellationToken: token);
-
-                                            ResetMatch();
-                                            botState = State.Idle;
-                                            await bot.SendTextMessageAsync(chatId, "Partita terminata",
-                                                cancellationToken: token);
-                                        }
-                                        else
-                                        {
-                                            await bot.SendTextMessageAsync(chatId, "Solo il master puo' usare quel comando",
-                                                cancellationToken: token);
-                                        }
-                                    }
+                                    await WinningPlayerCommand(update.Message.Chat, update.Message, token);
                                     break;
 
                                 default:
-                                    await bot.SendTextMessageAsync(chatId, $"Il comando /{SimpleCommand(text)} non esiste",
-                                        cancellationToken: token);
+                                    await NoSuchCommand(update.Message.Chat, update.Message, token);
                                     break;
                             }
                         }
@@ -481,6 +279,254 @@ namespace CCM_BotTelegram
                 default: break;
             }
         }        
+
+        public static async Task PlayCommand(Chat updateChat, Message updateMessage, CancellationToken token)
+        {
+            if (updateChat.Type == ChatType.Group || updateChat.Type == ChatType.Supergroup)
+            {
+                botState = State.WaitPoll_cah;
+
+                Message pollMatch = await Client.SendPollAsync(
+                    chatId: updateChat.Id,
+                    question: "Chi vuole giocare?",
+                    options: new[] { "Io sii", "Ma vatten" },
+                    isAnonymous: false,
+                    allowsMultipleAnswers: false,
+                    replyToMessageId: updateMessage.MessageId,
+                    cancellationToken: token
+                );
+
+                cahMatch = new(
+                    updateChat.Id,
+                    new PollInfo { id = pollMatch.Poll.Id, messageId = pollMatch.MessageId },
+                    updateMessage.From.Id
+                );
+            }
+            else
+            {
+                await Client.SendTextMessageAsync(
+                    updateChat.Id,
+                    $"Per usare il comando {SimpleCommand(updateMessage.Text)} devi essere in un gruppo",
+                    cancellationToken: token
+                );
+            }
+        }
+
+        public static async Task StartGameCommand(Chat updateChat, Message updateMessage, CancellationToken token)
+        {
+            if (cahMatch.GetChatId() == updateChat.Id)
+            {
+                if (cahMatch.GetMasterId() == updateMessage.From.Id)
+                {
+                    await StartMatch();
+                }
+                else
+                {
+                    await Client.SendTextMessageAsync(
+                        updateChat.Id, 
+                        "Solo il master puo' usare quel comando",
+                        cancellationToken: token
+                    );
+                }
+            }
+        }
+
+        public static async Task UpdatePlayersCardsCommand(Chat updateChat, Message updateMessage, CancellationToken token)
+        {
+            if (cahMatch.GetChatId() == updateChat.Id)
+            {
+                if (cahMatch.GetMasterId() == updateMessage.From.Id)
+                {
+                    // Update Cards
+                    cahMatch.UpdatePlayersCards();
+
+                    // Update Player Keyboard
+                    List<long> allPlayers = cahMatch.GetPlayers();
+
+                    foreach (long player in allPlayers)
+                    {
+                        await Client.SendTextMessageAsync(
+                            player, 
+                            "Hai una nuova carta",
+                            replyMarkup: CreatePlayerDeck(player),
+                            cancellationToken: cts.Token
+                        );
+                    }
+
+                    // Start a new Round
+                    await StartRoundCommand(updateChat, updateMessage, token);
+                }
+                else
+                {
+                    await Client.SendTextMessageAsync(
+                        updateChat.Id, 
+                        "Solo il master puo' usare quel comando",
+                        cancellationToken: token
+                    );
+                }
+            }
+        }
+
+        public static async Task StartRoundCommand(Chat updateChat, Message updateMessage, CancellationToken token)
+        {
+            if (cahMatch.GetChatId() == updateChat.Id)
+            {
+                if (cahMatch.GetMasterId() == updateMessage.From.Id)
+                {
+                    botState = State.Round;
+                    await Client.SendTextMessageAsync(
+                        updateChat.Id, 
+                        "Inizio Round. Avete 60 secondi per scegliere la vostra carta",
+                        cancellationToken: token
+                    );
+
+                    Card sentence = cahMatch.StartRound();
+
+                    List<long> allPlayers = cahMatch.GetPlayers();
+                    foreach (long player in allPlayers)
+                    {
+                        await Client.SendTextMessageAsync(
+                            player, 
+                            $"Frase: {sentence.text.Replace("_", "________")}",
+                            cancellationToken: cts.Token
+                        );
+                    }
+
+                    SetRoundTimer();
+                }
+                else
+                {
+                    await Client.SendTextMessageAsync(
+                        updateChat.Id, 
+                        "Solo il master puo' usare quel comando",
+                        cancellationToken: token
+                    );
+                }
+            }
+        }
+
+        public static async Task NextAnswerCommand(Chat updateChat, Message updateMessage, CancellationToken token)
+        {
+            if (cahMatch.GetChatId() == updateChat.Id)
+            {
+                if (cahMatch.GetMasterId() == updateMessage.From.Id)
+                {
+                    if (cahMatch.HasNextAnswer())
+                    {
+                        Card nextAnswer = cahMatch.GetNextAnswer();
+                        Card sentence = cahMatch.GetRoundSentence();
+
+                        Message answerPoll = await Client.SendPollAsync(
+                            chatId: updateChat.Id,
+                            question: $"{CompleteSentence(sentence.text, nextAnswer.text)}.\n\nFa ridere?",
+                            options: new[] { "Tantissimoo", "Ho visto di meglio", "Per niente" },
+                            isAnonymous: false,
+                            allowsMultipleAnswers: false,
+                            cancellationToken: token
+                        );
+
+                        cahMatch.SaveAnswerPoll(
+                            new PollInfo { 
+                                id = answerPoll.Poll.Id, 
+                                messageId = answerPoll.MessageId 
+                        });
+                    }
+                    else
+                    {
+                        botState = State.Points;
+                        await Client.SendTextMessageAsync(
+                            updateChat.Id, 
+                            "Round finito",
+                            cancellationToken: token
+                        );
+
+                        List<long> allPlayers = cahMatch.GetPlayers();
+                        foreach (long player in allPlayers)
+                        {
+                            await Client.SendTextMessageAsync(
+                                player, 
+                                $"Hai {cahMatch.GetPlayerPoints(player)} punti",
+                                cancellationToken: cts.Token
+                            );
+                        }
+                    }
+                }
+                else
+                {
+                    await Client.SendTextMessageAsync(
+                        updateChat.Id, 
+                        "Solo il master puo' usare quel comando", 
+                        cancellationToken: token
+                    );
+                }
+            }
+        }
+
+        public static async Task WinningPlayerCommand(Chat updateChat, Message updateMessage, CancellationToken token)
+        {
+            if (cahMatch.GetChatId() == updateChat.Id)
+            {
+                if (cahMatch.GetMasterId() == updateMessage.From.Id)
+                {
+                    WinningPlayerStats win = cahMatch.WinningPlayer();
+
+                    await Client.SendTextMessageAsync(
+                        updateChat.Id, 
+                        $"Congratulazioni {win.name}, hai vinto con {win.points}!!",
+                        cancellationToken: token
+                    );
+
+                    await EndGameCommand(updateChat, updateMessage, token);
+                }
+                else
+                {
+                    await Client.SendTextMessageAsync(
+                        updateChat.Id, 
+                        "Solo il master puo' usare quel comando",
+                        cancellationToken: token
+                    );
+                }
+            }
+        }
+
+        public static async Task EndGameCommand(Chat updateChat, Message updateMessage, CancellationToken token)
+        {
+            if (cahMatch.GetChatId() == updateChat.Id)
+            {
+                if (cahMatch.GetMasterId() == updateMessage.From.Id)
+                {
+                    botState = State.Idle;
+                    
+                    if (cahMatch.GetRoundNumber() == 0)
+                    {
+                        await Client.SendTextMessageAsync(
+                            updateChat.Id, 
+                            "Partita annullata",
+                            cancellationToken: token
+                        );
+                    }
+
+                    ResetMatch();
+                }
+                else
+                {
+                    await Client.SendTextMessageAsync(
+                        updateChat.Id, 
+                        "Solo il master puo' usare quel comando",
+                        cancellationToken: token
+                    );
+                }
+            }
+        }
+
+        public static async Task NoSuchCommand(Chat updateChat, Message updateMessage, CancellationToken token)
+        {
+            await Client.SendTextMessageAsync(
+                updateChat.Id,
+                $"Il comando /{SimpleCommand(updateMessage.Text)} non esiste",
+                cancellationToken: token
+            );
+        }
 
         public static string SimpleCommand(string command)
         {
@@ -495,6 +541,36 @@ namespace CCM_BotTelegram
             return command;
         }
 
+        public static string CompleteSentence(string sentence, string answer)
+        {
+            string completeSentence;
+
+            if (sentence.Contains("_"))
+                completeSentence = sentence.Replace("_", answer);
+            else
+                completeSentence = $"{sentence} {answer}";
+
+            return completeSentence;
+        }
+
+        public static ReplyKeyboardMarkup CreatePlayerDeck(long player)
+        {
+            List<Card> playerCard = cahMatch.GetPlayerCard(player);
+            ReplyKeyboardMarkup playerCardsKeyboard = new(
+            new[] {
+                new KeyboardButton[] { playerCard[0].text, playerCard[1].text },
+                new KeyboardButton[] { playerCard[2].text, playerCard[3].text },
+                new KeyboardButton[] { playerCard[4].text, playerCard[5].text },
+                new KeyboardButton[] { playerCard[6].text, playerCard[7].text },
+                new KeyboardButton[] { playerCard[8].text, playerCard[9].text }
+            })
+            {
+                ResizeKeyboard = true
+            };
+
+            return playerCardsKeyboard;
+        }
+
         private async static Task StartMatch()
         {
             await Client.StopPollAsync(cahMatch.GetChatId(), cahMatch.GetStartingPollMessageId(), cancellationToken: cts.Token);
@@ -507,25 +583,20 @@ namespace CCM_BotTelegram
 
                 foreach (long player in allPlayers)
                 {
-                    List<Card> playerCard = cahMatch.GetPlayerCard(player);
-                    ReplyKeyboardMarkup playerCardsKeyboard = new(
-                        new[] {
-                            new KeyboardButton[] { playerCard[0].text, playerCard[1].text },
-                            new KeyboardButton[] { playerCard[2].text, playerCard[3].text },
-                            new KeyboardButton[] { playerCard[4].text, playerCard[5].text },
-                            new KeyboardButton[] { playerCard[6].text, playerCard[7].text },
-                            new KeyboardButton[] { playerCard[8].text, playerCard[9].text }
-                        })
-                    {
-                        ResizeKeyboard = true
-                    };
-
-                    await Client.SendTextMessageAsync(player, "Sotto ci sono le tue carte",
-                        replyMarkup: playerCardsKeyboard,
-                        cancellationToken: cts.Token);
+                    await Client.SendTextMessageAsync(
+                        player, 
+                        "Sotto ci sono le tue carte",
+                        replyMarkup: CreatePlayerDeck(player),
+                        cancellationToken: cts.Token
+                    );
                 }
 
-                await Client.SendTextMessageAsync(cahMatch.GetChatId(), "Il master controlla la partita", cancellationToken: cts.Token);
+                await Client.SendTextMessageAsync(
+                    cahMatch.GetChatId(), 
+                    "Il master controlla la partita", 
+                    cancellationToken: cts.Token
+                );
+
                 await Client.SendTextMessageAsync(
                     cahMatch.GetChatId(), 
                     "Si comincia", 
@@ -539,6 +610,7 @@ namespace CCM_BotTelegram
                     "Non ci sono abbastanza giocatori", 
                     cancellationToken: cts.Token
                 );
+
                 botState = State.Idle;
             }
         }
@@ -549,8 +621,12 @@ namespace CCM_BotTelegram
             List<long> allPlayers = cahMatch.GetPlayers();
             foreach (long player in allPlayers)
             { 
-                await Client.SendTextMessageAsync(player, "Partita terminata",
-                    cancellationToken: cts.Token);
+                await Client.SendTextMessageAsync(
+                    player, 
+                    "Partita terminata",
+                    replyMarkup: new ReplyKeyboardRemove(),
+                    cancellationToken: cts.Token
+                );
             }
 
             cahMatch.Reset();
@@ -574,13 +650,20 @@ namespace CCM_BotTelegram
                 {
                     Card randomChoice = cahMatch.ChooseRandomly(player);
 
-                    await Client.SendTextMessageAsync(player, $"Hai impegato troppo tempo nello scegliere la carta. Ho scelto io questa per te: {randomChoice.text}", 
-                        cancellationToken: cts.Token);
+                    await Client.SendTextMessageAsync(
+                        player, 
+                        $"Hai impegato troppo tempo nello scegliere la carta. Ho scelto io questa" +
+                        $" per te: {randomChoice.text}",
+                        cancellationToken: cts.Token
+                    );
                 }
             }
 
-            await Client.SendTextMessageAsync(cahMatch.GetChatId(), "Tempo scaduto. E' ora di vedere le vostre frasi",
-                cancellationToken: cts.Token);
+            await Client.SendTextMessageAsync(
+                cahMatch.GetChatId(), 
+                "Tempo scaduto. E' ora di vedere le vostre frasi",
+                cancellationToken: cts.Token
+            );
 
             botState = State.ShowAnswers;
         }

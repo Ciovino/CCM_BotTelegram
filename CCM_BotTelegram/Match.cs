@@ -131,6 +131,11 @@ namespace CCM_BotTelegram
             return sentence;
         }
 
+        public int GetRoundNumber()
+        {
+            return roundManager.RoundNumber();
+        }
+
         public void SetPlayerChoice(long playerId, int choise)
         {            
             for(int i = 0; i < players.Count; i++)
