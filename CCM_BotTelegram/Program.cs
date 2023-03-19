@@ -73,7 +73,7 @@ namespace CCM_BotTelegram
                 text = update.Message.Text ?? "";
             }            
 
-            // bot_state command: Print the state of the command
+            // bot_state command: Print the state of the bot
             if (update.Type == UpdateType.Message) // Debug Time
             {
                 if (text[0] == '/') // Possible Command
@@ -118,7 +118,7 @@ namespace CCM_BotTelegram
                             if (update.PollAnswer.OptionIds[0] == 0)
                             {
                                 var user = update.PollAnswer.User;
-                                cahMatch.addPlayer(user.Id, user.FirstName);
+                                cahMatch.AddPlayer(user.Id, user.FirstName);
                             }
                         }
                     }
