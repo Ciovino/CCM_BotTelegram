@@ -36,6 +36,9 @@ namespace CCM_BotTelegram
         public int GetSettingMessageId() { return setting.MessageSettingId; }
         public void SetSettingRound(int newRound) { setting.Round = newRound; }
         public string GetSettingRound() { return setting.RoundToString(); }
+        public string GetSettingTieAllowed() { return setting.TieAllowedToString(); }
+        public bool IsTieAllowed() { return setting.TieAllowed; }
+        public void SetSettingTieAllowed(bool newTieAllowed) { setting.TieAllowed = newTieAllowed; }
 
         // Pre-match
         public bool Start() { return players.Count > 1; }
@@ -233,6 +236,21 @@ namespace CCM_BotTelegram
             return leaderboard;
         }
 
+        public int HowManyTied()
+        {
+            List<PlayerStats> leaderboard = Leaderboard();
+
+            int tie = 0;
+            for (int i = 1; i < leaderboard.Count; i++)
+            {
+                if (leaderboard[i].points == leaderboard[0].points)
+                    tie++;
+                else
+                    break;
+            }
+
+            return tie;
+        }
         
     } 
 

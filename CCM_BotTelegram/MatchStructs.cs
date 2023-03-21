@@ -31,12 +31,16 @@
     {
         public int MessageSettingId { get; set; }
         public int Round { get; set; } // -1 means infinite round
+        public bool TieAllowed { get; set; }
 
-        public MatchSetting(int round, int messageSettingId)
+        public MatchSetting(int round, int messageSettingId, bool tieAllowed)
         {
             Round = round;
             MessageSettingId = messageSettingId;
+            TieAllowed = tieAllowed;
         }
         public string RoundToString() { return Round == -1 ? "Infiniti" : Round.ToString(); }
+
+        public string TieAllowedToString() { return TieAllowed ? "Si" : "No"; }
     }
 }
