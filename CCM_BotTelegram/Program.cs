@@ -179,9 +179,23 @@ namespace CCM_BotTelegram
                             {
                                 botState = State.Setting_Tie;
 
+                                InlineKeyboardMarkup inlineKeyboard = new(new[]
+                                {
+                                    new [] {
+                                        InlineKeyboardButton.WithCallbackData(
+                                            text: "Si",
+                                            callbackData: "10"
+                                        ),
+                                        InlineKeyboardButton.WithCallbackData(
+                                            text: "No",
+                                            callbackData: "11")
+                                    }
+                                });
+
                                 await Client.SendTextMessageAsync(
                                     cahMatch.GetChatId(),
                                     $"Vuoi consentire il pareggio?",
+                                    replyMarkup: inlineKeyboard,
                                     cancellationToken: token
                                 );
                             }
@@ -204,7 +218,7 @@ namespace CCM_BotTelegram
                                 int idx = -1;
                                 for(int i = 0; i < playerCard.Count; i++)
                                 {
-                                    if (playerCard[i].text == text)
+                                    if (playerCard[i].text.ToLower() == text.ToLower())
                                         idx = i;
                                 }
 
@@ -362,31 +376,31 @@ namespace CCM_BotTelegram
                     break;
 
                 case State.Setting_Tie:
-                    if(update.Type == UpdateType.Message)
+                    if(update.Type == UpdateType.CallbackQuery)
                     {
-                        if (cahMatch.GetMasterId() == update.Message.From.Id)
+                        if (update.CallbackQuery.From.Id == cahMatch.GetMasterId())
                         {
-                            string newTie = text;
+                            if(update.CallbackQuery.Data == "10") // Tie Allowed
+                                cahMatch.SetSettingTieAllowed(true);
+                            else if (update.CallbackQuery.Data == "11") // Tie not Allowed
+                                cahMatch.SetSettingTieAllowed(false);
 
-                            switch (newTie.ToLower())
-                            {
-                                case "no":
-                                    cahMatch.SetSettingTieAllowed(false);
-                                    await SettingCommand(update.Message.Chat, update.Message, token);
-                                    break;
-                                case "yes":
-                                    cahMatch.SetSettingTieAllowed(true);
-                                    await SettingCommand(update.Message.Chat, update.Message, token);
-                                    break;
-                                default:
-                                    await Client.SendTextMessageAsync(
-                                        cahMatch.GetChatId(),
-                                        text: "Devi scrivere _si_ oppure _no_\\. Non è così difficile",
-                                        parseMode: ParseMode.MarkdownV2,
-                                        cancellationToken: token
-                                    );
-                                    break;
-                            }
+                            botState = State.Playing_cah;
+
+                            await Client.DeleteMessageAsync(
+                                cahMatch.GetChatId(),
+                                cahMatch.GetSettingMessageId(),
+                                token
+                            );
+
+                            Message newSettingMessageId = await Client.SendTextMessageAsync(
+                                cahMatch.GetChatId(),
+                                "Impostazioni aggiornate",
+                                replyMarkup: SettingKeyboard(),
+                                cancellationToken: token
+                            );
+
+                            cahMatch.SetSettingMessageId(newSettingMessageId.MessageId);
                         }
                     }
                     break;
@@ -457,7 +471,7 @@ namespace CCM_BotTelegram
                     updateChat.Id,
                     new PollInfo { id = pollMatch.Poll.Id, messageId = pollMatch.MessageId },
                     updateMessage.From.Id,
-                    new MatchSetting(-1, -1, true)
+                    new MatchSetting(10, -1, false)
                 );
             }
             else
@@ -755,11 +769,11 @@ namespace CCM_BotTelegram
             List<Card> playerCard = cahMatch.GetPlayerCard(player);
             ReplyKeyboardMarkup playerCardsKeyboard = new(
             new[] {
-                new KeyboardButton[] { playerCard[0].text, playerCard[1].text },
-                new KeyboardButton[] { playerCard[2].text, playerCard[3].text },
-                new KeyboardButton[] { playerCard[4].text, playerCard[5].text },
-                new KeyboardButton[] { playerCard[6].text, playerCard[7].text },
-                new KeyboardButton[] { playerCard[8].text, playerCard[9].text }
+                new KeyboardButton[] { playerCard[0].ModifiedText(), playerCard[1].ModifiedText() },
+                new KeyboardButton[] { playerCard[2].ModifiedText(), playerCard[3].ModifiedText() },
+                new KeyboardButton[] { playerCard[4].ModifiedText(), playerCard[5].ModifiedText() },
+                new KeyboardButton[] { playerCard[6].ModifiedText(), playerCard[7].ModifiedText() },
+                new KeyboardButton[] { playerCard[8].ModifiedText(), playerCard[9].ModifiedText() }
             })
             {
                 ResizeKeyboard = true
@@ -792,7 +806,7 @@ namespace CCM_BotTelegram
 
         private async static Task StartMatch()
         {
-            await Client.StopPollAsync(
+            await Client.DeleteMessageAsync(
                 cahMatch.GetChatId(), 
                 cahMatch.GetStartingPollMessageId(), 
                 cancellationToken: cts.Token

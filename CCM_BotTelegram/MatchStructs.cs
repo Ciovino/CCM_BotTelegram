@@ -6,9 +6,17 @@
         public string text;
         public bool used;
         public bool modify;
+        public int type;
 
-        public static Card InvalidCard() { return new Card { id = -1, text = "", used = false, modify = false }; }
+        public static Card InvalidCard() { return new Card { id = -1, text = "", used = false, modify = false, type = -1 }; }
         public bool IsInvalid() { return id == -1; }
+        public string ModifiedText()
+        {
+            if (type == 1 && modify)
+                return char.ToUpper(text[0]) + text[1..];
+            else
+                return text;
+        }
     }
 
     struct PlayerStats

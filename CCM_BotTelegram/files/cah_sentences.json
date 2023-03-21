@@ -3,1008 +3,1176 @@
     "id": 0,
     "text": "\"Questa e' pazzia!\" \"No. QUESTA E' _!\"",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 1,
     "text": "...e l'avrei scampata, se non fosse stato per _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 2,
     "text": "_. Cosi' mantengo viva la mia relazione",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 3,
     "text": "_. Dammi il cinque fratello",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 4,
     "text": "_. E' cosi' che voglio morire",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 5,
     "text": "_. E' una trappola",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 6,
     "text": "_. Una meraviglia in teoria, un po' complicato nella pratica",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 7,
     "text": "_. Uno tira l'altro",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 8,
     "text": "_: buono fino all'ultima goccia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 9,
     "text": "_:testato dai bambini, approvato dalle mamme",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 10,
     "text": "_? C'e' un'applicazione per quello",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 11,
     "text": "A cosa rinuncio per la quaresima?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 12,
     "text": "A scuola non mi sono mai realmente inserito finche' non ho scoperto il club di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 13,
     "text": "Abbiamo conteggiato i voti, la nuova mascotte scolastica e' _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 14,
     "text": "Alcuni membri del Rotary Club stanno pagando migliaia di Euro per provare _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 15,
     "text": "Amarti e' facile perche' sei _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 16,
     "text": "Amico, ne ho le palle piene di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 17,
     "text": "Anziche' carbone Babbo Natale ai bambini cattivi ora porta _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 18,
     "text": "Ascolta Gary, tu mi piaci. Ma se vuoi l'ufficio migliore, dovrai mostrarmi _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 19,
     "text": "Avete visto la donna barbuta! Avete visto l'anello infuocato! E ora, signore e signori, puntate lo sguardo su _!",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 20,
     "text": "Bevo per dimenticare _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 21,
     "text": "Cara TopGirl, ho difficolta' con _ e vorrei qualche consiglio",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 22,
     "text": "Caro Leader Kim Jong-Un, in nostro villaggio rende gloria alla vostra infinita saggezza con l'umile offerta di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 23,
     "text": "Che cosa e' divertente fino a che non diventa imbarazzante?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 24,
     "text": "Che cosa ha complicato la vita al campo nudisti?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 25,
     "text": "Che cosa ha fermato l'orgia?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 26,
     "text": "Che cosa ha paracadutato l'Italia ai bambini afghani?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 27,
     "text": "Chi controlla _, controlla il mondo",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 28,
     "text": "Chiama i responsabili delle risorse umane, nessuno dovrebbe subire _ sul lavoro",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 29,
     "text": "Ciao MTV! Mi chiamo Jessica, vengo da Rimini, adoro _, e mi piace divertirmi in compagnia",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 30,
     "text": "Come abitudine, Mike Bongiorno dedicava sempre 15 minuti al giorno a _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 31,
     "text": "Come compenso il mio minuscolo pene?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 32,
     "text": "Come desidera le ali di pollo? Delicate, piccanti oppure con _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 33,
     "text": "Cos'e' che me lo fa ammosciare?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 34,
     "text": "Cos'e' che mia nonna troverebbe allarmante ma nello stesso tempo anche stranamente affascinante?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 35,
     "text": "Cos'e' questa macchia sul mio divano?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 36,
     "text": "Cos'e' questo odore?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 37,
     "text": "Cos'e' questo rumore?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 38,
     "text": "Cosa aiuterebbe Mario Monti a rilassarsi?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 39,
     "text": "Cosa fece finire la mia passata relazione?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 40,
     "text": "Cosa ho portato a casa dal Messico?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 41,
     "text": "Cosa mi crea flatulenze incontrollabili?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 42,
     "text": "Cosa mi lascia dolorante dappertutto?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 43,
     "text": "Cosa mi rende cosi' appiccicoso?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 44,
     "text": "Cosa mi rende insonne?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 45,
     "text": "Cosa mi scaldera' durante il lungo gelido inverno?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 46,
     "text": "Cosa mi stanno tenendo nascosto i miei genitori?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 47,
     "text": "Cosa migliora con l'eta'?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 48,
     "text": "Cosa non vuoi trovare nel tuo cibo cinese?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 49,
     "text": "Cosa piace a Silvio Berlusconi?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 50,
     "text": "Cosa posso portare nel passato per convincere tutti di essere un potente stregone?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 51,
     "text": "Cosa rende le cose imbarazzanti durante la sauna?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 52,
     "text": "Cosa sara' disponibile a volonta' in paradiso?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 53,
     "text": "Cosa si mangia Vin Diesel per cena?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 54,
     "text": "Cosa ti permette di portarti a letto una ragazza con assoluta certezza?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 55,
     "text": "Cosa usano gli insegnanti per ispirare al successo i ragazzi?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 56,
     "text": "Cosi e' come il mondo finira', non con una eplosione, ma con _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 57,
     "text": "Da contratto, Morgan non si esibisce senza _ nel suo camerino",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 58,
     "text": "Da oggi in libreria \"Il coraggio di _\". Un libro di Barack Obama",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 59,
     "text": "Di cosa odorano le persone anziane?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 60,
     "text": "Dietro ogni grande uomo ci sono _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 61,
     "text": "Dopo essere svenuto al capodanno, sono stato svegliato da _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 62,
     "text": "Dopo mesi di dibattito, il Partito Democratico concorda solo sulla necessita' di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 63,
     "text": "Dubai vi aspetta! Potrete rilassarvi nelle nostre celebri spa, avere un assaggio della vita notturna o semplicemente stare a bordo piscina e godervi _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 64,
     "text": "Durante il sesso mi piace pensare a _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 65,
     "text": "Durante il sottovalutato Periodo Marrone di Picasso, egli produsse centinaia di opere su _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 66,
     "text": "Durante la sua crisi di mezza eta', mio padre passo' molto tempo su _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 67,
     "text": "E la zuppa del giorno e' Crema di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 68,
     "text": "E' dura quando fai una vita spericolata. Ecco perche' non esco mai di casa senza _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 69,
     "text": "E' in agguato nella notte. E' affamato di sangue. Quest'estate, nessuno si salvera' da _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 70,
     "text": "E' un peccato che i bambini di oggi si dedichino a _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 71,
     "text": "Finalmente! Un servizio che porta _ a domicilio",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 72,
     "text": "Gesu e' _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 73,
     "text": "Giacomo era un ragazzo solitario, ma quando ha scoperto una porta segreta in soffitta, ha incontrato un magico nuovo amico: _",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 74,
     "text": "Giorgio Mastrota ora vi presentera' _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 75,
     "text": "Gira voce che a San Vittore si possanno barattare 200 sigarette per _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 76,
     "text": "Girano voci che al Vaticano ci sia una stanza segreta per _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 77,
     "text": "Gli antropologi hanno recentemente scoperto una tribu' primitiva che venera _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 78,
     "text": "Hey bellezza, vieni a casa mia, ti mostrero' _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 79,
     "text": "Ho imparato che non puoi confrontare un amico depresso con _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 80,
     "text": "Ho un sacco di problemi, ma non con _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 81,
     "text": "Ho visto un uomo che moriva per amore; ne ho visto un altro che piu' lacrime non ha. Nessun coltello mai, ti puo' ferir di piu' di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 82,
     "text": "I giapponesi hanno sviluppato una versione piu' piccola e piu' efficiente di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 83,
     "text": "I soldi non compreranno l'amore, ma possono comprarmi _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 84,
     "text": "Il governo socialista Scandinavo ha dichiarato come basilare diritto dell'umanita' l'accesso a _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 85,
     "text": "Il gusto piu' estremo che abbiate mai provato! Preparatevi per Estathe' al gusto di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 86,
     "text": "Il mio insegnante di ginnastica e' stato licenziato per aver aggiunto _ alla corsa a ostacoli",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 87,
     "text": "Il prossimo romanzo di J.K. Rowling: Harry Potter e la camera di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 88,
     "text": "In questa puntata, Bear Grylls devve sopravvivere nella foresta amazzonica con solamente _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 89,
     "text": "In un tentativo di raggiungere un maggior pubblico, il Museo di Storia Naturale apre una mostra interattiva su _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 90,
     "text": "L'appuntamento al buio stava andando orribilmente finche' non scoprimmo che a entrambi piace _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 91,
     "text": "La CIA ora interroga i prigionieri sottoponendoli ripetutamente a _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 92,
     "text": "La FIFA ha bandito _ perche' dopante",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 93,
     "text": "La giornata peggiore di sempre. Hashtag #_",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 94,
     "text": "La gita scolastica fu completamente rovinata da _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 95,
     "text": "La guarigione e' iniziata quando ho iniziato a frequentare un gruppo di sostegno per vittme di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 96,
     "text": "La guerra! Qual e' il suo lato positivo?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 97,
     "text": "La medicina alternativa sta proponendo i poteri curativi di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 98,
     "text": "La nuova norma di sicurezza aerea ora proibisce _ sugli aerei",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 99,
     "text": "La puberta' e' un momento di cambiamenti. Ti crescceranno peli in posti nuovi. Potresti anche sviluppare interesse per _. E' completamente normale",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 100,
     "text": "La scienza non spieghera' mai l'origine di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 101,
     "text": "La vita dei nativi Americani cambio' quando i coloni li introdussero a _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 102,
     "text": "Lasciatemi in pace! Sono preso da _ in questo momento",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 103,
     "text": "Ma prima di ucciderla, Signor Bond, devo mostrarle _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 104,
     "text": "Mentre gli Stati Uniti e la Russia gareggiavano per la conquista della luna, il Messico ha investito milioni di pesos per _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 105,
     "text": "Mi aiuti dottore, ho _ dentro il culo!",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 106,
     "text": "Mi dispiace signora Zhang, ma non c'era nulla che potessimo fare. Alle 4:15 di questa mattina, suo figlio e' morto per _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 107,
     "text": "Mi dispiace signore, ma nel nostro circolo non ammettiamo _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 108,
     "text": "Mi faccio il culo tutto il giorno per la mia famiglia, e quando torno a casa devo trovare _!?",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 109,
     "text": "Mi scusi professore, non ho potuto fare i compiti a causa di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 110,
     "text": "Mia mamma e' impazzita quando nella cronologia del mio browser ha visto _.com",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 111,
     "text": "Mio nonno si e' fatto strada da solo. Quando e' arrivato in questo paese, tutto quello che possedeva erano le scarpe che aveva ai piedi e _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 112,
     "text": "Nei suoi ultimi giorni, Michael Jackson faceva spesso pensieri su _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 113,
     "text": "Nel futuro, gli storici concorderanno che il nostro declino e' iniziato con _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 114,
     "text": "Nel nuovo film della Disney, Hannah Montana per la prima volta si scontra con _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 115,
     "text": "Nel settimo girone infernale, i peccatori devono subire _ per l'eternita'",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 116,
     "text": "Nel suo famoso messaggio di addio, George Washington mise in guardia agli Americani sui pericoli di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 117,
     "text": "Nel suo nuovo film d'azione, Jackie Chan deve difendersi dai ninja mentre si occupa di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 118,
     "text": "Nel suo nuovo tentativo di promuovere il turismo, la citta' di Milano dichiara di essersi liberata di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 119,
     "text": "Nel suo ultimo album, Jovanotti da rap sopra il suono di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 120,
     "text": "Nel suo ultimo spettacolo, il Mago Casanova deve scappare da _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 121,
     "text": "Nella nuova serie dell'Isola dei Famosi, le celebrita' vivranno con _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 122,
     "text": "Nella prossima puntata di Rai Educational: Come parlare a tuo figlio di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 123,
     "text": "Non per vantarmi, ma mi chiamano il Michael Jordan dei _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 124,
     "text": "Non sei solo. Milioni di persone ogni giorno fanno i conti con _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 125,
     "text": "Non so con quali armi sara' combattuta la terza Guerra Mondiale, ma la quarta sara' combattuta con _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 126,
     "text": "Non sono come voi, sono troppo ricco e impegnato per _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 127,
     "text": "Non ti preoccupare figliolo, col tempo passa tutto. Ho convissuto con _ per 20 anni",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 128,
     "text": "Ogni Natale mio zio si ubriaca e ci racconta la sua storia riguardo _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 129,
     "text": "Parla il capitano. Allacciate le cinture e preparatevi per _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 130,
     "text": "Perche' non fai piu' l'amore con me? E' per via di _?",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 131,
     "text": "Presto in tutti i teatri: _, il Musical",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 132,
     "text": "Prima di concorrere alla presidenza, devo distruggere tutte le prove del mio coinvolgimento con _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 133,
     "text": "Prossimamente su Rai Sport 2: i mondiali di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 134,
     "text": "Qual e' il miglior amico di una ragazza?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 135,
     "text": "Qual e' il mio potere segreto?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 136,
     "text": "Qual e' il trucco per ravvivare una festa?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 137,
     "text": "Qual e' il vizio di Batman?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 138,
     "text": "Qual e' la cosa piu' emo?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 139,
     "text": "Qual e' la cosa piu' incrostata?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 140,
     "text": "Qual e' la nuova dieta del momento?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 141,
     "text": "Qual e' un regalo che andra' oltre le aspettative?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 142,
     "text": "Quale sara' la prossima coppia di supereroi?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 143,
     "text": "Quale sara' la prossima sorpresa dell'Happy Meal?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 144,
     "text": "Quando eravamo piccoli giocavamo a Cowboy e _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 145,
     "text": "Quando il faraone rimase impassibile, Mose' scaneto' la piaga di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 146,
     "text": "Quando nient'altro funziona, posso sempre masturbarmi con _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 147,
     "text": "Quando saro' il capo del governo, creero' il Ministero di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 148,
     "text": "Quando saro' milionario erigero' una statua di 30 metri per commemorare _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 149,
     "text": "Quando saro' Re, come terro' in riga i miei sudditi?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 150,
     "text": "Quando sono andato in bagno, cosa e' uscito dal mio didietro?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 0
   },
   {
     "id": 151,
     "text": "Questa e' l'America. Senza il duro lavoro, non puoi avere successo. Non importa se sei nero, bianco, viola o _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 152,
     "text": "Questo mese su Donna Moderna: \"Riaccendi la passione con _\"",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 153,
     "text": "Qui nell'Istituto dei Bambini Prodigio, lasciamo che gli studenti esplorino _ alla loro maniera",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 154,
     "text": "Recenti studi hanno mostrato che topi di laboratorio impiegano il 50% di tempo in meno per uscire da un labirinto se sono esposti a _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 155,
     "text": "Seguo delle tappe precise. Primo appuntamento, cena. Secondo appuntamento, bacio. Terzo appuntamento, _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 156,
     "text": "Solo due cose nella vita sono certe: la morte e _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 157,
     "text": "Sono completamente al verde a causa di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 158,
     "text": "Sono gli anni d'oro della mia vita. Sono giovane, bello e muoi dalla voglia di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 159,
     "text": "Sono Miss Molise, e se potessi rendere il mondo migliore cambiando una sola cosa, eliminerei _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 160,
     "text": "Sono piuttosto sicuro di essere fatto, perche' sono completamente intrippato da _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 161,
     "text": "Stanotte faremo sesso. E dopo, se vorrai, anche un po' di _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 162,
     "text": "Stasera a Report: quello che non sai su _ potrebbe ucciderti",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 163,
     "text": "Tra 100 anni, quando le banconote saranno un lontano ricordo, _ sara' la nostra moneta",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 164,
     "text": "Tua madre e' talmente grassa che e' come _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 165,
     "text": "Tutti a terra e non si fara' male nessuno! Siamo qui per _!",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 166,
     "text": "Un colloquio di lavoro di successo inizia con una solida stretta di mano e finisce con _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   },
   {
     "id": 167,
     "text": "Una cena a lume di candela non sarebbe completa senza _",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 0
   }
 ]

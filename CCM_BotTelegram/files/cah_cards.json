@@ -3,4722 +3,5509 @@
     "id": 0,
     "text": "10 incredibili curiosita' sull'ano",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 1,
     "text": "72 vergini",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 2,
     "text": "abbattere Babbo Natale con missili terra-aria",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 3,
     "text": "abbuffarsi e vomitare",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 4,
     "text": "aborti con l'appendiabiti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 5,
     "text": "addominali spettacolari",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 6,
     "text": "adolescenti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 7,
     "text": "Africa",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 8,
     "text": "aggredire persone",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 9,
     "text": "aggressioni della polizia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 10,
     "text": "agricoltura",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 11,
     "text": "AIDS",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 12,
     "text": "alba e arcobaleni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 13,
     "text": "alcolismo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 14,
     "text": "alieni gay",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 15,
     "text": "alito da Pringles cipolla e paprika",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 16,
     "text": "allattamento",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 17,
     "text": "allevatori di polli bosniaci",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 18,
     "text": "ambiguita' morale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 19,
     "text": "ambrogio, il mio maggiordomo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 20,
     "text": "amici che ti svuotano la dispensa",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 21,
     "text": "andare a fuoco",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 22,
     "text": "andare a Lourdes",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 23,
     "text": "andare a tutta velocita'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 24,
     "text": "andare in giro a prendere a pugni le persone",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 25,
     "text": "andare in prigione direttamente senza passare dal VIA",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 26,
     "text": "Andrea Dipre'",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 27,
     "text": "antica pederastia ateniese",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 28,
     "text": "anziani giapponesi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 29,
     "text": "api?",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 30,
     "text": "aprirsi un sentiero di sangue attraverso il LIDL con la scimitarra",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 31,
     "text": "Arnold Schwarzenegger",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 32,
     "text": "arrivare ai \"Paesi Bassi\"",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 33,
     "text": "asiatici di qualche tipo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 34,
     "text": "aspettare il matrimonio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 35,
     "text": "aspettarsi un rutto e vomitare sul pavimento",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 36,
     "text": "Auschwitz",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 37,
     "text": "autentica cucina calabrese",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 38,
     "text": "autismo lieve",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 39,
     "text": "auto cannibalismo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 40,
     "text": "auto commiserazione",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 41,
     "text": "auto flagellazione",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 42,
     "text": "aver capito come fare sesso con un delfino",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 43,
     "text": "aver quasi dato una monetina a un senzatetto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 44,
     "text": "avere fucili al posto delle gambe",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 45,
     "text": "avere il pene bloccato in una trappola cinese per dita, insieme a un altro pene",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 46,
     "text": "avere nove anni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 47,
     "text": "Babbo Natale",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 48,
     "text": "Babbo Natale del centro commerciale",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 49,
     "text": "bambini africani",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 50,
     "text": "bambini al guinzaglio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 51,
     "text": "bambini morti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 52,
     "text": "Barack Obama",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 53,
     "text": "barare alle Paraolimpiadi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 54,
     "text": "barboni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 55,
     "text": "barzellette sugli ebrei in momenti inopportuni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 56,
     "text": "BATMAN!!!",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 57,
     "text": "batteri mangia-carne",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 58,
     "text": "bella storia!",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 59,
     "text": "Benito Mussolini",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 60,
     "text": "bere il liquido antigelo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 61,
     "text": "bere responsabilmente",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 62,
     "text": "bersi 5 Red Bull per avere 5 paia di ali",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 63,
     "text": "Blacula - Il vampiro negro",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 64,
     "text": "Boris, il Martello Sovietico dell'Amore",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 65,
     "text": "Brad Pitt nudo e pieno d'olio",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 66,
     "text": "Britney Spears a 55 anni",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 67,
     "text": "caccole",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 68,
     "text": "cadere dentro il water",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 69,
     "text": "calcolare ogni movimento per non sembrare gay",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 70,
     "text": "caldo e vellutato sesso tra pupazzi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 71,
     "text": "calzini",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 72,
     "text": "campioni omaggio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 73,
     "text": "cantare lo yodel fuori contesto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 74,
     "text": "Capitan Findus",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 75,
     "text": "capre che mangiano lattine",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 76,
     "text": "carestia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 77,
     "text": "carisma",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 78,
     "text": "carte contro l'umanita'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 79,
     "text": "catapulte",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 80,
     "text": "cavalcare verso il tramonto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 81,
     "text": "cavalleria",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 82,
     "text": "cellule staminali embrionali",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 83,
     "text": "celodurismo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 84,
     "text": "cenare con i cartonati dei personaggi di \"Friends\"",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 85,
     "text": "chierichetti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 86,
     "text": "coccolarsi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 87,
     "text": "combattere coi nunchaku",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 88,
     "text": "combattimenti di gladiatori",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 89,
     "text": "combattimenti tra galli",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 90,
     "text": "combustione umana spontanea",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 91,
     "text": "comprare i pantaloni giusti per essere fichi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 92,
     "text": "concorsi di bellezza per bambini",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 93,
     "text": "condividere siringhe",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 94,
     "text": "consulenti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 95,
     "text": "convertire i senzatetto in antenne wifi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 96,
     "text": "copertura mediatica",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 97,
     "text": "correre nudi in un centro commerciale, pisciando e cagando ovunque",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 98,
     "text": "cosce poderose",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 99,
     "text": "cose anali",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 100,
     "text": "costosi status symbol \"made in China\"",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 101,
     "text": "creazionismo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 102,
     "text": "culinbocca",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 103,
     "text": "danzare con una scopa",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 104,
     "text": "dare il 110%",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 105,
     "text": "Darth Vader",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 106,
     "text": "deludere tutti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 107,
     "text": "deodorante Axe",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 108,
     "text": "deporre un uovo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 109,
     "text": "depressione",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 110,
     "text": "DFE: Diarrea Fulminante Esplosiva",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 111,
     "text": "Dio",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 112,
     "text": "dipingere con le dita",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 113,
     "text": "ditalini",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 114,
     "text": "dividere le acque del Mar Rosso",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 115,
     "text": "dolore articolare da moderato a intenso",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 116,
     "text": "doppia penetrazione",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 117,
     "text": "doveri di consorte",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 118,
     "text": "Dreadlock",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 119,
     "text": "droghe da stupro",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 120,
     "text": "due nani che cagano in un secchio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 121,
     "text": "effere belliffimi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 122,
     "text": "Emilio Fede che si incastra lo scroto nel gancio di una tendina",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 123,
     "text": "Emilio Fede che viene assalito da uno stormo di rapaci",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 124,
     "text": "emozioni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 125,
     "text": "esagerare con la lacca",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 126,
     "text": "esattamente quello che ti aspetti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 127,
     "text": "esercizi di team-building",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 128,
     "text": "esfloliarsi la pelle sotto i rotoli di grasso",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 129,
     "text": "esistere",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 130,
     "text": "espellere un calcolo renale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 131,
     "text": "esplosioni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 132,
     "text": "essere beccati dalla polizia e finire in prigione",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 133,
     "text": "essere colpiti da una raffica di mitra da un'auto in corsa",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 134,
     "text": "essere cosi' incazzati che ti viene duro",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 135,
     "text": "essere emarginato",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 136,
     "text": "essere favoloso",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 137,
     "text": "essere in mezzo a un gruppo di mimi che fingono di scoparti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 138,
     "text": "essere morto da un po'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 139,
     "text": "essere paralizzati dal collo in giu'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 140,
     "text": "essere ricco",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 141,
     "text": "essere sommerso dai debiti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 142,
     "text": "essere stronzo coi bambini",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 143,
     "text": "essere un adulto senza soldi con molte cose importanti da fare",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 144,
     "text": "essere un dinosauro",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 145,
     "text": "essere un fottutissimo stregone",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 146,
     "text": "essere venerati in quanti unico vero Dio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 147,
     "text": "esserer rapiti da Peter Pan",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 148,
     "text": "estrogeni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 149,
     "text": "eugenetica",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 150,
     "text": "Euphoria, di Calvin Klein",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 151,
     "text": "fantasie sui boscaioli",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 152,
     "text": "fantasmi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 153,
     "text": "far baciare i peni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 154,
     "text": "far cambiare idea a una persona per mezzo di logica e fatti concreti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 155,
     "text": "far precipitare il lampadario sui tuoi nemici e risalire con la corda",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 156,
     "text": "fare il labbrino",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 157,
     "text": "fare l'elicottero col pene",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 158,
     "text": "fare l'occhiolino agli anziani",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 159,
     "text": "fare la cosa giusta",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 160,
     "text": "fare lo scalpo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 161,
     "text": "fare sesso alla guida",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 162,
     "text": "fare sesso sopra una pizza",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 163,
     "text": "fare solo un pochino di pipi'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 164,
     "text": "fare un fischio di apprezzamento",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 165,
     "text": "fare una puzzetta in ascensore",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 166,
     "text": "farlo dall'entrata posteriore",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 167,
     "text": "farsi sparare",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 168,
     "text": "ferite multiple da arma da taglio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 169,
     "text": "finalmente tacere",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 170,
     "text": "fingere di essere felici",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 171,
     "text": "fingere di essere interessati",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 172,
     "text": "finire i biscotti per la vendita di beneficienza contro l'AIDS, prima che inizi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 173,
     "text": "fisting",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 174,
     "text": "flash improvvisi della guerra",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 175,
     "text": "formaggio caldo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 176,
     "text": "forti dolori muscolari",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 177,
     "text": "fottere un cadavere fino a resuscitarlo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 178,
     "text": "Freddy Krueger",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 179,
     "text": "frignare come una puttanella",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 180,
     "text": "frustare uno schiavo disobbediente",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 181,
     "text": "fumare crack, per esempio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 182,
     "text": "fuoco amico",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 183,
     "text": "Gandalf",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 184,
     "text": "Gandhi",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 185,
     "text": "gattini",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 186,
     "text": "gelato gratis, zio!",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 187,
     "text": "geloni allo scroto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 188,
     "text": "gemelle siamesi sexy",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 189,
     "text": "Genghis Khan",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 190,
     "text": "genitori morti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 191,
     "text": "gente povera",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 192,
     "text": "giapponesi non portati per la matematica",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 193,
     "text": "ginocchio ricurvato congenito",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 194,
     "text": "giocare a nascondino nudi con tutta la famiglia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 195,
     "text": "giocherellare",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 196,
     "text": "giostrai",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 197,
     "text": "giustizia privata",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 198,
     "text": "gli Harlem Globetrotters",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 199,
     "text": "gli indici accusatori di Enrico Letta",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 200,
     "text": "gli obiettivi politici del gay",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 201,
     "text": "gli Umpa Lumpa",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 202,
     "text": "gloryhole",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 203,
     "text": "goblin",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 204,
     "text": "Google",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 205,
     "text": "Grammar Nazi che sono anche Nazi normali",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 206,
     "text": "grammatica corretta",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 207,
     "text": "grande Ali', principe Ali', Ali' Ababua!",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 208,
     "text": "gravidanze adolescenziali",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 209,
     "text": "grosse mani da artigiano",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 210,
     "text": "guarire gli omosessuali con la preghiera",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 211,
     "text": "Harakiri",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 212,
     "text": "herpes orale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 213,
     "text": "hipster",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 214,
     "text": "hipsters dai capelli angelici ardenti per l'antico contatto celeste con la dinamo stellata nel macchinario della notte",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 215,
     "text": "Hugh Grant in varie storie d'amore intrecciate",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 216,
     "text": "Hulk Hogan",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 217,
     "text": "i barzotti degli anziani",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 218,
     "text": "i batticarne, la mentula, il pipino",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 219,
     "text": "i calci volanti di Chuck Norris",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 220,
     "text": "i desideri erotici di Zeus",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 221,
     "text": "i gay",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 222,
     "text": "i gravemente disabili",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 223,
     "text": "i gulag",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 224,
     "text": "i miei genitali",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 225,
     "text": "i miei scheletri nell'armadio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 226,
     "text": "i Nickelback",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 227,
     "text": "i piu' grandi successi di Raul Casadei",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 228,
     "text": "i pollici opponibili",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 229,
     "text": "i Take That",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 230,
     "text": "i terroristi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 231,
     "text": "il Big Bang",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 232,
     "text": "il Capitano Kirk",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 233,
     "text": "il cinepanettone",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 234,
     "text": "il clitoride",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 235,
     "text": "il complesso introgo geopolitico nel Medio Oriente",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 236,
     "text": "il complotto dello zucchero raffinato",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 237,
     "text": "il corpo umano",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 238,
     "text": "il cuore di un bambino",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 239,
     "text": "il DNA di Genghis Khan",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 240,
     "text": "il femminicidio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 241,
     "text": "il frutto proibito",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 242,
     "text": "il genio italico",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 243,
     "text": "il gioco della bottiglia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 244,
     "text": "il giudice Santi Licheri",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 245,
     "text": "il Grinch",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 246,
     "text": "il guanto da baseball del mio figlio defunto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 247,
     "text": "il Ku Klux Klan",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 248,
     "text": "il lattaio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 249,
     "text": "il marchese",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 250,
     "text": "il mero concetto di \"reality show\"",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 251,
     "text": "il mio antro del sesso",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 252,
     "text": "il mio figlio inutile",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 253,
     "text": "il mio machete",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 254,
     "text": "il mio menarca",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 255,
     "text": "il mio stato sentimentale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 256,
     "text": "il miracolo della riproduzione",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 257,
     "text": "il Mostro di Firenze",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 258,
     "text": "il nuovo fidanzato di mia madre",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 259,
     "text": "il pacifico e innocuo sviluppo della Cina",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 260,
     "text": "il Papa",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 261,
     "text": "il pesante sacco di Babbo Natale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 262,
     "text": "il salto della quaglia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 263,
     "text": "il Sangue di Cristo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 264,
     "text": "il senso di colpa del sopravvissuto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 265,
     "text": "il sesso selvaggio e animale che i tuoi genitori stanno facendo in questo momento",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 266,
     "text": "il singhiozzo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 267,
     "text": "il sistema Oasi del Riposo Eminflex",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 268,
     "text": "il sistematico genocidio di un intero popolo e della sua cultura",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 269,
     "text": "il Sogno Americano",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 270,
     "text": "il Sud",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 271,
     "text": "il suffragio universale femminile",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 272,
     "text": "il Telefono Azzurro",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 273,
     "text": "il testicolo mancante di Lance Armstrong",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 274,
     "text": "il vero significato del Natale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 275,
     "text": "imboccare Platinette",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 276,
     "text": "immagini di donne nude",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 277,
     "text": "imponenti donne scandinave in bikini",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 278,
     "text": "incesto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 279,
     "text": "incontrare i vecchi compagni del liceo mentre si e' fatti di ketamina",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 280,
     "text": "incrociare i peni in segno di reciproca stima",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 281,
     "text": "indossare biancheria al contrario per evitare di lavarla",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 282,
     "text": "indossare un polipo come cappello",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 283,
     "text": "infilare Chupa Chups in bocca ad un bambino finche' non inizia a divertirsi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 284,
     "text": "iniettare speed in un braccio e sonnefero per cavalli nell'altro",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 285,
     "text": "iniezioni di ormoni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 286,
     "text": "iniziare a cantare e ballare all'improvviso",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 287,
     "text": "inquietante musica di sottofondo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 288,
     "text": "insatala del McDonald's",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 289,
     "text": "insegnare l'amore a un robot",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 290,
     "text": "invalidi di guerra",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 291,
     "text": "invidia del pene",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 292,
     "text": "italiani",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 293,
     "text": "Jafar, Grand Visir del Sultano di Agrabah",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 294,
     "text": "Jean-Claude Van Damme",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 295,
     "text": "Jovanotti",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 296,
     "text": "Justin Bieber",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 297,
     "text": "Keanu Reaves",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 298,
     "text": "Kim Jong-Il",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 299,
     "text": "l'approvazione dell'Uomo del monte",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 300,
     "text": "l'assunzione in cielo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 301,
     "text": "l'economia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 302,
     "text": "l'esercito della liberta'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 303,
     "text": "l'ex presidente Silvio Berlusconi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 304,
     "text": "l'Immacolata Concezione",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 305,
     "text": "l'inevitabile morte termica dell'Universo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 306,
     "text": "l'odore degli anziani",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 307,
     "text": "l'odore di sesso di George Clooney",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 308,
     "text": "l'Oltreuomo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 309,
     "text": "l'omino Michelin",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 310,
     "text": "l'ondata di euforia nello strangolare un senzatetto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 311,
     "text": "l'ultimo album dei Radiohead",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 312,
     "text": "l'ultimo giorno di scuola",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 313,
     "text": "l'uomo nero",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 314,
     "text": "l'uragano Katrina",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 315,
     "text": "la Banda Bassotti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 316,
     "text": "la carriera da attore di Shaquille O'Neal",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 317,
     "text": "la carta di credito di papino",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 318,
     "text": "la cintura di papa'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 319,
     "text": "la Danza della Fata Confetto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 320,
     "text": "la faccia da fottuto idiota di mio padre",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 321,
     "text": "la febbre del sabato sera",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 322,
     "text": "la follia dell'uomo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 323,
     "text": "la formaggia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 324,
     "text": "la formula segreta per la soddisfazione femminile",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 325,
     "text": "la Forza",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 326,
     "text": "la fredda luce del giorno",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 327,
     "text": "la gobba di Giulio Andreotti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 328,
     "text": "la lingua",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 329,
     "text": "la mano invisibile",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 330,
     "text": "la metropolitana",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 331,
     "text": "la mia anima",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 332,
     "text": "la mia collezione di giocattoli erotici high-tech",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 333,
     "text": "la mia cugina gnocca",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 334,
     "text": "la mia prima vittima",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 335,
     "text": "la mia vagina",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 336,
     "text": "la mia vita sessuale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 337,
     "text": "la morte di Mufasa",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 338,
     "text": "la pace nel mondo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 339,
     "text": "la patata",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 340,
     "text": "la paura stessa",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 341,
     "text": "la permanenza degli oggetti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 342,
     "text": "la piu' minuscola traccia di prova dell'esistenza dei Dio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 343,
     "text": "la placenta",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 344,
     "text": "la questione meridoionale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 345,
     "text": "la ragazza che manda sempre messaggi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 346,
     "text": "la Sacra Bibbia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 347,
     "text": "la safe word",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 348,
     "text": "la selezione naturale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 349,
     "text": "la sottile patina di casualita' situazionale che e' alla base del porno",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 350,
     "text": "la squadra cinese di ginnastica artistica",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 351,
     "text": "la strage delle Fosse Ardeatine",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 352,
     "text": "la sua calda, umida e ansiosa bocca",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 353,
     "text": "la Terra del Cioccolato",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 354,
     "text": "la vagina che conduce ad un'altra dimensione",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 355,
     "text": "la vagina di Oriana Fallaci",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 356,
     "text": "la violazione dei piu' basilari diritti dell'uomo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 357,
     "text": "Lady Gaga",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 358,
     "text": "lancio del nano",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 359,
     "text": "lasciare un imbarazzante messaggio vocale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 360,
     "text": "le avventure del piccolo tostapane",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 361,
     "text": "le ceneri del nonno",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 362,
     "text": "le dimensioni del mio pene",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 363,
     "text": "le industrie di caffe'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 364,
     "text": "le mie tette",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 365,
     "text": "le piccole callose mani dei bambini cinesi che lavorano come schiavi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 366,
     "text": "le quattro braccia di Vishnu",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 367,
     "text": "le quote rosa",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 368,
     "text": "le ragazze della Morositas",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 369,
     "text": "le ragezze nelle pubblicita' degli yogurt",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 370,
     "text": "lebbra",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 371,
     "text": "leccare cose per rivendicare la proprieta'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 372,
     "text": "lo sguardo da Orsetto del Cuore",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 373,
     "text": "lo stupido pene del mio ragazzo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 374,
     "text": "lobby giudaico massoniche",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 375,
     "text": "Loki, il dio burlone",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 376,
     "text": "lotta sexy con i cuscini",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 377,
     "text": "macchiarsi da soli",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 378,
     "text": "mangiare i baffi di Magnum P.I. per assorbirne i poteri",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 379,
     "text": "mangiare l'ultimo bisonte conosciuto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 380,
     "text": "mangiare merda",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 381,
     "text": "mangiare un albino",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 382,
     "text": "mangiare un intero pupazzo di neve",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 383,
     "text": "mani di ricotta",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 384,
     "text": "maometto (sia lode a lui)",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 385,
     "text": "marmottare all'infinito",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 386,
     "text": "Mastro Lindo, proprio dietro di te",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 387,
     "text": "masturbarsi in una vasca di lacrime di bambini",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 388,
     "text": "masturbazione",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 389,
     "text": "matrimoni interspecie",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 390,
     "text": "Maurizio Costanzo, nudo, su un tappedo di pelle d'orso, con un sassofono",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 391,
     "text": "maxi hot-dog in offerta",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 392,
     "text": "me",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 393,
     "text": "MechaHitler",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 394,
     "text": "mestruazioni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 395,
     "text": "metamfetamina in cristalli",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 396,
     "text": "mettere sotto qualcuno",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 397,
     "text": "mettere un criceto vivo in un pacco regalo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 398,
     "text": "mettere un panino con la nutella nel lettore VHS",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 399,
     "text": "mezzo chilo di pessima eroina messicana",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 400,
     "text": "Michael Jackson",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 401,
     "text": "miglioramenti cibernetici",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 402,
     "text": "mine antiuomo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 403,
     "text": "mischiare le razze",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 404,
     "text": "molle Slinky attorcigliate",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 405,
     "text": "monte cazzo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 406,
     "text": "morire",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 407,
     "text": "morire soli tra atroci sofferenze",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 408,
     "text": "moschee abusive",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 409,
     "text": "motoseghe per mani",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 410,
     "text": "muffin alla ganja",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 411,
     "text": "muggire",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 412,
     "text": "musica new age",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 413,
     "text": "Napoleone Bonaparte",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 414,
     "text": "napoletani in festa",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 415,
     "text": "nascondere un'erezione",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 416,
     "text": "Natalie Portman",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 417,
     "text": "nazisti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 418,
     "text": "necrofilia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 419,
     "text": "Neil Patrick Harris",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 420,
     "text": "neri",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 421,
     "text": "Nicolas Cage",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 422,
     "text": "niente",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 423,
     "text": "noioso sesso vaginale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 424,
     "text": "non contribuire alla societa' in nessun modo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 425,
     "text": "non credere all'esistenza delle giraffe",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 426,
     "text": "non scopare",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 427,
     "text": "nonna",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 428,
     "text": "nudita' totale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 429,
     "text": "obbedienza indiscussa",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 430,
     "text": "obesita'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 431,
     "text": "occhi appallati da fatto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 432,
     "text": "oche",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 433,
     "text": "omofobia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 434,
     "text": "orribili incidenti causati dalla depilazione laser",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 435,
     "text": "ospite speciale, Gigi D'Alessio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 436,
     "text": "PacMan, incarpettato con un ball gag",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 437,
     "text": "palle",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 438,
     "text": "palline cinesi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 439,
     "text": "palpeggiare",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 440,
     "text": "pantaloni da cowboy senza il sedere",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 441,
     "text": "paralisi facciale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 442,
     "text": "parecchi aborti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 443,
     "text": "parole, parole, parole",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 444,
     "text": "passare alla Vodafone",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 445,
     "text": "pavoneggiarsi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 446,
     "text": "pazzesche abilita' di giocoliere",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 447,
     "text": "pedofili",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 448,
     "text": "pensieri suicidi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 449,
     "text": "pessime scelte di vita",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 450,
     "text": "petrolio!",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 451,
     "text": "pettegole",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 452,
     "text": "piangere su un libro di poesie di Jim Morrison",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 453,
     "text": "picchiare la moglie",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 454,
     "text": "piccioni esplosivi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 455,
     "text": "piccoli capezzoli",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 456,
     "text": "piercing ai capezzoli",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 457,
     "text": "piercing ai genitali",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 458,
     "text": "Piero Angela",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 459,
     "text": "piloti Kamikaze",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 460,
     "text": "Pino Scotto",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 461,
     "text": "pioggia dorata",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 462,
     "text": "pizza con la nutella",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 463,
     "text": "polentoni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 464,
     "text": "polluzioni notturne",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 465,
     "text": "pompini per tutti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 466,
     "text": "porno sadomaso tedeschi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 467,
     "text": "pornodivi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 468,
     "text": "pornografia con Harry Potter",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 469,
     "text": "portare finalmente a termine il genocidio degli indiani",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 470,
     "text": "preliminari velocissimi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 471,
     "text": "prepuzio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 472,
     "text": "privilegi degli italiani",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 473,
     "text": "problemi paterni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 474,
     "text": "profanare tombe",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 475,
     "text": "puberta'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 476,
     "text": "pulirle il culo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 477,
     "text": "pulizia etnica",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 478,
     "text": "pupu'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 479,
     "text": "puttane",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 480,
     "text": "qualsiasi cosa Kwanzaa voglia dire",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 481,
     "text": "qualunche cosa usino per fare i McNuggets",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 482,
     "text": "quanto sono fantastico",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 483,
     "text": "quel coso che da' la scossa agli addominali",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 484,
     "text": "quello che farebbe Gesu'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 485,
     "text": "ragazzi che non chiamano",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 486,
     "text": "raggiungere rapidamente l'orgasmo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 487,
     "text": "Raoul Bova che cavalca un cavallo bianco",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 488,
     "text": "razzismo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 489,
     "text": "repressione",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 490,
     "text": "revisionismo storico",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 491,
     "text": "riciclare un regalo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 492,
     "text": "ridicolizzare altri in pubblico",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 493,
     "text": "riempire la casa di trappole per proteggersi dai ladri",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 494,
     "text": "riempire ogni orifizio con crema al mascarpone",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 495,
     "text": "rimangiarsi la parola",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 496,
     "text": "rimorchiare alla clinica per gli aborti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 497,
     "text": "riscaldamento globale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 498,
     "text": "risolvere il Bartezzaghi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 499,
     "text": "risorgere dalla tomba",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 500,
     "text": "Ritalin",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 501,
     "text": "RoboCop",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 502,
     "text": "robot volanti che uccidono le persone",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 503,
     "text": "Rocco Siffredi",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 504,
     "text": "rolando Sputafango, flatulista del Re",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 505,
     "text": "Romano Prodi",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 506,
     "text": "Rosy Bindi",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 507,
     "text": "rubare caramelle a un bambino",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 508,
     "text": "salire di livello",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 509,
     "text": "saltellare su e giu'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 510,
     "text": "sarcasmo ambiguo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 511,
     "text": "sballare di brutto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 512,
     "text": "sballarsi veramente",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 513,
     "text": "sbattersene del terzo mondo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 514,
     "text": "sborrare api vive. E le api sono incazzate",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 515,
     "text": "sbronzarsi da soli",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 516,
     "text": "scambiare effusioni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 517,
     "text": "schiaffeggiare una vecchietta razzista",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 518,
     "text": "Scientology",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 519,
     "text": "scienza",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 520,
     "text": "scimmie con l'AIDS",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 521,
     "text": "scopamici",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 522,
     "text": "scopare da dio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 523,
     "text": "scopare per vendetta",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 524,
     "text": "scoreggiare e andarsene via",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 525,
     "text": "scusarsi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 526,
     "text": "Sean Connery",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 527,
     "text": "seduzione",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 528,
     "text": "senza vestiti, pene nella vagina",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 529,
     "text": "serpenti volanti che fanno sesso",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 530,
     "text": "servitu' della gleba",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 531,
     "text": "sesso a sorpresa!",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 532,
     "text": "sesso non consenziente al primo appuntamento",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 533,
     "text": "sesso orale non corrisposto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 534,
     "text": "sesso tra panda",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 535,
     "text": "sexting",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 536,
     "text": "sfaccimma",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 537,
     "text": "sfornare un figlio ogni 9 mesi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 538,
     "text": "Sindrome Alcolica Fetale",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 539,
     "text": "Skeletor",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 540,
     "text": "slip commestibili",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 541,
     "text": "slow motion",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 542,
     "text": "sniffare cocaina dal cazzo duro di clown",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 543,
     "text": "sniffare la colla",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 544,
     "text": "sofficini",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 545,
     "text": "solleticarsi lo scroto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 546,
     "text": "solo la punta",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 547,
     "text": "solo un piccolo grande amore",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 548,
     "text": "sopraffare tuo padre",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 549,
     "text": "sorvegliare un ostaggio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 550,
     "text": "sottomettere un'orsa grizzly per poi sposarla",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 551,
     "text": "sottomissione sessuale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 552,
     "text": "Space Jam su VHS",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 553,
     "text": "sparare fucilate in aria mentre stai cavalcando una maiala urlante",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 554,
     "text": "spendere un sacco di soldi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 555,
     "text": "speranza",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 556,
     "text": "sperma di elfo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 557,
     "text": "spermi giganti venuto dallo spazio profondo per inseminare la Terra",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 558,
     "text": "spettegolare",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 559,
     "text": "spogliarsi e guardare Rai YoYo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 560,
     "text": "spompinare alcuni ragazzi in un vicolo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 561,
     "text": "sport",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 562,
     "text": "squali con le gambe",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 563,
     "text": "squartare il petto di un uomo e strapparne via il cuore ancora pulsante",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 564,
     "text": "starnutire, scoreggiare ed eiaculare nello stesso istante",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 565,
     "text": "statistiche inventate",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 566,
     "text": "Stephen Hawking che dice parolacce",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 567,
     "text": "stimolanti naturali per lui",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 568,
     "text": "stocazzo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 569,
     "text": "stonare \"Bianco Natale\" davanti a 300 genitori",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 570,
     "text": "stringere amicizia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 571,
     "text": "stronzate",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 572,
     "text": "stronzi infuocati",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 573,
     "text": "struscinate",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 574,
     "text": "stuprare e saccheggiare",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 575,
     "text": "sua maesta' la Regina Elisabetta II",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 576,
     "text": "super soldati modificati geneticamente",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 577,
     "text": "sussidi per l'affidamento dei bambini",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 578,
     "text": "sussurrare avances",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 579,
     "text": "svegliarsi bagnati e mezzi nudi nel parcheggio dell'IKEA",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 580,
     "text": "tagliare le gambe ad un fenicottero con le forbici da giardinaggio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 581,
     "text": "Tavernello",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 582,
     "text": "tedio esistenziale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 583,
     "text": "teneri orfanelli",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 584,
     "text": "tensione erotica",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 585,
     "text": "terroni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 586,
     "text": "testi di conoscenza del dialetto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 587,
     "text": "tettine sode",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 588,
     "text": "tingersi completamente di nero",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 589,
     "text": "togliere gli occhi e le palle a un uomo, quindi scambiarle di posto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 590,
     "text": "toglierle garbatamente le mutandine",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 591,
     "text": "toglierti la maglia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 592,
     "text": "Tom Cruise",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 593,
     "text": "Tonio Cartonio",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 594,
     "text": "torsione del testicolo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 595,
     "text": "tortura cinese",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 596,
     "text": "tossire in una vagina",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 597,
     "text": "trattare bene i suoi capezzoli",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 598,
     "text": "trattenere una risata quando si parla del genocidio in Rwanda",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 599,
     "text": "tre secondi consecutivi di felicita'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 600,
     "text": "tronisti televisivi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 601,
     "text": "trovare uno scheletro",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 602,
     "text": "tutti i miei amici morenti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 603,
     "text": "tutti questi cuscini decorativi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 604,
     "text": "tutto Internet",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 605,
     "text": "Twister",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 606,
     "text": "ubriacarsi col collutorio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 607,
     "text": "uccelli che non volano",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 608,
     "text": "un abbraccio virile a Brokeback Mountain",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 609,
     "text": "un agguato di mafia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 610,
     "text": "un altro anno di merda",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 611,
     "text": "un altro fottuto film sui vampiri",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 612,
     "text": "un altro schizzetto di morfina",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 613,
     "text": "un ambiente familiare deleterio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 614,
     "text": "un ano sbiancato",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 615,
     "text": "un appassionato amante latino",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 616,
     "text": "un assolo di sassofono",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 617,
     "text": "un bacio sulle labbra",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 618,
     "text": "un balletto gay sul ghiaccio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 619,
     "text": "un barile di vaselina",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 620,
     "text": "un basso standard di vita",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 621,
     "text": "un Big Mac a colazione",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 622,
     "text": "un biglietto di sola andata per Biella",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 623,
     "text": "un boccone di insalata di patate",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 624,
     "text": "un branco di idioti che giocano a carte invece di interagire come normali essere umani",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 625,
     "text": "un bukkake censurato",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 626,
     "text": "un busone",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 627,
     "text": "un capodoglio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 628,
     "text": "un cappello davvero alla moda",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 629,
     "text": "un cavallo zoppo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 630,
     "text": "un cazzo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 631,
     "text": "un cazzo, piu' grosso e piu' nero",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 632,
     "text": "un cenone di Natele monoporzione Findus",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 633,
     "text": "un ciccione che piagnucola come un bambino",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 634,
     "text": "un complesso di Edipo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 635,
     "text": "un disastro al posteriore",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 636,
     "text": "un dojo rivale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 637,
     "text": "un dominatore sadomaso ansimante e tutto sudato",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 638,
     "text": "un drago grasso e triste senza amici",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 639,
     "text": "un esercito di scheletri",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 640,
     "text": "un esoscheletro morotizzato",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 641,
     "text": "un festival della salsiccia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 642,
     "text": "un feto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 643,
     "text": "un furgoncino hippie",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 644,
     "text": "un gran bel culo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 645,
     "text": "un gran rumore per nulla",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 646,
     "text": "un grosso cazzo nero",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 647,
     "text": "un indiano Navajo che risolve crimini viaggiando nel mondo degli spiriti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 648,
     "text": "un indimenticabile diciottesimo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 649,
     "text": "un infaticabile cinese",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 650,
     "text": "un inguardabile maglione a collo alto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 651,
     "text": "un jamaicano preso bene",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 652,
     "text": "un lecca lecca gigante",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 653,
     "text": "un leone depresso dello zoo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 654,
     "text": "un mare di problemi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 655,
     "text": "un micro pene",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 656,
     "text": "un migliaio di salamini Beretta",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 657,
     "text": "un mimo che ha un infarto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 658,
     "text": "un minimo di decenza",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 659,
     "text": "un minuscolo cavallino",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 660,
     "text": "un modo senza rischi di guadagnare \u00e2\u201a\u00ac2000 da casa vostra",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 661,
     "text": "un momento per me stesso",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 662,
     "text": "un mongoloide forzuto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 663,
     "text": "un mulino pieno di cadaveri",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 664,
     "text": "un nerda brufoloso",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 665,
     "text": "un onesto poliziotto con niente da perdere",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 666,
     "text": "un operatore del call center",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 667,
     "text": "un ornitorinco con un cappellino",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 668,
     "text": "un passo di danza che in realta' e' sesso",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 669,
     "text": "un pelo pubico",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 670,
     "text": "un perservativo bucato",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 671,
     "text": "un peto vaginale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 672,
     "text": "un plotone di avvocati",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 673,
     "text": "un poliziotto che e' anche un cane",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 674,
     "text": "un porno con alieni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 675,
     "text": "un post-it passivo-agressivo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 676,
     "text": "un problemino nell'intimita'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 677,
     "text": "un pugno alla mandibola",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 678,
     "text": "un ragazzo giovane, di colore, con una felpa col cappuccio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 679,
     "text": "un raggio della morte",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 680,
     "text": "un ragionato castello di bugie",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 681,
     "text": "un sacchetto di fagioli magici",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 682,
     "text": "un seno rifatto storto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 683,
     "text": "un signore della guerra ungherese",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 684,
     "text": "un Super Liquidator caricato a piscio di gatto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 685,
     "text": "un tamarro con la canotta",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 686,
     "text": "un Toy Boy",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 687,
     "text": "un trauma catastrofico all'uretra",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 688,
     "text": "un travestito accettabile",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 689,
     "text": "un trenino spontaneo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 690,
     "text": "un tumore al cervello",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 691,
     "text": "un universo parallelo e leggermente piu' di merda",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 692,
     "text": "un uomo di mezza eta' sui pattini in linea",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 693,
     "text": "un uomo in pantaloni attillati, con degli orecchini piumati e la coda",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 694,
     "text": "un uovo di pterodattilo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 695,
     "text": "un vaso di Pandora pieno di calci in culo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 696,
     "text": "un video amatoriale di Barbara d'Urso che piange mentre si prepara dei \"4 salti in padella\"",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 697,
     "text": "un video di gattini cosi' tenero che ti si girano gli occhi e ti esce la spina dorsale dal buco del culo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 698,
     "text": "un'antilope fraudolenta",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 699,
     "text": "un'erezione che dura piu' di quattro ore",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 700,
     "text": "un'esplosione termonucleare",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 701,
     "text": "un'identita' di genere che puo' essere definita solo con una gara di poesia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 702,
     "text": "un'indescrivibile solitudine",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 703,
     "text": "un'insalata deludente",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 704,
     "text": "un'insaziabile sete di sangue",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 705,
     "text": "un'inspiegabile stupidita'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 706,
     "text": "un'invasione di termiti",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 707,
     "text": "una \"inondazione\" improvvisa",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 708,
     "text": "una balena spiaggiata",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 709,
     "text": "una bella astronave",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 710,
     "text": "una bella gnocca",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 711,
     "text": "una bella sniffata",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 712,
     "text": "una borsa termica piena di organi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 713,
     "text": "una calza della Befana piena di insalata russa",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 714,
     "text": "una cena a buffet di pesce a \u00e2\u201a\u00ac3.99",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 715,
     "text": "una circoncisione approssimativa",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 716,
     "text": "una colazione equilibrata",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 717,
     "text": "una cometa del sesso proveniente da Nettuno che rende la Terra eternamente sexy",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 718,
     "text": "una danza di accoppiamento",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 719,
     "text": "una delicataa carezza sull'interno coscia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 720,
     "text": "una disfunzione erettile",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 721,
     "text": "una donna disprezzata",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 722,
     "text": "una festa di compleanno deludente",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 723,
     "text": "una fiction strappalacrime tratta da una storia vera su Rai 2",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 724,
     "text": "una grattatina di culo clandestina",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 725,
     "text": "una guerra di mafia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 726,
     "text": "una gustosa tetta che spunta",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 727,
     "text": "una innovata e rivoluzionaria tipologia di porno",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 728,
     "text": "una lampreda che nuota nel cesso e ti morde il perineo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 729,
     "text": "una lobotomia eseguita con un puntello da ghiaccio",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 730,
     "text": "una lucertola che sputa DAVVERO sangue dagli occhi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 731,
     "text": "una maledizione gitana",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 732,
     "text": "una mutua distruzione assicurata",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 733,
     "text": "una pentolaccia piena di scoprioni",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 734,
     "text": "una piccola manina rachitica",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 735,
     "text": "una piccola, accurata critica",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 736,
     "text": "una pietra luccicante che prova il mio amore per te",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 737,
     "text": "una possesione demoniaca",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 738,
     "text": "una presentazione PowerPoint",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 739,
     "text": "una quantita' di ragni allucinante",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 740,
     "text": "una ragione per non suicidarsi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 741,
     "text": "una roba veramente perversa",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 742,
     "text": "una ruota panoramica scardinata che rotola verso il mare",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 743,
     "text": "una sbirciatina",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 744,
     "text": "una scimmia che fuma un sigare",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 745,
     "text": "una scoreggia vestita",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 746,
     "text": "una secchiata di sborra di cavallo in faccia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 747,
     "text": "una sega triste",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 748,
     "text": "una simpatica trippona",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 749,
     "text": "una sorprendente quantita' di capelli",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 750,
     "text": "una specie di uomo-uccello",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 751,
     "text": "una squadra di talpe con occhiali da aviatore",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 752,
     "text": "una storia ininterrotta di imperialismo e sfruttamento",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 753,
     "text": "una stretta di mano interrazziale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 754,
     "text": "una tartaruga alligatore che ti morde la punta del pene",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 755,
     "text": "una toccante interpretazione di \"Che sara', sara'\"",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 756,
     "text": "una top model scompigliata",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 757,
     "text": "una trappola Viet Cong",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 758,
     "text": "una troupe di soli nani che rappresenta il Riccardo III di Shakespeare",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 759,
     "text": "una valigetta di plutonio di quantita' militare",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 760,
     "text": "una velata xenofobia",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 761,
     "text": "una vita di tristezza",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 762,
     "text": "una zuppa troppo calda",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 763,
     "text": "universita'",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 764,
     "text": "uno schizzo di panna acida",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 765,
     "text": "uno sfigato con la chitarra",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 766,
     "text": "uno stereotipo confermato dalla statistica",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 767,
     "text": "uno straccio imbevuto di etere",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 768,
     "text": "untori",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 769,
     "text": "uomini",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 770,
     "text": "urlare come un pazzo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 771,
     "text": "uvetta",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 772,
     "text": "velcro",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 773,
     "text": "vendetta, dolce vendetta",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 774,
     "text": "venire mangiati vivi da Antonino Cannavacciuolo",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 775,
     "text": "veri e propri mutanti con qualche malattia e nessun super potere",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 776,
     "text": "viagra",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 777,
     "text": "vichinghi",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 778,
     "text": "violenza su minore",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 779,
     "text": "violenza, linguaggio volgare e contenuti erotici",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 780,
     "text": "vittime civili",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 781,
     "text": "vivere in un cassonetto",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 782,
     "text": "vomitare durante il sesso orale",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 783,
     "text": "vongole",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   },
   {
     "id": 784,
     "text": "Wanna Marchi",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 785,
     "text": "World of Warcraft",
     "used": false,
-    "modify": false
+    "modify": false,
+    "type": 1
   },
   {
     "id": 786,
     "text": "zuppa, insalata e grissini gratis",
     "used": false,
-    "modify": true
+    "modify": true,
+    "type": 1
   }
 ]
