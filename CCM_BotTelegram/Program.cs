@@ -9,14 +9,15 @@ using Timer = System.Timers.Timer;
 namespace CCM_BotTelegram
 {
     enum State{
-        Idle,           // Nothing to do, waiting for commands
-        WaitPoll_cah,   // Cah starting state: wait for /start command from the master
-        Playing_cah,    // Playing Cah game
-        Round,          // Player choose the card
-        ShowAnswers,    // Answers are shown in the group chat
-        Points,         // Points are assigned to the players
-        Setting_Round,  // Change number of round
-        Setting_Tie     // Change if tie is allowed
+        Idle,               // Nothing to do, waiting for commands
+        WaitPoll_cah,       // Cah starting state: wait for /start command from the master
+        Playing_cah,        // Playing Cah game
+        Round,              // Player choose the card
+        ShowAnswers,        // Answers are shown in the group chat
+        Points,             // Points are assigned to the players
+        Setting_Round_CB,   // Change number of round
+        Setting_Round_Text,
+        Setting_Tie         // Change if tie is allowed
     }
 
     internal class Program
@@ -171,11 +172,41 @@ namespace CCM_BotTelegram
                         {
                             if (update.CallbackQuery.Data == "01")
                             {
-                                botState = State.Setting_Round;
+                                botState = State.Setting_Round_CB;
+
+                                InlineKeyboardMarkup roundSettings = new(new[]
+                                {
+                                    new [] {
+                                        InlineKeyboardButton.WithCallbackData(
+                                            text: "5",
+                                            callbackData: "r00"
+                                        ),
+                                        InlineKeyboardButton.WithCallbackData(
+                                            text: "10",
+                                            callbackData: "r01")
+                                    },
+                                    new [] {
+                                        InlineKeyboardButton.WithCallbackData(
+                                            text: "20",
+                                            callbackData: "r10"
+                                        ),
+                                        InlineKeyboardButton.WithCallbackData(
+                                            text: "Infiniti",
+                                            callbackData: "r11")
+                                    },
+                                    new []
+                                    {
+                                        InlineKeyboardButton.WithCallbackData(
+                                            text: "Personalizza",
+                                            callbackData: "rXX"
+                                        )
+                                    }
+                                });
 
                                 await Client.SendTextMessageAsync(
                                     cahMatch.GetChatId(),
-                                    $"Quanti round vuoi fare? (Scrivi -1 per avere round infiniti)",
+                                    "Quanti round vuoi fare?",
+                                    replyMarkup: roundSettings,
                                     cancellationToken: token
                                 );
                             }
@@ -343,7 +374,42 @@ namespace CCM_BotTelegram
                     }
                     break;
 
-                case State.Setting_Round:
+                case State.Setting_Round_CB:
+                    if (update.Type == UpdateType.CallbackQuery)
+                    {
+                        if (update.CallbackQuery.From.Id == cahMatch.GetMasterId())
+                        {
+                            if (update.CallbackQuery.Data == "rXX")
+                            {
+                                botState = State.Setting_Round_Text;
+
+                                await Client.SendTextMessageAsync(
+                                    cahMatch.GetChatId(),
+                                    "Scrivi quanti round vuoi fare",
+                                    cancellationToken: token
+                                );
+                            }
+                            else
+                            {
+                                int newRound = 1;
+
+                                if (update.CallbackQuery.Data == "r00") // 5 rounds
+                                    newRound = 5;
+                                else if (update.CallbackQuery.Data == "r01") // 10 rounds
+                                    newRound = 10;
+                                else if (update.CallbackQuery.Data == "r10") // 20 rounds
+                                    newRound = 20;
+                                else if (update.CallbackQuery.Data == "r11") // Infinite rounds
+                                    newRound = -1;
+
+                                cahMatch.SetSettingRound(newRound);
+                                await SettingCommand(token);
+                            }
+                        }
+                    }
+                    break;
+
+                case State.Setting_Round_Text:
                     if (update.Type == UpdateType.Message)
                     {
                         if (cahMatch.GetMasterId() == update.Message.From.Id)
@@ -364,7 +430,7 @@ namespace CCM_BotTelegram
                                 {
                                     cahMatch.SetSettingRound(newRound);
 
-                                    await SettingCommand(update.Message.Chat, update.Message, token);
+                                    await SettingCommand(token);
                                 }
                             }
                             catch
@@ -389,22 +455,7 @@ namespace CCM_BotTelegram
                             else if (update.CallbackQuery.Data == "11") // Tie not Allowed
                                 cahMatch.SetSettingTieAllowed(false);
 
-                            botState = State.Playing_cah;
-
-                            await Client.DeleteMessageAsync(
-                                cahMatch.GetChatId(),
-                                cahMatch.GetSettingMessageId(),
-                                token
-                            );
-
-                            Message newSettingMessageId = await Client.SendTextMessageAsync(
-                                cahMatch.GetChatId(),
-                                "Impostazioni aggiornate",
-                                replyMarkup: SettingKeyboard(),
-                                cancellationToken: token
-                            );
-
-                            cahMatch.SetSettingMessageId(newSettingMessageId.MessageId);
+                            await SettingCommand(token);
                         }
                     }
                     break;
@@ -444,38 +495,24 @@ namespace CCM_BotTelegram
             }
         }
 
-        private static async Task SettingCommand(Chat updateChat, Message updateMessage, CancellationToken token)
+        private static async Task SettingCommand(CancellationToken token)
         {
-            if (cahMatch.GetChatId() == updateChat.Id)
-            {
-                if (cahMatch.GetMasterId() == updateMessage.From.Id)
-                {
-                    botState = State.Playing_cah;
+            botState = State.Playing_cah;
 
-                    await Client.DeleteMessageAsync(
-                        updateChat,
-                        cahMatch.GetSettingMessageId(),
-                        token
-                    );
+            await Client.DeleteMessageAsync(
+                cahMatch.GetChatId(),
+                cahMatch.GetSettingMessageId(),
+                token
+            );
 
-                    Message newSettingMessageId = await Client.SendTextMessageAsync(
-                        updateChat,
-                        "Impostazioni aggiornate",
-                        replyMarkup: SettingKeyboard(),
-                        cancellationToken: token
-                    );
+            Message newSettingMessageId = await Client.SendTextMessageAsync(
+                cahMatch.GetChatId(),
+                "Impostazioni aggiornate",
+                replyMarkup: SettingKeyboard(),
+                cancellationToken: token
+            );
 
-                    cahMatch.SetSettingMessageId(newSettingMessageId.MessageId);
-                }
-                else
-                {
-                    await Client.SendTextMessageAsync(
-                        updateChat.Id,
-                        "Solo il master puo' usare quel comando",
-                        cancellationToken: token
-                    );
-                }
-            }
+            cahMatch.SetSettingMessageId(newSettingMessageId.MessageId);
         }
 
         public static async Task PlayCommand(Chat updateChat, Message updateMessage, CancellationToken token)
