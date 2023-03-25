@@ -33,6 +33,8 @@
     {
         public string id;
         public int messageId;
+
+        public static PollInfo InvalidPollInfo() { return new PollInfo { id = "invalido", messageId = -1 }; }
     }
 
     struct MatchSetting

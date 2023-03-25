@@ -90,6 +90,10 @@ namespace CCM_BotTelegram
                                     await PlayCommand(update.Message.Chat, update.Message, token);                                    
                                     break;
 
+                                case "testino":
+                                    await TestinoCommand(update.Message.Chat, update.Message, token);
+                                    break;
+
                                 default: break;
                             }
                         }
@@ -409,9 +413,40 @@ namespace CCM_BotTelegram
             }
         }
 
+        private static async Task TestinoCommand(Chat updateChat, Message updateMessage, CancellationToken token)
+        {
+            if(updateChat.Id == PrivateConfiguration.GetLogChatId())
+            {
+                botState = State.Playing_cah;
+                cahMatch = new(
+                    updateChat.Id,
+                    PollInfo.InvalidPollInfo(),
+                    updateMessage.From.Id,
+                    new MatchSetting(10, -1, false)
+                );
+
+                cahMatch.AddPlayer(updateMessage.From.Id, updateMessage.From.FirstName);
+
+                await Client.SendTextMessageAsync(
+                    updateChat,
+                    "Test",
+                    replyMarkup : CreatePlayerDeck(updateMessage.From.Id),
+                    cancellationToken: token);
+
+                Message settings = await Client.SendTextMessageAsync(
+                    cahMatch.GetChatId(),
+                    "Si comincia",
+                    replyMarkup: SettingKeyboard(),
+                    cancellationToken: cts.Token
+                );
+
+                cahMatch.SetSettingMessageId(settings.MessageId);
+            }
+        }
+
         private static async Task SettingCommand(Chat updateChat, Message updateMessage, CancellationToken token)
         {
-            if (updateChat.Type == ChatType.Group || updateChat.Type == ChatType.Supergroup)
+            if (cahMatch.GetChatId() == updateChat.Id)
             {
                 if (cahMatch.GetMasterId() == updateMessage.From.Id)
                 {
@@ -440,14 +475,6 @@ namespace CCM_BotTelegram
                         cancellationToken: token
                     );
                 }
-            }
-            else
-            {
-                await Client.SendTextMessageAsync(
-                    updateChat.Id,
-                    $"Per usare il comando {SimpleCommand(updateMessage.Text)} devi essere in un gruppo",
-                    cancellationToken: token
-                );
             }
         }
 
