@@ -17,7 +17,8 @@ namespace CCM_BotTelegram
         Points,             // Points are assigned to the players
         Setting_Round_CB,   // Change number of round
         Setting_Round_Text,
-        Setting_Tie         // Change if tie is allowed
+        Setting_Tie,        // Change if tie is allowed
+        Setting_Bonus       // Allow bonus point
     }
 
     internal class Program
@@ -234,6 +235,30 @@ namespace CCM_BotTelegram
                                     cancellationToken: token
                                 );
                             }
+                            else if (update.CallbackQuery.Data == "03")
+                            {
+                                botState = State.Setting_Bonus;
+
+                                InlineKeyboardMarkup inlineKeyboard = new(new[]
+                                {
+                                    new [] {
+                                        InlineKeyboardButton.WithCallbackData(
+                                            text: "Si",
+                                            callbackData: "10"
+                                        ),
+                                        InlineKeyboardButton.WithCallbackData(
+                                            text: "No",
+                                            callbackData: "11")
+                                    }
+                                });
+
+                                await Client.SendTextMessageAsync(
+                                    cahMatch.GetChatId(),
+                                    $"Bonus risata gigante?",
+                                    replyMarkup: inlineKeyboard,
+                                    cancellationToken: token
+                                );
+                            }
                         }
                     }
                     break;
@@ -304,7 +329,17 @@ namespace CCM_BotTelegram
                     {
                         if (cahMatch.IsAnswerPoll(update.PollAnswer.PollId, update.PollAnswer.User.Id))
                         {
-                            cahMatch.AddPoints(update.PollAnswer.OptionIds[0]);
+                            cahMatch.AddPoints(2 - update.PollAnswer.OptionIds[0]);
+                        }
+                    }
+                    else if (update.Type == UpdateType.CallbackQuery)
+                    {
+                        if(update.CallbackQuery.Data == "bp00")
+                        {
+                            if (!cahMatch.AlredyGaveBonus(update.CallbackQuery.From.Id))
+                            {
+                                cahMatch.AddPoints(1);
+                            }
                         }
                     }
                     break;
@@ -342,7 +377,10 @@ namespace CCM_BotTelegram
                                             await WinningPlayerCommand(update.Message.Chat, update.Message, token);
                                         }
                                     }
+                                    break;
 
+                                case "points":
+                                    await ShowPointsCommand(update.Message.Chat, update.Message, token);
                                     break;
 
                                 case "stop":
@@ -460,6 +498,21 @@ namespace CCM_BotTelegram
                     }
                     break;
 
+                case State.Setting_Bonus:
+                    if (update.Type == UpdateType.CallbackQuery)
+                    {
+                        if (update.CallbackQuery.From.Id == cahMatch.GetMasterId())
+                        {
+                            if (update.CallbackQuery.Data == "10") // Bonus point Allowed
+                                cahMatch.SetSettingBonusPoint(true);
+                            else if (update.CallbackQuery.Data == "11") // Bonus point not Allowed
+                                cahMatch.SetSettingBonusPoint(false);
+
+                            await SettingCommand(token);
+                        }
+                    }
+                    break;
+
                 default: break;
             }
         }
@@ -473,7 +526,7 @@ namespace CCM_BotTelegram
                     updateChat.Id,
                     PollInfo.InvalidPollInfo(),
                     updateMessage.From.Id,
-                    new MatchSetting(10, -1, false)
+                    new MatchSetting(10, -1, false, false)
                 );
 
                 cahMatch.AddPlayer(updateMessage.From.Id, updateMessage.From.FirstName);
@@ -535,7 +588,7 @@ namespace CCM_BotTelegram
                     updateChat.Id,
                     new PollInfo { id = pollMatch.Poll.Id, messageId = pollMatch.MessageId },
                     updateMessage.From.Id,
-                    new MatchSetting(10, -1, false)
+                    new MatchSetting(10, -1, false, false)
                 );
             }
             else
@@ -652,12 +705,28 @@ namespace CCM_BotTelegram
                         Card nextAnswer = cahMatch.GetNextAnswer();
                         Card sentence = cahMatch.GetRoundSentence();
 
+                        InlineKeyboardMarkup? bonusKeyboard = null;
+
+                        if (cahMatch.IsBonusPoint())
+                        {
+                            bonusKeyboard = new(new[] 
+                            {
+                                new [] {
+                                    InlineKeyboardButton.WithCallbackData(
+                                        text: "Bonus Risata Gigante",
+                                        callbackData: "bp00"
+                                    )
+                                }
+                            });
+                        }
+
                         Message answerPoll = await Client.SendPollAsync(
                             chatId: updateChat.Id,
                             question: $"{CompleteSentence(sentence, nextAnswer)}\n\nFa ridere?",
                             options: new[] { "Tantissimoo", "Ho visto di meglio", "Per niente" },
                             isAnonymous: false,
                             allowsMultipleAnswers: false,
+                            replyMarkup: bonusKeyboard,
                             cancellationToken: token
                         );
 
@@ -675,16 +744,6 @@ namespace CCM_BotTelegram
                             "Round finito",
                             cancellationToken: token
                         );
-
-                        List<long> allPlayers = cahMatch.GetPlayers();
-                        foreach (long player in allPlayers)
-                        {
-                            await Client.SendTextMessageAsync(
-                                player, 
-                                $"Hai {cahMatch.GetPlayerPoints(player)} punti",
-                                cancellationToken: cts.Token
-                            );
-                        }
                     }
                 }
                 else
@@ -695,6 +754,25 @@ namespace CCM_BotTelegram
                         cancellationToken: token
                     );
                 }
+            }
+        }
+
+        public static async Task ShowPointsCommand(Chat updateChat, Message updateMessage, CancellationToken token)
+        {
+            if (cahMatch.GetPlayers().Contains(updateChat.Id))
+            {
+                int punti = cahMatch.GetPlayerPoints(updateChat.Id);
+                string mex = $"Hai {cahMatch.GetPlayerPoints(updateChat.Id)} ";                
+                if (punti == 1)
+                    mex += "punto";
+                else
+                    mex += "punti";
+
+                await Client.SendTextMessageAsync(
+                    updateChat.Id,
+                    mex,
+                    cancellationToken: token
+                );
             }
         }
 
@@ -848,7 +926,7 @@ namespace CCM_BotTelegram
 
         private static InlineKeyboardMarkup SettingKeyboard()
         {
-            InlineKeyboardMarkup inlineKeyboard = new(new[]
+            InlineKeyboardMarkup inlineKeyboard = new( new[]
             {
                 new [] {
                     InlineKeyboardButton.WithCallbackData(
@@ -861,6 +939,12 @@ namespace CCM_BotTelegram
                     InlineKeyboardButton.WithCallbackData(
                         text: $"Pareggio consentito: {cahMatch.GetSettingTieAllowed()}",
                         callbackData: "02"
+                    )
+                },
+                new [] {
+                    InlineKeyboardButton.WithCallbackData(
+                        text: $"Punto Bonus: {cahMatch.GetSettingBonusPoint()}",
+                        callbackData: "03"
                     )
                 }
             });

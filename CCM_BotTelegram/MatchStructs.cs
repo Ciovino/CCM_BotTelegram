@@ -42,15 +42,19 @@
         public int MessageSettingId { get; set; }
         public int Round { get; set; } // -1 means infinite round
         public bool TieAllowed { get; set; }
+        public bool BonusPoint { get; set; }
 
-        public MatchSetting(int round, int messageSettingId, bool tieAllowed)
+        public MatchSetting(int round, int messageSettingId, bool tieAllowed, bool bonusPoint)
         {
             Round = round;
             MessageSettingId = messageSettingId;
             TieAllowed = tieAllowed;
+            BonusPoint = bonusPoint;
         }
         public string RoundToString() { return Round == -1 ? "Infiniti" : Round.ToString(); }
 
         public string TieAllowedToString() { return TieAllowed ? "Si" : "No"; }
+
+        public string BonusPointToString() { return BonusPoint ? "Si" : "No"; }
     }
 }

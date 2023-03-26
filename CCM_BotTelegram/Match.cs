@@ -36,9 +36,12 @@ namespace CCM_BotTelegram
         public int GetSettingMessageId() { return setting.MessageSettingId; }
         public void SetSettingRound(int newRound) { setting.Round = newRound; }
         public string GetSettingRound() { return setting.RoundToString(); }
+        public void SetSettingTieAllowed(bool newTieAllowed) { setting.TieAllowed = newTieAllowed; }
         public string GetSettingTieAllowed() { return setting.TieAllowedToString(); }
         public bool IsTieAllowed() { return setting.TieAllowed; }
-        public void SetSettingTieAllowed(bool newTieAllowed) { setting.TieAllowed = newTieAllowed; }
+        public void SetSettingBonusPoint(bool bonusPoint) { setting.BonusPoint = bonusPoint; }
+        public string GetSettingBonusPoint() { return setting.BonusPointToString(); }
+        public bool IsBonusPoint() { return setting.BonusPoint; }
 
         // Pre-match
         public bool Start() { return players.Count > 1; }
@@ -187,7 +190,26 @@ namespace CCM_BotTelegram
 
             return pollId.Equals(players[roundManager.playerCardChoosen].AnswerPoll.id); 
         }
-        public void AddPoints(int answer) { players[roundManager.playerCardChoosen].AddPoints(Math.Abs(answer - 2)); }
+        public bool AlredyGaveBonus(long playerId)
+        {
+            if (!SamePlayerCard(playerId)) return true;
+
+            foreach (PlayerCah player in players) 
+            {
+                if (player.GetId().Equals(playerId))
+                {
+                    if (!player.BonusGiven)
+                    {
+                        player.BonusGiven = true;
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+        public bool SamePlayerCard(long userId) { return userId == players[roundManager.playerCardChoosen].GetId(); }
+        public void AddPoints(int points) { players[roundManager.playerCardChoosen].AddPoints(points); }
         public int GetPlayerPoints(long playerId)
         {
             foreach (PlayerCah player in players)
@@ -207,6 +229,7 @@ namespace CCM_BotTelegram
 
                 Card oldCard = player.UpdateCards(newCard);
                 allCards.UpdateCard(oldCard);
+                player.BonusGiven = false;
             }
         }        
 
@@ -261,6 +284,7 @@ namespace CCM_BotTelegram
         readonly List<Card> cards = new();
         public int ChosenCard { get; set; }
         public bool ShownAnswer { get; set; }
+        public bool BonusGiven { get; set; }
         public PollInfo AnswerPoll { get; set; }
 
         public int points;  
